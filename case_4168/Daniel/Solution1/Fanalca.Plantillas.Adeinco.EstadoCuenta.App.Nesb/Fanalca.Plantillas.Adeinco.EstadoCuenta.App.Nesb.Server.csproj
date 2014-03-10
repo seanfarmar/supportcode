@@ -1,0 +1,102 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{3BF54DDA-2594-494D-9673-A95261AAF809}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Fanalca.Plantillas.Adeinco.EstadoCuenta.App.Nesb.Server</RootNamespace>
+    <AssemblyName>Fanalca.Plantillas.Adeinco.EstadoCuenta.App.Nesb.Server</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="NServiceBus">
+      <HintPath>..\packages\NServiceBus.Interfaces.4.4.0\lib\net40\NServiceBus.dll</HintPath>
+    </Reference>
+    <Reference Include="NServiceBus.Core">
+      <HintPath>..\packages\NServiceBus.4.4.0\lib\net40\NServiceBus.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="NServiceBus.Host">
+      <HintPath>..\packages\NServiceBus.Host.4.4.0\lib\net40\NServiceBus.Host.exe</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="ProcesaPlantilla.cs" />
+    <Compile Include="EndpointConfig.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Fanalca.Plantillas.Adeinco.EstadoCuenta.Entidades\Fanalca.Plantillas.Adeinco.EstadoCuenta.Entidades.csproj">
+      <Project>{7811664C-6133-401A-B504-B20F2B75F74A}</Project>
+      <Name>Fanalca.Plantillas.Adeinco.EstadoCuenta.Entidades</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Fanalca.Plantillas.Adeinco.EstadoCuenta.Logic.NoSql.Interface\Fanalca.Plantillas.Adeinco.EstadoCuenta.Logic.NoSql.Interface.csproj">
+      <Project>{A6E034D1-FED9-4CE1-B44F-5D25B00D2AC4}</Project>
+      <Name>Fanalca.Plantillas.Adeinco.EstadoCuenta.Logic.NoSql.Interface</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Fanalca.Plantillas.Adeinco.EstadoCuenta.Logica.Excepcion\Fanalca.Plantillas.Adeinco.EstadoCuenta.Logica.Excepcion.csproj">
+      <Project>{4F60E6A4-AEEB-4326-919F-0751F561C3EF}</Project>
+      <Name>Fanalca.Plantillas.Adeinco.EstadoCuenta.Logica.Excepcion</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Fanalca.Plantillas.Adeinco.EstadoCuenta.Logica.Logica.NoSql\Fanalca.Plantillas.Adeinco.EstadoCuenta.Logica.NoSql.csproj">
+      <Project>{8AA83E0B-8467-4D5D-BDB1-CD5EE5D84D82}</Project>
+      <Name>Fanalca.Plantillas.Adeinco.EstadoCuenta.Logica.NoSql</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Fanalca.Plantillas.Adeinco.EstadoCuenta.NoSQL.Interfaces\Fanalca.Plantillas.Adeinco.EstadoCuenta.NoSQL.Interfaces.csproj">
+      <Project>{E520C4E3-E501-4B6E-8BE7-BE827801611A}</Project>
+      <Name>Fanalca.Plantillas.Adeinco.EstadoCuenta.NoSQL.Interfaces</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Fanalca.Plantillas.Adeinco.EstadoCuenta.NoSQL.Raven\Fanalca.Plantillas.Adeinco.EstadoCuenta.NoSQL.Raven.csproj">
+      <Project>{867BBE60-524F-4EA1-8FB6-EB63DB2C0085}</Project>
+      <Name>Fanalca.Plantillas.Adeinco.EstadoCuenta.NoSQL.Raven</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Fanalca.PlantillasAdeinco.EstadoCuenta.Datos.Excepcion\Fanalca.Plantillas.Adeinco.EstadoCuenta.Datos.Excepcion.csproj">
+      <Project>{D0AE94AA-3550-4A6D-A43E-0AA3FF906CB2}</Project>
+      <Name>Fanalca.Plantillas.Adeinco.EstadoCuenta.Datos.Excepcion</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+  <PropertyGroup>
+    <StartAction>Program</StartAction>
+    <StartProgram>$(ProjectDir)$(OutputPath)NServiceBus.Host.exe</StartProgram>
+  </PropertyGroup>
+</Project>

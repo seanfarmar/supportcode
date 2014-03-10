@@ -1,0 +1,34 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.21005.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Messages", "Messages\Messages.csproj", "{F47B6C8C-4D43-4BB7-A985-9CD70C0466A5}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebApplication_mvc5", "WebApplication_mvc5\WebApplication_mvc5.csproj", "{B147FC48-30EF-4D41-B151-1B32F33C4B9D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Handlers", "Handlers\Handlers.csproj", "{A46C1F0C-F644-4C06-BC66-6C4D69136444}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{F47B6C8C-4D43-4BB7-A985-9CD70C0466A5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F47B6C8C-4D43-4BB7-A985-9CD70C0466A5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F47B6C8C-4D43-4BB7-A985-9CD70C0466A5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F47B6C8C-4D43-4BB7-A985-9CD70C0466A5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B147FC48-30EF-4D41-B151-1B32F33C4B9D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B147FC48-30EF-4D41-B151-1B32F33C4B9D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B147FC48-30EF-4D41-B151-1B32F33C4B9D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B147FC48-30EF-4D41-B151-1B32F33C4B9D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A46C1F0C-F644-4C06-BC66-6C4D69136444}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A46C1F0C-F644-4C06-BC66-6C4D69136444}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A46C1F0C-F644-4C06-BC66-6C4D69136444}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A46C1F0C-F644-4C06-BC66-6C4D69136444}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
