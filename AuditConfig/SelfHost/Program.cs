@@ -1,10 +1,10 @@
-﻿namespace ConsoleApplication1
+﻿namespace SelfHost
 {
-    using System;
-    using NServiceBus;
-    using NServiceBus.Installation.Environments;
+	using System;
+	using NServiceBus;
+	using NServiceBus.Installation.Environments;
 
-    class Program
+	class Program
     {
         static void Main(string[] args)
         {
