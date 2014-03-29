@@ -2,7 +2,7 @@
 {
     using System;
 
-    public class ReplayMessage
+    public class ReplayDummyMessage
     {
         public Guid Id { get; set; }
         public Guid TransactionId { get; set; } 

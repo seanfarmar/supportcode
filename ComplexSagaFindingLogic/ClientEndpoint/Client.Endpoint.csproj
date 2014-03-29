@@ -7,8 +7,8 @@
     <ProjectGuid>{A832EEAB-9A55-4A04-8E4C-8E707F32DEB3}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>ClientEndpoint</RootNamespace>
-    <AssemblyName>ClientEndpoint</AssemblyName>
+    <RootNamespace>Client.Endpoint</RootNamespace>
+    <AssemblyName>Client.Endpoint</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
@@ -43,13 +43,27 @@
     <Reference Include="System.Core" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Class1.cs" />
+    <Compile Include="TransactionMessageHandler.cs" />
     <Compile Include="EndpointConfig.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Conventions\Conventions.csproj">
+      <Project>{dfd75993-5f91-4c65-bfcc-e5bc7127661e}</Project>
+      <Name>Conventions</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Messgaes\Client.Messgaes.csproj">
+      <Project>{4EE8C2F5-5F60-4F7F-8545-7A7F6A4466CE}</Project>
+      <Name>Client.Messgaes</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Server.Messages\Server.Messages.csproj">
+      <Project>{C019AC9C-710D-46A3-9BEF-4F1DEA586A6B}</Project>
+      <Name>Server.Messages</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

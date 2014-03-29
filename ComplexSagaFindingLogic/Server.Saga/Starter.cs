@@ -1,6 +1,8 @@
 ﻿namespace Server.Saga
 {
     using System;
+    using System.Collections.Generic;
+    using System.Security.Cryptography;
     using Messages;
     using NServiceBus;
 
@@ -10,7 +12,7 @@
 
         public void Start()
         {
-            Console.WriteLine("Press 'S' to send a message");
+            Console.WriteLine("Press 's' to send a message");
             
             string cmd;
 
@@ -19,36 +21,57 @@
                 switch (cmd)
                 {
                     case "s":
+
+                        Console.WriteLine("=========================");
+
+                        Console.WriteLine("Sending a new batch...");
+
                         var correlationId = Guid.NewGuid();
 
-                        const int startingTransactionId = 1000;
+                        var control = new InternalTransactionControlMessage{CorrelationId = correlationId, TransactionList = new List<Guid>()};
+
+                        var t1 = Guid.NewGuid();
 
                         Bus.SendLocal<InternalTransactionMessage>(m =>
                         {
                             m.CorrelationId = correlationId;
-                            m.TransactionId = startingTransactionId;
+                            m.TransactionId = t1;
                         });
+
+                        control.TransactionList.Add(t1);
+
+                        var t2 = Guid.NewGuid();
 
                         Bus.SendLocal<InternalTransactionMessage>(m =>
                         {
                             m.CorrelationId = correlationId;
-                            m.TransactionId = startingTransactionId + 1;
+                            m.TransactionId = t2;
                         });
 
+                        control.TransactionList.Add(t2);
+
+                        var t3 = Guid.NewGuid();
                         Bus.SendLocal<InternalTransactionMessage>(m =>
                         {
                             m.CorrelationId = correlationId;
-                            m.TransactionId = startingTransactionId + 2;
+                            m.TransactionId = t3;
                         });
 
+                        control.TransactionList.Add(t3);
+
+                        var t4 = Guid.NewGuid();
                         Bus.SendLocal<InternalTransactionMessage>(m =>
                         {
                             m.CorrelationId = correlationId;
-                            m.TransactionId = startingTransactionId + 3;
+                            m.TransactionId = t4;
                         });
+
+                        control.TransactionList.Add(t4);
+
+                        Bus.SendLocal(control);
 
                         break;
-                }
+                }                
             }
         }
 
