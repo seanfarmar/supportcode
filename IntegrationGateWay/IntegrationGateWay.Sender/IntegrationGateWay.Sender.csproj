@@ -51,6 +51,12 @@
     <None Include="App.config" />
     <None Include="packages.config" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\IntegrationGateWay.Messages\IntegrationGateWay.Messages.csproj">
+      <Project>{A3DF9DA1-DF9B-423E-B11B-ECA479B7429E}</Project>
+      <Name>IntegrationGateWay.Messages</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

@@ -21,13 +21,18 @@ namespace IntegrationGateWay.Sender
                 switch (cmd)
                 {
                     case "s":
-
-                        Bus.Send<SendSomething>(m =>
+                        var msg = new SendSomething
                         {
-                            m.SomeData = "Hallo World!";
-                            m.Id = Guid.NewGuid();
-                        });
+                            SomeData = "Hallo World! " + Guid.NewGuid(),
+                            Id = Guid.NewGuid()
+                        };
+
+                        Bus.Send(msg);
                         
+                        Console.WriteLine("");
+
+                        Console.WriteLine("Sending message with id: {0}", msg.Id);
+
                         break;                    
                 }
             }

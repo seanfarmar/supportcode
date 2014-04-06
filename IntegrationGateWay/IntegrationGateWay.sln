@@ -5,6 +5,12 @@ VisualStudioVersion = 12.0.21005.1
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IntegrationGateWay.Sender", "IntegrationGateWay.Sender\IntegrationGateWay.Sender.csproj", "{3BB125D0-E53C-4DF3-B430-4C996AF47B46}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IntegrationGateWay.Messages", "IntegrationGateWay.Messages\IntegrationGateWay.Messages.csproj", "{A3DF9DA1-DF9B-423E-B11B-ECA479B7429E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IntegrationGateWay.GateWay", "IntegrationGateWay.GateWay\IntegrationGateWay.GateWay.csproj", "{8386E91A-3154-429C-BB84-9B53FDE9BEE8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IntegrationGateWay.DataBaseSite", "IntegrationGateWay.DataBaseSite\IntegrationGateWay.DataBaseSite.csproj", "{F31468D2-7D03-49D6-87B4-9C17C37D047A}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +21,18 @@ Global
 		{3BB125D0-E53C-4DF3-B430-4C996AF47B46}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3BB125D0-E53C-4DF3-B430-4C996AF47B46}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{3BB125D0-E53C-4DF3-B430-4C996AF47B46}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A3DF9DA1-DF9B-423E-B11B-ECA479B7429E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A3DF9DA1-DF9B-423E-B11B-ECA479B7429E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A3DF9DA1-DF9B-423E-B11B-ECA479B7429E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A3DF9DA1-DF9B-423E-B11B-ECA479B7429E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8386E91A-3154-429C-BB84-9B53FDE9BEE8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8386E91A-3154-429C-BB84-9B53FDE9BEE8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8386E91A-3154-429C-BB84-9B53FDE9BEE8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8386E91A-3154-429C-BB84-9B53FDE9BEE8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F31468D2-7D03-49D6-87B4-9C17C37D047A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F31468D2-7D03-49D6-87B4-9C17C37D047A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F31468D2-7D03-49D6-87B4-9C17C37D047A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F31468D2-7D03-49D6-87B4-9C17C37D047A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
