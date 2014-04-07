@@ -6,20 +6,20 @@
     using Client.Messages;
     using Messages;
     using NServiceBus;
+    using NServiceBus.Persistence.Raven;
     using NServiceBus.Saga;
-    using Raven.Client;
 
     public class TransactionSaga : Saga<TransactionSagaData>, IAmStartedByMessages<InternalTransactionMessage>, IHandleMessages<ReplayMessage>, IHandleMessages<InternalTransactionControlMessage>
     {
         public override void ConfigureHowToFindSaga()
         {
-            ConfigureMapping<InternalTransactionMessage>(m => m.CorrelationId).ToSaga(m => m.CorrelationId);
-            ConfigureMapping<InternalTransactionControlMessage>(m => m.CorrelationId).ToSaga(m => m.CorrelationId);
+            ConfigureMapping<InternalTransactionMessage>(m => m.CorrelationId).ToSaga(s => s.CorrelationId);
+            ConfigureMapping<InternalTransactionControlMessage>(m => m.CorrelationId).ToSaga(s => s.CorrelationId);
         }
 
         public void Handle(InternalTransactionMessage message)
         {
-            Console.WriteLine("Saga is handeling InternalTransactionMessage with CorrelationId: {0}, TransactionId: {1}", message.CorrelationId, message.TransactionId);
+            Console.WriteLine("Saga is handeling InternalTransactionMessage with sagaId: {0} TransactionId: {1} CorrelationId: {2}", Data.Id, message.TransactionId, message.CorrelationId);
             Console.WriteLine("======================================");
             
             // save the saga data
@@ -83,7 +83,6 @@
                 return;
             }
 
-
             Console.WriteLine("Saga complete, with sagaId: {0}", Data.Id);
 
             MarkAsComplete();
@@ -92,18 +91,16 @@
 
     public class ReplayMessageSagaFinder : IFindSagas<TransactionSagaData>.Using<ReplayMessage>
     {
-        readonly IDocumentSession _session;
-        public ReplayMessageSagaFinder(IDocumentSession documentSession)
-        {
-            _session = documentSession;
-        }
-
+        public RavenSessionFactory RavenSessionFactory { get; set; }
+        
         public TransactionSagaData FindBy(ReplayMessage message)
         {
-            var saga = _session.Query<TransactionSagaData>()
-            .Where(t => t.TransactionList.Any(x => x == message.TransactionId));
+            var saga = RavenSessionFactory.Session.Query<TransactionSagaData>()
+            .FirstOrDefault(t => t.TransactionList.Any(x => x == message.TransactionId));
 
-            return saga.FirstOrDefault();
+            if(saga == null) throw new Exception("can't find saga probably due to Raven's eventual consistancy, index is not found");
+
+            return saga;
         }
     }
 
@@ -118,6 +115,7 @@
         public Guid Id { get; set; }
         public string Originator { get; set; }
         public string OriginalMessageId { get; set; }
+        [Unique]
         public Guid CorrelationId { get; set; }
         public List<Guid> TransactionList { get; set; }
         public List<Guid> TransactionRplyList { get; set; }

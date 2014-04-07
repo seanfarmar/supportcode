@@ -3,8 +3,8 @@
     using System;
     using System.Collections.Generic;
     using Client.Messages;
+    using NServiceBus.Persistence.Raven;
     using NUnit.Framework;
-    using Raven.Client;
     using Raven.Client.Embedded;
     using Server.Saga;
 
@@ -12,7 +12,7 @@
     public class SagaFiderTests
     {
         private EmbeddableDocumentStore _store;
-        private IDocumentSession _session;
+        private RavenSessionFactory _sessionFactory;
 
         [SetUp]
         public void SetUp()
@@ -20,6 +20,8 @@
             _store = new EmbeddableDocumentStore {RunInMemory = true};
 
             _store.Initialize();
+
+            _sessionFactory = new RavenSessionFactory(new StoreAccessor(_store));
         }
 
         [Test]
@@ -29,7 +31,9 @@
 
             using (var session = _store.OpenSession())
             {
-                var sutSagaFinder = new ReplayMessageSagaFinder(session);
+                var sutSagaFinder = new ReplayMessageSagaFinder();
+
+                sutSagaFinder.RavenSessionFactory = _sessionFactory;
 
                 var found = sutSagaFinder.FindBy(replyMessage);
 
