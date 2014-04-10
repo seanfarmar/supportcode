@@ -1,0 +1,1 @@
+﻿.\bin\Debug\Runner.exe 10 10000 xml msmq nonvolatile normalmessages nhibernate 1
