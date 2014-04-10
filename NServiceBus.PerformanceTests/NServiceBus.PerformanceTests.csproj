@@ -106,6 +106,7 @@
     <None Include="TestSuites\Threads.ps1" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Readme.txt" />
     <Content Include="TestSuites\Reset-Database.sql" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
