@@ -10,7 +10,13 @@ namespace IntegrationGateWay.DataBaseSite
 
     // Make sure you run this endpoint with the NServiceBus.Integration NServiceBus.MultiSite arguments
 
-    public class EndpointConfig : IConfigureThisEndpoint, AsA_Server
+    public class EndpointConfig : IConfigureThisEndpoint, AsA_Server,IWantCustomInitialization
     {
+        public void Init()
+        {
+            Configure.With()
+                .DefaultBuilder()
+                .RunGateway();
+        }
     }
 }

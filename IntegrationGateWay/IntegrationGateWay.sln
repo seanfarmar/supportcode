@@ -7,9 +7,14 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IntegrationGateWay.Sender",
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IntegrationGateWay.Messages", "IntegrationGateWay.Messages\IntegrationGateWay.Messages.csproj", "{A3DF9DA1-DF9B-423E-B11B-ECA479B7429E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IntegrationGateWay.GateWay", "IntegrationGateWay.GateWay\IntegrationGateWay.GateWay.csproj", "{8386E91A-3154-429C-BB84-9B53FDE9BEE8}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IntegrationGateWay.Dispatch", "IntegrationGateWay.Dispatch\IntegrationGateWay.Dispatch.csproj", "{8386E91A-3154-429C-BB84-9B53FDE9BEE8}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IntegrationGateWay.DataBaseSite", "IntegrationGateWay.DataBaseSite\IntegrationGateWay.DataBaseSite.csproj", "{F31468D2-7D03-49D6-87B4-9C17C37D047A}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{36B0E74E-A4B3-4EA6-955D-774BA1722B40}"
+	ProjectSection(SolutionItems) = preProject
+		README.md = README.md
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

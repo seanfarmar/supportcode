@@ -1,4 +1,4 @@
-﻿namespace IntegrationGateWay.GateWay
+﻿namespace IntegrationGateWay.Dispatch
 {
     using System;
     using NServiceBus.Saga;

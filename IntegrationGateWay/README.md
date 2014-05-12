@@ -1,0 +1,1 @@
+http://docs.particular.net/nservicebus/the-gateway-and-multi-site-distribution
