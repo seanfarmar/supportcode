@@ -7,7 +7,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IntegrationGateWay.Messages
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IntegrationGateWay.DataBaseSite2010", "IntegrationGateWay.DataBaseSite\IntegrationGateWay.DataBaseSite2010.csproj", "{8C6AEE81-326F-4699-86D6-2928CC0C7C27}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IntegrationGateWay.GateWay2010", "IntegrationGateWay.GateWay\IntegrationGateWay.GateWay2010.csproj", "{94EDB4BF-1E44-42C9-A971-1DA8690945EA}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IntegrationGateWay.Dispatch2010", "IntegrationGateWay.Dispatch\IntegrationGateWay.Dispatch2010.csproj", "{94EDB4BF-1E44-42C9-A971-1DA8690945EA}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
