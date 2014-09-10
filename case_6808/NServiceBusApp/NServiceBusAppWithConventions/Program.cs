@@ -38,7 +38,6 @@
             Configure.Instance.ForInstallationOn<Windows>().Install();
 
             _bus = _startableBus.Start();
-
         }
     }
 }
