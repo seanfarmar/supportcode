@@ -4,12 +4,18 @@
     using System.Windows.Forms;
 
     using NServiceBus;
-
-    using Slb.Messages;
+    using NServiceBus.Installation.Environments;
 
     static class Program
     {
-        public static IBus Bus;
+        private static IBus _bus;
+
+        private static IStartableBus _startableBus;
+
+        public static IBus Bus
+        {
+            get { return _bus; }
+        }
 
         /// <summary>
         /// The main entry point for the application.
@@ -25,39 +31,14 @@
 
         private static void InitBus()
         {
-            //Bus = Configure.With().DefaultBuilder().UnicastBus().CreateBus().Start();
+            _startableBus = Configure.With()
+                 .DefaultBuilder()
+                 .UnicastBus()
+                 .CreateBus();
 
-            Configure.ScaleOut(s => s.UseSingleBrokerQueue());
+            Configure.Instance.ForInstallationOn<Windows>().Install();
 
-            Configure.Serialization.Xml();
-            Configure.Transactions.Enable();
-
-            Bus = Configure.With()
-                           .DefaultBuilder()
-                           .PurgeOnStartup(true)
-                           .UnicastBus()
-                           .RunHandlersUnderIncomingPrincipal(false)
-                           .CreateBus()
-                           .Start(() => Configure.Instance.ForInstallationOn<NServiceBus.Installation.Environments.Windows>().Install());
-
-            /*Bus = Configure.With()
-                .DefaultBuilder()
-                .PurgeOnStartup(false)
-                .UnicastBus().ImpersonateSender(false).LoadMessageHandlers()
-                .CreateBus()
-                .Start();*/
+            _bus = _startableBus.Start();
         }
-
-        /*public class CustomInit : INeedInitialization
-        {
-            public void Init()
-            {
-                Configure.With(@"D:\Dev\Slb\BackupService\BackupService\ConsumerWindowsFormsApplication\bin\Debug");
-
-                Configure.With(new [] { typeof(AddWork), typeof(MyMessage) });
-                
-                Configure.With();
-            }
-        }*/
     }
 }
