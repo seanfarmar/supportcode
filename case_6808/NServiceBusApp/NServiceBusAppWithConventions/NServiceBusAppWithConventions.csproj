@@ -4,11 +4,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{19CC310B-5247-4D97-AEDD-2B7637CB66FD}</ProjectGuid>
+    <ProjectGuid>{266BD14B-4236-441C-ADF9-E887B19C7BB6}</ProjectGuid>
     <OutputType>WinExe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>NServiceBusApp</RootNamespace>
-    <AssemblyName>NServiceBusApp</AssemblyName>
+    <RootNamespace>NServiceBusAppWithConventions</RootNamespace>
+    <AssemblyName>NServiceBusAppWithConventions</AssemblyName>
     <TargetFrameworkVersion>v4.5.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -59,10 +59,10 @@
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
     </EmbeddedResource>
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
     <None Include="packages.config" />
@@ -80,6 +80,10 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\MessageConventions\MessageConventions.csproj">
+      <Project>{f6eeee8e-83a9-4837-b6ec-b5f9c8a28d2e}</Project>
+      <Name>MessageConventions</Name>
+    </ProjectReference>
     <ProjectReference Include="..\NServiceBusMessages\NServiceBusMessages.csproj">
       <Project>{ae8b9ac6-dff7-4e3d-8c77-7b43b673a448}</Project>
       <Name>NServiceBusMessages</Name>

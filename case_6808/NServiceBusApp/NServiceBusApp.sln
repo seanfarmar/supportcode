@@ -9,6 +9,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NServiceBusMessages", "NSer
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NServiceBusService", "NServiceBusService\NServiceBusService.csproj", "{29772D9C-7C3E-4967-8CB0-45E2C86F0F11}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NServiceBusAppWithConventions", "NServiceBusAppWithConventions\NServiceBusAppWithConventions.csproj", "{266BD14B-4236-441C-ADF9-E887B19C7BB6}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MessageConventions", "MessageConventions\MessageConventions.csproj", "{F6EEEE8E-83A9-4837-B6EC-B5F9C8A28D2E}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +31,14 @@ Global
 		{29772D9C-7C3E-4967-8CB0-45E2C86F0F11}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{29772D9C-7C3E-4967-8CB0-45E2C86F0F11}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{29772D9C-7C3E-4967-8CB0-45E2C86F0F11}.Release|Any CPU.Build.0 = Release|Any CPU
+		{266BD14B-4236-441C-ADF9-E887B19C7BB6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{266BD14B-4236-441C-ADF9-E887B19C7BB6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{266BD14B-4236-441C-ADF9-E887B19C7BB6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{266BD14B-4236-441C-ADF9-E887B19C7BB6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F6EEEE8E-83A9-4837-B6EC-B5F9C8A28D2E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F6EEEE8E-83A9-4837-B6EC-B5F9C8A28D2E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F6EEEE8E-83A9-4837-B6EC-B5F9C8A28D2E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F6EEEE8E-83A9-4837-B6EC-B5F9C8A28D2E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

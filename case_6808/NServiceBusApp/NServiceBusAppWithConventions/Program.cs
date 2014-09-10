@@ -1,8 +1,7 @@
-﻿namespace NServiceBusApp
+﻿namespace NServiceBusAppWithConventions
 {
     using System;
     using System.Windows.Forms;
-
     using NServiceBus;
     using NServiceBus.Installation.Environments;
 

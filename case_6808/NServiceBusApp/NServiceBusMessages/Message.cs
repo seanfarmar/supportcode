@@ -1,12 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace NServiceBusMessages
+﻿namespace NServiceBusMessages
 {
-    public class Message
+    using NServiceBus;
+
+    public class Message : IMessage
     {
     }
 }
