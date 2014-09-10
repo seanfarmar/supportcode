@@ -1,6 +1,8 @@
 ﻿namespace Slb.Messages
 {
-    internal class StartService
+    using NServiceBus;
+
+    internal class StartService : IMessage
     {
     }
 }
