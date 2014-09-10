@@ -1,0 +1,34 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.30501.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NServiceBusApp", "NServiceBusApp\NServiceBusApp.csproj", "{19CC310B-5247-4D97-AEDD-2B7637CB66FD}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NServiceBusMessages", "NServiceBusMessages\NServiceBusMessages.csproj", "{AE8B9AC6-DFF7-4E3D-8C77-7B43B673A448}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NServiceBusService", "NServiceBusService\NServiceBusService.csproj", "{29772D9C-7C3E-4967-8CB0-45E2C86F0F11}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{19CC310B-5247-4D97-AEDD-2B7637CB66FD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{19CC310B-5247-4D97-AEDD-2B7637CB66FD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{19CC310B-5247-4D97-AEDD-2B7637CB66FD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{19CC310B-5247-4D97-AEDD-2B7637CB66FD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AE8B9AC6-DFF7-4E3D-8C77-7B43B673A448}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AE8B9AC6-DFF7-4E3D-8C77-7B43B673A448}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AE8B9AC6-DFF7-4E3D-8C77-7B43B673A448}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AE8B9AC6-DFF7-4E3D-8C77-7B43B673A448}.Release|Any CPU.Build.0 = Release|Any CPU
+		{29772D9C-7C3E-4967-8CB0-45E2C86F0F11}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{29772D9C-7C3E-4967-8CB0-45E2C86F0F11}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{29772D9C-7C3E-4967-8CB0-45E2C86F0F11}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{29772D9C-7C3E-4967-8CB0-45E2C86F0F11}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
