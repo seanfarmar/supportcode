@@ -2,7 +2,7 @@ namespace Server.WebServices
 {
     using Messages;
     
-    public class CancelOrderService : CustomWcfService<CancelOrder, ErrorCodes>
+    public class CancelOrderService : WcfService<CancelOrder, ErrorCodes>
     {
     }
 }

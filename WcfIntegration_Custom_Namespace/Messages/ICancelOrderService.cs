@@ -13,7 +13,7 @@ namespace Messages
     [ServiceContract(Namespace = "http://tempuri.org/")]
     public interface ICancelOrderService
     {
-        [OperationContract(Action = "http://tempuri.org/ICustomWcfServiceOf_CancelOrder_ErrorCodes/Process", ReplyAction = "http://tempuri.org/ICustomWcfServiceOf_CancelOrder_ErrorCodes/ProcessResponse")]
+        [OperationContract(Action = "http://tempuri.org/IWcfServiceOf_CancelOrder_ErrorCodes/Process", ReplyAction = "http://tempuri.org/IWcfServiceOf_CancelOrder_ErrorCodes/ProcessResponse")]
         ErrorCodes Process(CancelOrder request);
     }
 }

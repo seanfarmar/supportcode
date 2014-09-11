@@ -10,27 +10,27 @@
     /// </summary>
     [ServiceBehavior(InstanceContextMode = InstanceContextMode.PerCall,
                      ConcurrencyMode = ConcurrencyMode.Multiple)]
-    public abstract class CustomWcfService<TRequest, TResponse> : ICustomWcfService<TRequest, TResponse>
+    public abstract class WcfService<TRequest, TResponse> : IWcfService<TRequest, TResponse>
     {
-        protected CustomWcfService()
+        protected WcfService()
         {
             bus = Configure.Instance.Builder.Build<IBus>();
         }
 
-        static CustomWcfService()
+        static WcfService()
         {
             if (!typeof(TResponse).IsEnum)
                 throw new InvalidOperationException(typeof(TResponse).FullName + " must be an enum representing error codes returned by the server.");
         }
 
-        IAsyncResult ICustomWcfService<TRequest, TResponse>.BeginProcess(TRequest request, AsyncCallback callback, object state)
+        IAsyncResult IWcfService<TRequest, TResponse>.BeginProcess(TRequest request, AsyncCallback callback, object state)
         {
             var result = new ServiceAsyncResult(state);
 
             return ((UnicastBus)bus).SendLocal(request).Register(r => ProxyCallback(callback, result, r), state);
         }
 
-        TResponse ICustomWcfService<TRequest, TResponse>.EndProcess(IAsyncResult asyncResult)
+        TResponse IWcfService<TRequest, TResponse>.EndProcess(IAsyncResult asyncResult)
         {
             var completionResult = ((ServiceAsyncResult)asyncResult).Result;
 

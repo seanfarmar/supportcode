@@ -7,7 +7,7 @@
     /// Service interface for a generic WCF adapter to a messaging endpoint.
     /// </summary>
     [ServiceContract(Namespace = "http://tempuri.org/")]
-    public interface ICustomWcfService<TRequest, TResponse>
+    public interface IWcfService<TRequest, TResponse>
     {
         /// <summary>
         /// Sends the message to the messaging endpoint.
