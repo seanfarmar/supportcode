@@ -1,7 +1,7 @@
-﻿using NServiceBus;
-
-namespace Hinda.Internal.ServiceBus.Messages.Ftp.IngramBooks
+﻿namespace Hinda.Internal.ServiceBus.Messages.Ftp.IngramBooks
 {
+    using NServiceBus;
+
     public interface IOrderFilesMessage : IMessage
     {
         IFtpFileImportMessage[] ShipmentNotificationMessages { get; set; }

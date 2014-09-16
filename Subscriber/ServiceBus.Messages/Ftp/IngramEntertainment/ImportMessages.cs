@@ -1,14 +1,22 @@
-﻿using NServiceBus;
-
-namespace Hinda.Internal.ServiceBus.Messages.Ftp.IngramEntertainment
+﻿namespace Hinda.Internal.ServiceBus.Messages.Ftp.IngramEntertainment
 {
-    public interface IInventoryImportMessage : IIngramImportMessage { }
-    public interface IProductImportMessage : IIngramImportMessage { }
-    public interface IContentImportMessage : IIngramImportMessage { }
+    using NServiceBus;
+
+    public interface IInventoryImportMessage : IIngramImportMessage
+    {
+    }
+
+    public interface IProductImportMessage : IIngramImportMessage
+    {
+    }
+
+    public interface IContentImportMessage : IIngramImportMessage
+    {
+    }
 
     public interface IIngramImportMessage : IMessage
     {
-        IFileImportMessage[] ImportMessages  { get; set; }
+        IFileImportMessage[] ImportMessages { get; set; }
     }
 
     public interface IImagesImportMessage : IMessage

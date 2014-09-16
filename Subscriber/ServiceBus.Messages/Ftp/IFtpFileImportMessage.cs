@@ -1,5 +1,4 @@
-﻿
-namespace Hinda.Internal.ServiceBus.Messages.Ftp
+﻿namespace Hinda.Internal.ServiceBus.Messages.Ftp
 {
     public interface IFtpFileImportMessage : IFileImportMessage
     {

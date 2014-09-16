@@ -1,5 +1,6 @@
-﻿
-namespace Hinda.Internal.ServiceBus.Messages.Ftp.Abt
+﻿namespace Hinda.Internal.ServiceBus.Messages.Ftp.Abt
 {
-    public interface IAbtInvoiceReceivedMessage : IFileImportMessage { }
+    public interface IAbtInvoiceReceivedMessage : IFileImportMessage
+    {
+    }
 }

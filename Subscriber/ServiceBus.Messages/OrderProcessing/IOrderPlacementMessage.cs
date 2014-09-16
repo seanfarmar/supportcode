@@ -1,7 +1,7 @@
-﻿using NServiceBus;
-
-namespace Hinda.Internal.ServiceBus.Messages.OrderProcessing
+﻿namespace Hinda.Internal.ServiceBus.Messages.OrderProcessing
 {
+    using NServiceBus;
+
     public interface IOrderPlacementMessage : IMessage
     {
         int ClientApplicationId { get; set; }

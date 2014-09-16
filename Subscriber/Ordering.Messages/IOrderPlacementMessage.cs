@@ -1,7 +1,7 @@
-﻿using NServiceBus;
-
-namespace Ordering.Messages
+﻿namespace Ordering.Messages
 {
+    using NServiceBus;
+
     public interface IOrderPlacementMessage : IMessage
     {
         int ClientApplicationId { get; set; }

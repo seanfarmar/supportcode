@@ -1,7 +1,7 @@
-﻿using System;
-
-namespace Hinda.Internal.ServiceBus.Messages.OrderProcessing
+﻿namespace Hinda.Internal.ServiceBus.Messages.OrderProcessing
 {
+    using System;
+
     [Serializable]
     public class PeopleSoftOrder
     {

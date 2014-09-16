@@ -1,8 +1,8 @@
-using System;
-using NServiceBus;
-
 namespace Hinda.Internal.ServiceBus.Messages.EPS
 {
+    using System;
+    using NServiceBus;
+
     public interface IEpsPushoutClientCatalogMessage : IMessage
     {
         string DatabaseServer { get; set; }

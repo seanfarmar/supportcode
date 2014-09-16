@@ -1,8 +1,8 @@
-﻿using System;
-using System.Xml.Serialization;
-
-namespace Hinda.Internal.ServiceBus.Messages.OrderProcessing
+﻿namespace Hinda.Internal.ServiceBus.Messages.OrderProcessing
 {
+    using System;
+    using System.Xml.Serialization;
+
     [Serializable]
     public class OrderLineShipmentNotification : ShipmentNotificationBase
     {

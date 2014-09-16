@@ -1,8 +1,7 @@
-﻿using Hinda.Internal.ServiceBus.Messages.OrderProcessing;
-using NServiceBus;
-
-namespace Ordering.Messages
+﻿namespace Ordering.Messages
 {
+    using NServiceBus;
+
     public interface IPeopleSoftCancellationMessage : IMessage
     {
         OrderCancellation[] Cancellations { get; set; }

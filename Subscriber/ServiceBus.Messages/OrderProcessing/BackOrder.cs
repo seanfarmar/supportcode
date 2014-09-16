@@ -1,9 +1,9 @@
-﻿using System;
-using System.Xml.Serialization;
-using Hinda.Internal.ServiceBus.Messages.OrderProcessing;
-
-namespace Ordering.Messages
+﻿namespace Ordering.Messages
 {
+    using System;
+    using System.Xml.Serialization;
+    using Hinda.Internal.ServiceBus.Messages.OrderProcessing;
+
     [Serializable]
     public class BackOrderCollection
     {

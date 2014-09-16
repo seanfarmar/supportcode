@@ -9,16 +9,9 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ordering.Server", "Ordering
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ordering.Subscriber", "Ordering.Subscriber\Ordering.Subscriber.csproj", "{58965675-650F-44F5-9EA0-C9D7B6BB052E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ServiceBus", "..\..\..\..\Dev\TFS\AwardsPlus\Main\ServiceBus\ServiceBus.csproj", "{E2DF1B65-2FD6-4CAE-851B-DB14198008E1}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ServiceBus.Messages", "ServiceBus.Messages\ServiceBus.Messages.csproj", "{C076E4CA-7A61-4BF2-B18C-69025EF4CF44}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ServiceBus.Messages", "..\..\..\..\Dev\TFS\AwardsPlus\Main\ServiceBus.Messages\ServiceBus.Messages.csproj", "{C076E4CA-7A61-4BF2-B18C-69025EF4CF44}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Infrastructure", "..\..\..\..\Dev\TFS\AwardsPlus\Main\Infrastructure\Infrastructure.csproj", "{9C774107-37AF-483A-8DEB-EEE9D73E4A5A}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Logger", "..\..\..\..\Dev\TFS\AwardsPlus\Main\Logger\Logger.csproj", "{F776EE79-C200-421F-B536-7DC5ED6812F4}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Infrastructure.LegacyInterfaces", "..\..\..\..\Dev\TFS\AwardsPlus\Main\Infrastructure.LegacyInterfaces\Infrastructure.LegacyInterfaces.csproj", "{174DE4B2-98D6-472F-BF36-97AEA9192B1B}"
-EndProject
+
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU

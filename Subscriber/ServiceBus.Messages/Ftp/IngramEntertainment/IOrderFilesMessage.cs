@@ -1,5 +1,4 @@
-﻿
-namespace Hinda.Internal.ServiceBus.Messages.Ftp.IngramEntertainment
+﻿namespace Hinda.Internal.ServiceBus.Messages.Ftp.IngramEntertainment
 {
     public interface IOrderFilesMessage : IFileImportMessage
     {

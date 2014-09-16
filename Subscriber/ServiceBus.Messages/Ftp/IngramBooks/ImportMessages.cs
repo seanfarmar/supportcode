@@ -1,13 +1,30 @@
-﻿using NServiceBus;
-
-namespace Hinda.Internal.ServiceBus.Messages.Ftp.IngramBooks
+﻿namespace Hinda.Internal.ServiceBus.Messages.Ftp.IngramBooks
 {
-    public interface IProductDeltaMessage : IIngramBooksMessage { }
-    public interface IInventoryDeltaMessage : IIngramBooksMessage { }
-    public interface IProductExclusionMessage : IIngramBooksMessage { }
-    public interface IAnnotationMessage : IIngramBooksMessage { }
-    public interface IDesirabilityMessage : IIngramBooksMessage { }
-    public interface ICategoryMessage : IMultipleImportMessage { }
+    using NServiceBus;
+
+    public interface IProductDeltaMessage : IIngramBooksMessage
+    {
+    }
+
+    public interface IInventoryDeltaMessage : IIngramBooksMessage
+    {
+    }
+
+    public interface IProductExclusionMessage : IIngramBooksMessage
+    {
+    }
+
+    public interface IAnnotationMessage : IIngramBooksMessage
+    {
+    }
+
+    public interface IDesirabilityMessage : IIngramBooksMessage
+    {
+    }
+
+    public interface ICategoryMessage : IMultipleImportMessage
+    {
+    }
 
     public interface IFullImportMessage : IFileImportMessage
     {
