@@ -14,7 +14,6 @@ namespace Ordering.Subscriber
         {
             Configure.Features.Disable<Sagas>();
             Configure.Features.Disable<TimeoutManager>();
-            Configure.Features.Disable<MessageDrivenSubscriptions>();
         }
     }
 }

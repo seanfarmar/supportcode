@@ -8,13 +8,12 @@ namespace Ordering.Server
 		can be found here: http://particular.net/articles/the-nservicebus-host
 	*/
 
-    public class EndpointConfig : IConfigureThisEndpoint, AsA_Server, IWantCustomInitialization
+    public class EndpointConfig : IConfigureThisEndpoint, AsA_Publisher, IWantCustomInitialization
     {
         public void Init()
         {
             Configure.Features.Disable<Sagas>();
             Configure.Features.Disable<TimeoutManager>();
-            Configure.Features.Disable<MessageDrivenSubscriptions>();
         }
     }
 }
