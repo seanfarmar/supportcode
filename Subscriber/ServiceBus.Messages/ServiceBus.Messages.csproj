@@ -1,0 +1,109 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{C076E4CA-7A61-4BF2-B18C-69025EF4CF44}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Hinda.Internal.ServiceBus.Messages</RootNamespace>
+    <AssemblyName>Hinda.Internal.ServiceBus.Messages</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="NServiceBus">
+      <HintPath>..\External\NServiceBus.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="MadisonPerformanceGroup\DataImportMessage.cs" />
+    <Compile Include="EPS\IEpsCatalogPushoutMessage.cs" />
+    <Compile Include="EPS\IEpsImportItemCollectionMessage.cs" />
+    <Compile Include="EPS\IEpsImportItemsToGlobalShareMessage.cs" />
+    <Compile Include="EPS\IEpsPublishPriceListToGlobalShareMessage.cs" />
+    <Compile Include="EPS\IEpsPushoutClientCatalogItemUpdatesMessage.cs" />
+    <Compile Include="EPS\IEpsPushoutClientPriceUpdatesMessage.cs" />
+    <Compile Include="Ftp\1800Flowers\I800FlowersImportMessage.cs" />
+    <Compile Include="Ftp\Abt\IAbtInventoryOutMessage.cs" />
+    <Compile Include="Ftp\Abt\IAbtInvoiceReceivedMessage.cs" />
+    <Compile Include="Ftp\Abt\IAbtPriceOutMessage.cs" />
+    <Compile Include="Ftp\Abt\IAbtProductOutMessage.cs" />
+    <Compile Include="Ftp\Abt\IAcknowledgementReportMessage.cs" />
+    <Compile Include="Ftp\Abt\IShipmentMessage.cs" />
+    <Compile Include="Ftp\BarnesAndNoble\IBNBookMessage.cs" />
+    <Compile Include="Ftp\BarnesAndNoble\IBNVideoMessage.cs" />
+    <Compile Include="Ftp\BarnesAndNoble\IBNMusicMessage.cs" />
+    <Compile Include="Ftp\BPS\IBassProImportMessage.cs" />
+    <Compile Include="Ftp\IMultipleImportMessage.cs" />
+    <Compile Include="Ftp\IngramBooks\IOrderFilesMessage.cs" />
+    <Compile Include="Ftp\IngramBooks\ImportMessages.cs" />
+    <Compile Include="Ftp\IngramEntertainment\IOrderFilesMessage.cs" />
+    <Compile Include="Ftp\IngramEntertainment\IEdiFunctionalAcknowledgementMessage.cs" />
+    <Compile Include="Ftp\IFileImportMessage.cs" />
+    <Compile Include="Ftp\IImportImageMessage.cs" />
+    <Compile Include="Ftp\IFtpFileImportMessage.cs" />
+    <Compile Include="Ftp\IngramEntertainment\ImportMessages.cs" />
+    <Compile Include="Ftp\SearsCanada\ISearsProductImportMessage.cs" />
+    <Compile Include="Ftp\SearsUnitedStates\ImportMessages.cs" />
+    <Compile Include="MadisonPerformanceGroup\I488OrderStatusMessage.cs" />
+    <Compile Include="OrderProcessing\BackOrder.cs" />
+    <Compile Include="OrderProcessing\IAllocateStockMessage.cs" />
+    <Compile Include="OrderProcessing\IOrderPlacementMessage.cs" />
+    <Compile Include="OrderProcessing\IOrdersPlacementMessage.cs" />
+    <Compile Include="OrderProcessing\IPeopleSoftBackOrderMessage.cs" />
+    <Compile Include="OrderProcessing\IPeopleSoftCancellationMessage.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="OrderProcessing\IPeopleSoftResponseMessage.cs" />
+    <Compile Include="OrderProcessing\IPeopleSoftShipmentNotificationMessage.cs" />
+    <Compile Include="OrderProcessing\OrderCancellation.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="OrderProcessing\OrderLineShipmentNotification.cs" />
+    <Compile Include="OrderProcessing\PeopleSoftOrder.cs" />
+    <Compile Include="OrderProcessing\ShipmentNotificationBase.cs" />
+    <Compile Include="OrderProcessing\ShipmentNotificationInfo.cs" />
+    <Compile Include="OrderProcessing\VirtualCertShipmentNotification.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
