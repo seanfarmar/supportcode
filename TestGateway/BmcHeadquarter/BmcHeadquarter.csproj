@@ -45,12 +45,16 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="log4net">
+      <HintPath>..\packages\log4net.1.2.10\lib\2.0\log4net.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.CSharp" />
-    <Reference Include="NServiceBus">
-      <HintPath>..\binaries\NServiceBus.dll</HintPath>
+    <Reference Include="NServiceBus, Version=3.3.0.0, Culture=neutral, PublicKeyToken=9fc386479f8a226c, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\NServiceBus.Interfaces.3.3.12\lib\net40\NServiceBus.dll</HintPath>
     </Reference>
     <Reference Include="NServiceBus.Core">
-      <HintPath>..\binaries\NServiceBus.Core.dll</HintPath>
+      <HintPath>..\packages\NServiceBus.3.3.12\lib\net40\NServiceBus.Core.dll</HintPath>
     </Reference>
     <Reference Include="System.Data.Entity" />
     <Reference Include="System" />
@@ -107,15 +111,12 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Container\ConfigureMvc3.cs" />
-    <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Models\AccountModels.cs" />
-    <Compile Include="Container\NServiceBusControllerActivator.cs" />
-    <Compile Include="Container\NServiceBusResolverAdapter.cs" />
+    <Compile Include="Handlers\PriceUpdateReceivedMessageHandler.cs" />
+    <Compile Include="Handlers\UpdatePriceMessageHandler.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -183,7 +184,9 @@
     <Content Include="Scripts\jquery.validate.js" />
     <Content Include="Scripts\jquery.validate.min.js" />
     <Content Include="Scripts\modernizr-2.5.3.js" />
-    <Content Include="Web.config" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </Content>
@@ -215,6 +218,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Models\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />
@@ -223,6 +227,10 @@
     <ProjectReference Include="..\Headquarter.Messages\Headquarter.Messages.csproj">
       <Project>{5849dbd1-cba9-4792-90aa-80f9476e526f}</Project>
       <Name>Headquarter.Messages</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\MvcContainer\MvcContainer.csproj">
+      <Project>{dc791260-365e-40b7-b6a5-bf7f0a34ad6c}</Project>
+      <Name>MvcContainer</Name>
     </ProjectReference>
   </ItemGroup>
   <PropertyGroup>

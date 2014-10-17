@@ -1,22 +1,20 @@
-﻿using NServiceBus;
-using NServiceBus.ObjectBuilder;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-using System.Web.Mvc;
-
-namespace BmcHeadquarter
+﻿namespace MvcContainer
 {
+    using System;
+    using System.Collections.Generic;
+    using System.Linq;
+    using System.Web.Mvc;
+    using NServiceBus;
+
     public static class ConfigureMvc3
     {
-        public static NServiceBus.Configure ForMVC(this NServiceBus.Configure configure)
+        public static Configure ForMvc(this Configure configure)
         {
             // Register our controller activator with NSB
-            configure.Configurer.RegisterSingleton(typeof(IControllerActivator),
+            configure.Configurer.RegisterSingleton(typeof (IControllerActivator),
                 new NServiceBusControllerActivator());
 
-            var controllers = NServiceBus.Configure.TypesToScan.Where(t => typeof(IController).IsAssignableFrom(t));
+            IEnumerable<Type> controllers = Configure.TypesToScan.Where(t => typeof (IController).IsAssignableFrom(t));
 
             // Register each controller class with the NServiceBus container
             foreach (Type type in controllers)

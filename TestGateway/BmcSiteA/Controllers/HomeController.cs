@@ -1,16 +1,14 @@
-﻿using Headquarter.Messages;
-using NServiceBus;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-using System.Web.Mvc;
-
-namespace BmcSiteA.Controllers
+﻿namespace BmcSiteA.Controllers
 {
+    using System;
+    using System.Web.Mvc;
+    using Headquarter.Messages;
+    using NServiceBus;
+
     public class HomeController : Controller
     {
         public IBus Bus { get; set; }
+
         public ActionResult Index()
         {
             ViewBag.Message = "Welcome to Site A!" + Bus.GetType().FullName;
@@ -20,14 +18,9 @@ namespace BmcSiteA.Controllers
 
         public ActionResult SendMessageToHO()
         {
-            try
-            {
-                Bus.SendToSites(new[] { "HO" }, new UpdatePrice { ProductId = 1, NewPrice = 100.0, ValidFrom = DateTime.Now });
-            }
-            catch (Exception ex)
-            {
-            }
-
+            Bus.SendToSites(new[] {"HO"},
+                    new UpdatePrice {ProductId = 1, NewPrice = 100.0, ValidFrom = DateTime.Now});
+            
             return RedirectToAction("Index");
         }
 

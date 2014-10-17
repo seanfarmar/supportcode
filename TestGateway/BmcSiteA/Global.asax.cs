@@ -1,20 +1,16 @@
-﻿using NServiceBus;
-using NServiceBus.Installation.Environments;
-using System;
-using System.Collections.Generic;
-using System.Data.Entity;
-using System.Data.Entity.Infrastructure;
-using System.Linq;
-using System.Web;
-using System.Web.Mvc;
-using System.Web.Routing;
-
-namespace BmcSiteA
+﻿namespace BmcSiteA
 {
+    using System.Web;
+    using System.Web.Mvc;
+    using System.Web.Routing;
+    using MvcContainer;
+    using NServiceBus;
+    using NServiceBus.Installation.Environments;
+
     // Note: For instructions on enabling IIS6 or IIS7 classic mode, 
     // visit http://go.microsoft.com/?LinkId=9394801
 
-    public class MvcApplication : System.Web.HttpApplication
+    public class MvcApplication : HttpApplication
     {
         private static IBus _bus;
 
@@ -37,9 +33,8 @@ namespace BmcSiteA
             routes.MapRoute(
                 "Default", // Route name
                 "{controller}/{action}/{id}", // URL with parameters
-                new { controller = "Home", action = "Index", id = UrlParameter.Optional } // Parameter defaults
-            );
-
+                new {controller = "Home", action = "Index", id = UrlParameter.Optional} // Parameter defaults
+                );
         }
 
         protected void Application_Start()
@@ -49,39 +44,23 @@ namespace BmcSiteA
             RegisterGlobalFilters(GlobalFilters.Filters);
             RegisterRoutes(RouteTable.Routes);
 
-            //Configure.ScaleOut(s => s.UseSingleBrokerQueue());
-
-            _startableBus = Configure.WithWeb()
+            _startableBus = Configure.With()
                 .DefaultBuilder()
-                .ForMVC()
+                .ForMvc() // no need for this...
                 .MsmqTransport()
                 .UnicastBus()
                 .RunGateway() //this line configures the gateway
-                 .FileShareDataBus(".\\databus")
+                .FileShareDataBus(".\\databus")
                 .CreateBus();
 
             Configure.Instance.ForInstallationOn<Windows>().Install();
 
             _bus = _startableBus.Start();
-
-            //Configure.WithWeb()
-            //    .DefaultBuilder()
-            //    .ForMVC()   // <------ here is the line that registers everything
-            //    .Log4Net()
-            //    .XmlSerializer()
-            //    .MsmqTransport()
-            //        .IsTransactional(false)
-            //        .PurgeOnStartup(false)
-            //    .UnicastBus()
-            //        .ImpersonateSender(false)
-            //    .RunGateway()
-            //    .CreateBus()
-            //    .Start(() => Configure.Instance.ForInstallationOn<Windows>().Install());
         }
 
         protected void Application_End()
         {
-            
+            _startableBus.Dispose();
         }
     }
 }
