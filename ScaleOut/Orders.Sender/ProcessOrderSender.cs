@@ -1,33 +1,22 @@
-﻿using System;
-using NServiceBus;
-using Orders.Messages;
-
-namespace Orders.Sender
+﻿namespace Orders.Sender
 {
+    using System;
+    using NServiceBus;
+    using Orders.Commands;
+    using Orders.Messages;
+
     class ProcessOrderSender : IWantToRunWhenBusStartsAndStops
     {
         public IBus Bus { get; set; }
 
         public void Start()
         {
-            Console.WriteLine("Press 'Enter' to send a bulk of messages. To exit, Ctrl + C");
-
+            Console.WriteLine("Press 'Enter' to send a message. To exit, Ctrl + C");
+            var counter = 0;
             while (Console.ReadLine() != null)
             {
-                Console.WriteLine("Starting to send 40k messages");
-                SendBulk();
-                Console.WriteLine("Done sending 40k messages");
-            }
-        }
-
-        private void SendBulk()
-        {
-            int counter = 0;
-
-            for (int i = 0; i < 40000; i++)
-            {
                 counter++;
-                var placeOrder = new PlaceOrder {OrderId = "order" + counter};
+                var placeOrder = new PlaceOrder { OrderId = "order" + counter};
                 Bus.Send(placeOrder).Register(PlaceOrderReturnCodeHandler, this);
                 Console.WriteLine(string.Format("Sent PlacedOrder command with order id [{0}].", placeOrder.OrderId));
             }

@@ -1,8 +1,6 @@
-﻿using NServiceBus;
-
-namespace Orders.Messages
+﻿namespace Orders.Events
 {
-    public class OrderPlaced : IEvent
+    public class OrderPlaced 
     {
         public string OrderId { get; set; }
     }

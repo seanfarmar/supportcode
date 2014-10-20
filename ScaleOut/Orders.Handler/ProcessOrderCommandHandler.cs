@@ -1,9 +1,12 @@
-﻿using NServiceBus;
-using Orders.Messages;
+﻿
 
 namespace Orders.Handler
 {
+    using NServiceBus;
     using System;
+    using Orders.Commands;
+    using Orders.Events;
+    using Orders.Messages;
 
     public class ProcessOrderCommandHandler : IHandleMessages<PlaceOrder>
     {
