@@ -15,6 +15,7 @@ namespace Orders.Handler
             //{
                 configuration.UsePersistence<InMemoryPersistence>();
             //}
+
             configuration.Conventions()
                 .DefiningCommandsAs(t => t.Namespace != null && t.Namespace.EndsWith("Commands"))
                 .DefiningEventsAs(t => t.Namespace != null && t.Namespace.EndsWith("Events"))

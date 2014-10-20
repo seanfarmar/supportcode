@@ -36,6 +36,10 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\packages\NServiceBus.5.0.0\lib\net45\NServiceBus.Core.dll</HintPath>
     </Reference>
+    <Reference Include="NServiceBus.Distributor.MSMQ, Version=5.0.0.0, Culture=neutral, PublicKeyToken=9fc386479f8a226c, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\NServiceBus.Distributor.MSMQ.5.0.0\lib\net45\NServiceBus.Distributor.MSMQ.dll</HintPath>
+    </Reference>
     <Reference Include="NServiceBus.Host, Version=5.0.0.0, Culture=neutral, PublicKeyToken=9fc386479f8a226c, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\packages\NServiceBus.Host.5.0.0\lib\net45\NServiceBus.Host.exe</HintPath>
