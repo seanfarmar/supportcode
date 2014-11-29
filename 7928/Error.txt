@@ -1,0 +1,30 @@
+Microsoft Windows [Version 6.1.7601]
+Copyright (c) 2009 Microsoft Corporation.  All rights reserved.
+
+C:\Users\user1>cd C:\Program Files (x86)\Particular Software\ServiceControl
+
+C:\Program Files (x86)\Particular Software\ServiceControl>ServiceControl.exe --install -serviceName="Particular.ServiceControl" -displayName="Particular ServiceControl" -d="ServiceControl/TransportTyp
+e==NServiceBus.Config.AzureQueueConfig, NServiceBus.Azure.Transports.WindowsAzureStorageQueues" -d="NServiceBus/Transport==UseDevelopmentStorage=true"
+Options written to config file.
+2014-11-27 16:56:21.3348|1|Info|NServiceBus.Configure|Invocation of NServiceBus.IWantToRunBeforeConfiguration completed in 0.05 s
+
+Unhandled Exception: System.ArgumentException: GenericArguments[0], 'NServiceBus.Config.AzureQueueConfig', on 'NServiceBus.Transports.IConfigureTransport`1[T]' violates the constraint of type 'T'. ---
+> System.TypeLoadException: GenericArguments[0], 'NServiceBus.Config.AzureQueueConfig', on 'NServiceBus.Transports.IConfigureTransport`1[T]' violates the constraint of type parameter 'T'.
+   at System.RuntimeTypeHandle.Instantiate(RuntimeTypeHandle handle, IntPtr* pInst, Int32 numGenericArgs, ObjectHandleOnStack type)
+   at System.RuntimeTypeHandle.Instantiate(Type[] inst)
+   at System.RuntimeType.MakeGenericType(Type[] instantiation)
+   --- End of inner exception stack trace ---
+   at System.RuntimeType.ValidateGenericArguments(MemberInfo definition, RuntimeType[] genericArguments, Exception e)
+   at System.RuntimeType.MakeGenericType(Type[] instantiation)
+   at NServiceBus.TransportReceiverConfig.<>c__DisplayClass1.<CreateTransportConfigurer>b__0(Type t) in c:\BuildAgent\work\1b05a2fea6e4cd32\src\NServiceBus.Core\Unicast\Transport\Config\TransportRecei
+verConfig.cs:line 80
+   at System.Linq.Enumerable.SingleOrDefault[TSource](IEnumerable`1 source, Func`2 predicate)
+   at NServiceBus.TransportReceiverConfig.CreateTransportConfigurer(Type transportDefinitionType) in c:\BuildAgent\work\1b05a2fea6e4cd32\src\NServiceBus.Core\Unicast\Transport\Config\TransportReceiver
+Config.cs:line 78
+   at Particular.ServiceControl.Bootstrapper..ctor(ServiceBase host, HostArguments hostArguments) in c:\BuildAgent\work\b7f882efc2cd360b\src\ServiceControl\Bootstrapper.cs:line 47
+   at Particular.ServiceControl.Commands.RunBootstrapperAndNServiceBusInstallers.Execute(HostArguments args) in c:\BuildAgent\work\b7f882efc2cd360b\src\ServiceControl\Hosting\Commands\RunBootstrapperA
+ndNServiceBusInstallers.cs:line 12
+   at Particular.ServiceControl.Commands.CommandRunner.Execute(HostArguments args) in c:\BuildAgent\work\b7f882efc2cd360b\src\ServiceControl\Hosting\Commands\CommandRunner.cs:line 19
+   at Particular.ServiceControl.Program.Main(String[] args) in c:\BuildAgent\work\b7f882efc2cd360b\src\ServiceControl\Program.cs:line 15
+
+C:\Program Files (x86)\Particular Software\ServiceControl>

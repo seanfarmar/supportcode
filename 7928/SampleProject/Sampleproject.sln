@@ -1,0 +1,61 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HQStoreMessageProcessor", "HQStoreMessageProcessor\HQStoreMessageProcessor.csproj", "{89D0D653-8B5F-4F7E-BF3C-13A5F41F8A16}"
+EndProject
+Project("{CC5FD16D-436D-48AD-A40C-5A424C6E3E79}") = "HeadQuarters", "POSWebPortal\HeadQuarters.ccproj", "{1DC9DF1A-30E8-4463-9970-3642BFABF367}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StoreMessageProcessor", "StoreMessageProcessor\StoreMessageProcessor.csproj", "{8C2D42E2-DD0C-41D5-98DE-DE461A1FB678}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".nuget", ".nuget", "{DAA7BE0C-F78D-4DA2-BBC8-6856A6F4E131}"
+	ProjectSection(SolutionItems) = preProject
+		.nuget\NuGet.Config = .nuget\NuGet.Config
+		.nuget\NuGet.exe = .nuget\NuGet.exe
+		.nuget\NuGet.targets = .nuget\NuGet.targets
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AxisMessages.Contract", "AxisMessages.Contract\AxisMessages.Contract.csproj", "{4927D88A-0104-4FBF-AF29-9C5FC9BF7CB6}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Debug|x86 = Debug|x86
+		Release|Any CPU = Release|Any CPU
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{89D0D653-8B5F-4F7E-BF3C-13A5F41F8A16}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{89D0D653-8B5F-4F7E-BF3C-13A5F41F8A16}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{89D0D653-8B5F-4F7E-BF3C-13A5F41F8A16}.Debug|x86.ActiveCfg = Debug|x86
+		{89D0D653-8B5F-4F7E-BF3C-13A5F41F8A16}.Debug|x86.Build.0 = Debug|x86
+		{89D0D653-8B5F-4F7E-BF3C-13A5F41F8A16}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{89D0D653-8B5F-4F7E-BF3C-13A5F41F8A16}.Release|Any CPU.Build.0 = Release|Any CPU
+		{89D0D653-8B5F-4F7E-BF3C-13A5F41F8A16}.Release|x86.ActiveCfg = Release|x86
+		{89D0D653-8B5F-4F7E-BF3C-13A5F41F8A16}.Release|x86.Build.0 = Release|x86
+		{1DC9DF1A-30E8-4463-9970-3642BFABF367}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1DC9DF1A-30E8-4463-9970-3642BFABF367}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1DC9DF1A-30E8-4463-9970-3642BFABF367}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{1DC9DF1A-30E8-4463-9970-3642BFABF367}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1DC9DF1A-30E8-4463-9970-3642BFABF367}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1DC9DF1A-30E8-4463-9970-3642BFABF367}.Release|x86.ActiveCfg = Release|Any CPU
+		{8C2D42E2-DD0C-41D5-98DE-DE461A1FB678}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8C2D42E2-DD0C-41D5-98DE-DE461A1FB678}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8C2D42E2-DD0C-41D5-98DE-DE461A1FB678}.Debug|x86.ActiveCfg = Debug|x86
+		{8C2D42E2-DD0C-41D5-98DE-DE461A1FB678}.Debug|x86.Build.0 = Debug|x86
+		{8C2D42E2-DD0C-41D5-98DE-DE461A1FB678}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8C2D42E2-DD0C-41D5-98DE-DE461A1FB678}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8C2D42E2-DD0C-41D5-98DE-DE461A1FB678}.Release|x86.ActiveCfg = Release|x86
+		{8C2D42E2-DD0C-41D5-98DE-DE461A1FB678}.Release|x86.Build.0 = Release|x86
+		{4927D88A-0104-4FBF-AF29-9C5FC9BF7CB6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4927D88A-0104-4FBF-AF29-9C5FC9BF7CB6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4927D88A-0104-4FBF-AF29-9C5FC9BF7CB6}.Debug|x86.ActiveCfg = Debug|x86
+		{4927D88A-0104-4FBF-AF29-9C5FC9BF7CB6}.Debug|x86.Build.0 = Debug|x86
+		{4927D88A-0104-4FBF-AF29-9C5FC9BF7CB6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4927D88A-0104-4FBF-AF29-9C5FC9BF7CB6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4927D88A-0104-4FBF-AF29-9C5FC9BF7CB6}.Release|x86.ActiveCfg = Release|x86
+		{4927D88A-0104-4FBF-AF29-9C5FC9BF7CB6}.Release|x86.Build.0 = Release|x86
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
