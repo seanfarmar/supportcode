@@ -1,11 +1,9 @@
-﻿using System;
-using System.Linq;
-using System.Collections.Generic;
-using NServiceBus;
-
-namespace WebSqpHandlers.Handlers
+﻿namespace WebSQP.Handlers
 {
-	public class Message
+    using System;
+    using NServiceBus;
+
+    public class Message
 	{
 
 	}
