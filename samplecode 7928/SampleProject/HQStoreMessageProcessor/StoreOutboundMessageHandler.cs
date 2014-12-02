@@ -1,9 +1,9 @@
-﻿using System;
-using DataSync.Common.AxisMessages.Contract;
-using NServiceBus;
-
-namespace DataSync.HQ.HQStoreMessageProcessor
+﻿namespace DataSync.HQ.HQStoreMessageProcessor
 {
+    using System;
+    using Common.AxisMessages.Contract;
+    using NServiceBus;
+
     public class StoreOutboundMessageHandler : IHandleMessages<AxisStoreOutboundMessage>
     {
         public IBus Bus { get; set; }
@@ -15,7 +15,5 @@ namespace DataSync.HQ.HQStoreMessageProcessor
             _message = message;
             Console.WriteLine("Inside the StoreOutboundMessageHandler");
         }
-
-      
     }
 }
