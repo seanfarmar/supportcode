@@ -12,6 +12,7 @@
     <ProjectView>ShowAllFiles</ProjectView>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|AnyCPU'">
-    <StartProgram>C:\Users\user1\Desktop\Quadratics\SampleProject\StoreMessageProcessor\bin\Debug\NServiceBus.Host32.exe</StartProgram>
+    <StartProgram>C:\Code\Github\SupportCode\samplecode 7928\SampleProject\StoreMessageProcessor\bin\Debug\NServiceBus.Host32.exe</StartProgram>
+    <StartArguments>NServiceBus.Integration</StartArguments>
   </PropertyGroup>
 </Project>
