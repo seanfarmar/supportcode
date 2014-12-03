@@ -1,6 +1,4 @@
-﻿using System;
-
-namespace DataSync.Common.AxisMessages.Contract
+﻿namespace DataSync.Common.AxisMessages.Contract
 {
     public abstract class AxisHQOutboundMessage : AxisMessage
     {

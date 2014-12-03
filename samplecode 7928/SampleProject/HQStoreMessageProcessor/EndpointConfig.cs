@@ -5,15 +5,13 @@ namespace DataSync.HQ.HQStoreMessageProcessor
 {
     public class EndpointConfig : IConfigureThisEndpoint, AsA_Worker
     {
-        static EndpointConfig()
+        public void Customize(BusConfiguration configuration)
         {
+            configuration.UseTransport<AzureStorageQueueTransport>();
+            configuration.UsePersistence<AzureStoragePersistence>();
 
-        }
-
-        public void Customize(BusConfiguration builder)
-        {
-            builder.UseTransport<AzureStorageQueueTransport>();
-            builder.UsePersistence<AzureStoragePersistence>();
+            var conventions = configuration.Conventions();
+            conventions.DefiningMessagesAs(t => t.Namespace.EndsWith("Contract"));
         }
     }
 }

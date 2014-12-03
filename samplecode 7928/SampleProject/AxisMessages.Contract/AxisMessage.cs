@@ -1,9 +1,8 @@
-﻿using System;
-using NServiceBus;
-
-namespace DataSync.Common.AxisMessages.Contract
+﻿namespace DataSync.Common.AxisMessages.Contract
 {
-    public abstract class AxisMessage : IMessage
+    using System;
+    
+    public abstract class AxisMessage
     {
         public int CompanyID { get; set; }
         public DateTime Timestamp { get; set; }
