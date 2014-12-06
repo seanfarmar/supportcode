@@ -1,0 +1,148 @@
+<?xml version="1.0" standalone="yes"?>
+<xs:schema targetNamespace="http://ThinkFinance/Underwriting/Services/2012/08/Application" xmlns:mstns="http://ThinkFinance/Underwriting/Services/2012/08/UnderwritingResponse" xmlns="http://ThinkFinance/Underwriting/Services/2012/08/Application" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" attributeFormDefault="qualified" elementFormDefault="qualified" xmlns:app2="http://ThinkFinance/Underwriting/Services/2012/08/Application" xmlns:app1="http://ThinkFinance/Underwriting/Services/2012/08/UnderwritingRequest">
+  <xs:import namespace="http://ThinkFinance/Underwriting/Services/2012/08/UnderwritingRequest" schemaLocation="UnderwriterResponse_app1.xsd" />
+  <xs:import namespace="http://ThinkFinance/Underwriting/Services/2012/08/UnderwritingResponse" schemaLocation="UnderwriterResponse.xsd" />
+  <xs:element name="Application" msdata:Prefix="ns0">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="SourceId" msdata:Prefix="ns0" type="xs:string" minOccurs="0" />
+        <xs:element name="ApplicationNumber" msdata:Prefix="ns0" type="xs:string" minOccurs="0" />
+        <xs:element name="ApplicationUniqueId" msdata:Prefix="ns0" type="xs:string" minOccurs="0" />
+        <xs:element name="SubmitDate" msdata:Prefix="ns0" type="xs:string" minOccurs="0" />
+        <xs:element name="OriginalDate" msdata:Prefix="ns0" type="xs:string" minOccurs="0" />
+        <xs:element name="ExpirationDate" msdata:Prefix="ns0" type="xs:string" minOccurs="0" />
+        <xs:element name="InitialSubmitDate" msdata:Prefix="ns0" type="xs:string" minOccurs="0" />
+        <xs:element name="IsApplicationSigned" msdata:Prefix="ns0" type="xs:string" minOccurs="0" />
+        <xs:element name="SignedDate" msdata:Prefix="ns0" type="xs:string" minOccurs="0" />
+        <xs:element name="IsApplicationAccepted" msdata:Prefix="ns0" type="xs:string" minOccurs="0" />
+        <xs:element name="AcceptedAmount" msdata:Prefix="ns0" type="xs:string" minOccurs="0" />
+        <xs:element name="DecisionType" msdata:Prefix="ns0" type="xs:string" minOccurs="0" />
+        <xs:element name="IPAddress" msdata:Prefix="ns0" type="xs:string" minOccurs="0" />
+        <xs:element name="IsAllFaxesReceived" msdata:Prefix="ns0" type="xs:string" minOccurs="0" />
+        <xs:element name="VersionNumber" msdata:Prefix="ns0" type="xs:string" minOccurs="0" />
+        <xs:element name="Contact" msdata:Prefix="ns0" minOccurs="0" maxOccurs="unbounded">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="FirstName" msdata:Prefix="ns0" type="xs:string" minOccurs="0" />
+              <xs:element name="LastName" msdata:Prefix="ns0" type="xs:string" minOccurs="0" />
+              <xs:element name="DateOfBirth" msdata:Prefix="ns0" type="xs:string" minOccurs="0" />
+              <xs:element name="SSN" msdata:Prefix="ns0" type="xs:string" minOccurs="0" />
+              <xs:element name="DriversLicenseNumber" msdata:Prefix="ns0" type="xs:string" minOccurs="0" />
+              <xs:element name="DriversLicenseState" msdata:Prefix="ns0" type="xs:string" minOccurs="0" />
+              <xs:element name="IsActiveMilitary" msdata:Prefix="ns0" type="xs:string" minOccurs="0" />
+              <xs:element name="EMailAddress" msdata:Prefix="ns0" type="xs:string" minOccurs="0" />
+              <xs:element name="EMailYears" msdata:Prefix="ns0" type="xs:string" minOccurs="0" />
+              <xs:element name="EMailMonths" msdata:Prefix="ns0" type="xs:string" minOccurs="0" />
+              <xs:element name="HomePhone" msdata:Prefix="ns0" type="xs:string" minOccurs="0" />
+              <xs:element name="CellPhone" msdata:Prefix="ns0" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="Incomes" msdata:Prefix="ns0" minOccurs="0" maxOccurs="unbounded">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Income" msdata:Prefix="ns0" minOccurs="0" maxOccurs="unbounded">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="Type" msdata:Prefix="ns0" type="xs:string" minOccurs="0" />
+                    <xs:element name="Source" msdata:Prefix="ns0" type="xs:string" minOccurs="0" />
+                    <xs:element name="Amount" msdata:Prefix="ns0" type="xs:string" minOccurs="0" />
+                    <xs:element name="PaymentCycle" msdata:Prefix="ns0" type="xs:string" minOccurs="0" />
+                    <xs:element name="NextPayDate" msdata:Prefix="ns0" type="xs:string" minOccurs="0" />
+                    <xs:element name="PayMonthlyDay1" msdata:Prefix="ns0" type="xs:string" minOccurs="0" />
+                    <xs:element name="PayMonthlyDay2" msdata:Prefix="ns0" type="xs:string" minOccurs="0" />
+                    <xs:element name="PayMonthlyDayOfWeekIter1" msdata:Prefix="ns0" type="xs:string" minOccurs="0" />
+                    <xs:element name="PayMonthlyDayOfWeekIter2" msdata:Prefix="ns0" type="xs:string" minOccurs="0" />
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="Address" msdata:Prefix="ns0" minOccurs="0" maxOccurs="unbounded">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Line1" msdata:Prefix="ns0" type="xs:string" minOccurs="0" />
+              <xs:element name="City" msdata:Prefix="ns0" type="xs:string" minOccurs="0" />
+              <xs:element name="State" msdata:Prefix="ns0" type="xs:string" minOccurs="0" />
+              <xs:element name="ZipCode" msdata:Prefix="ns0" type="xs:string" minOccurs="0" />
+              <xs:element name="OwnershipType" msdata:Prefix="ns0" type="xs:string" minOccurs="0" />
+              <xs:element name="MonthsAtResidence" msdata:Prefix="ns0" type="xs:string" minOccurs="0" />
+              <xs:element name="MonthlyHousingCost" msdata:Prefix="ns0" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="Employment" msdata:Prefix="ns0" minOccurs="0" maxOccurs="unbounded">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Employer" msdata:Prefix="ns0" type="xs:string" minOccurs="0" />
+              <xs:element name="JobTitle" msdata:Prefix="ns0" type="xs:string" minOccurs="0" />
+              <xs:element name="JobCategory" msdata:Prefix="ns0" type="xs:string" minOccurs="0" />
+              <xs:element name="HiredDate" msdata:Prefix="ns0" type="xs:string" minOccurs="0" />
+              <xs:element name="WorkPhoneNumber" msdata:Prefix="ns0" type="xs:string" minOccurs="0" />
+              <xs:element name="WorkPhoneExtension" msdata:Prefix="ns0" type="xs:string" minOccurs="0" />
+              <xs:element name="VerificationPhoneNumber" msdata:Prefix="ns0" type="xs:string" minOccurs="0" />
+              <xs:element name="VerificationPhoneExtension" msdata:Prefix="ns0" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="Bank" msdata:Prefix="ns0" minOccurs="0" maxOccurs="unbounded">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="AccountType" msdata:Prefix="ns0" type="xs:string" minOccurs="0" />
+              <xs:element name="Name" msdata:Prefix="ns0" type="xs:string" minOccurs="0" />
+              <xs:element name="RoutingNumber" msdata:Prefix="ns0" type="xs:string" minOccurs="0" />
+              <xs:element name="AccountNumber" msdata:Prefix="ns0" type="xs:string" minOccurs="0" />
+              <xs:element name="IsDirectDeposit" msdata:Prefix="ns0" type="xs:string" minOccurs="0" />
+              <xs:element name="AccountYears" msdata:Prefix="ns0" type="xs:string" minOccurs="0" />
+              <xs:element name="AccountMonths" msdata:Prefix="ns0" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="References" msdata:Prefix="ns0" minOccurs="0" maxOccurs="unbounded">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Reference" msdata:Prefix="ns0" minOccurs="0" maxOccurs="unbounded">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="FirstName" msdata:Prefix="ns0" type="xs:string" minOccurs="0" />
+                    <xs:element name="LastName" msdata:Prefix="ns0" type="xs:string" minOccurs="0" />
+                    <xs:element name="Phone" msdata:Prefix="ns0" type="xs:string" minOccurs="0" />
+                    <xs:element name="Relationship" msdata:Prefix="ns0" type="xs:string" minOccurs="0" />
+                    <xs:element name="IsAuthorized" msdata:Prefix="ns0" type="xs:string" minOccurs="0" />
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="BlockedAttributes" msdata:Prefix="ns0" minOccurs="0" maxOccurs="unbounded">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="IsBlockedIP" msdata:Prefix="ns0" type="xs:string" minOccurs="0" />
+              <xs:element name="IsBlockedPhone" msdata:Prefix="ns0" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="Source" msdata:Prefix="ns0" minOccurs="0" maxOccurs="unbounded">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Type" msdata:Prefix="ns0" type="xs:string" minOccurs="0" />
+              <xs:element name="Name" msdata:Prefix="ns0" type="xs:string" minOccurs="0" />
+              <xs:element name="PromoSubCode" msdata:Prefix="ns0" type="xs:string" minOccurs="0" />
+              <xs:element name="CampaignCode" msdata:Prefix="ns0" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="Iovation" msdata:Prefix="ns0" minOccurs="0" maxOccurs="unbounded">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Result" msdata:Prefix="ns0" type="xs:string" minOccurs="0" />
+              <xs:element name="Reason" msdata:Prefix="ns0" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

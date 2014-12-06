@@ -1,0 +1,348 @@
+<ns2:UnderwritingResponse xmlns:ns2="http://ThinkFinance/Underwriting/Services/2012/08/UnderwritingResponse" xmlns:ns1="http://ThinkFinance/Underwriting/Services/2012/08/UnderwritingRequest">
+	<ns2:UnderwritingResult>
+		<ns2:Header>
+			<ns2:TrackingId>4a06ec34-fe02-4c4d-9e03-1ed6b2d3d181</ns2:TrackingId>
+			<ns2:ApplicationNumber>1003085</ns2:ApplicationNumber>
+			<ns2:ApplicationUniqueId>391a9c18-2030-4e27-bbd3-8fc4b2d3d1bd</ns2:ApplicationUniqueId>
+		</ns2:Header>
+		<ns2:Channel Name="New Customer" Id="C01">
+			<ns2:AdverseAction Reason1="" />
+			<ns2:Scorecards>
+				<ns2:Scorecard Name="FX1" RiskScore="888" Version="" WeightedValueSum="-2.0752">
+					<ns2:Characteristic Name="Months_At_Bank_Number" Value="30" Source="App" Rank="4" WeightedValue="-0.1353" />
+					<ns2:Characteristic Name="Months_At_Bank_MOD6_Flag" Value="0" Source="Derived" Rank="1" WeightedValue="0" />
+					<ns2:Characteristic Name="Danger_TimeNextPayday" Value="0" Source="Derived" Rank="2" WeightedValue="0" />
+					<ns2:Characteristic Name="App_TimeOfDayGroup" Value="0" Source="Derived" Rank="3" WeightedValue="0" />
+					<ns2:Characteristic Name="Age_in_years" Value="50" Source="App" Rank="5" WeightedValue="-0.6075" />
+				</ns2:Scorecard>
+				<ns2:Scorecard Name="FX1_Clarity" RiskScore="942" Version="" WeightedValueSum="-2.7785">
+					<ns2:Characteristic Name="CLR_SSN_Valid" Value="TRUE" Source="Clarity" Rank="10" WeightedValue="-1.6077" />
+					<ns2:Characteristic Name="CLR_Account_High_Risk" Value="FALSE" Source="Clarity" Rank="8" WeightedValue="0" />
+					<ns2:Characteristic Name="Clarity_CB_AB_Flag" Value="1" Source="Clarity" Rank="4" WeightedValue="0.3699" />
+					<ns2:Characteristic Name="Clarity_Acct_Behavior_Code" Value="9" Source="Clarity" Rank="5" WeightedValue="0.1536" />
+					<ns2:Characteristic Name="Num_of_ssn_with_bank_acct" Value="1" Source="Clarity" Rank="3" WeightedValue="0.4639" />
+					<ns2:Characteristic Name="CIDF_Bank90" Value="1" Source="Clarity" Rank="2" WeightedValue="0.6966" />
+					<ns2:Characteristic Name="CIDF_NMI90" Value="1" Source="Clarity" Rank="6" WeightedValue="0.0821" />
+					<ns2:Characteristic Name="CIDF_wkPhone90" Value="1" Source="Clarity" Rank="7" WeightedValue="0.0515" />
+					<ns2:Characteristic Name="CB_account_severity_code" Value="" Source="Clarity" Rank="1" WeightedValue="0.7548" />
+					<ns2:Characteristic Name="Age_in_years" Value="47" Source="Clarity" Rank="9" WeightedValue="-0.8325" />
+				</ns2:Scorecard>
+				<ns2:Scorecard Name="FX1_CLV" RiskScore="950" Version="" WeightedValueSum="-2.9522">
+					<ns2:Characteristic Name="CLV_Score" Value="700" Source="CLVerify" Rank="8" WeightedValue="-1.953" />
+					<ns2:Characteristic Name="CLV_pda_summary_recentInquiries" Value="0" Source="CLVerify" Rank="6" WeightedValue="0" />
+					<ns2:Characteristic Name="CLV_Cstab_ItmHmPh_D15" Value="1" Source="CLVerify" Rank="1" WeightedValue="0.3436" />
+					<ns2:Characteristic Name="CLV_dda_ACLD_fraudCount" Value="0" Source="CLVerify" Rank="5" WeightedValue="0" />
+					<ns2:Characteristic Name="CLV_dda_bankInq_Prd30D_Qty" Value="0" Source="CLVerify" Rank="4" WeightedValue="0" />
+					<ns2:Characteristic Name="CLV_WarmAddrMatchCodeNum" Value="N" Source="CLVerify" Rank="3" WeightedValue="0" />
+					<ns2:Characteristic Name="CLV_NameAddrMatchCodeNum" Value="N" Source="CLVerify" Rank="2" WeightedValue="0" />
+					<ns2:Characteristic Name="CLV_NameSSNMatchCodeNum" Value="" Source="CLVerify" Rank="7" WeightedValue="-0.4111" />
+				</ns2:Scorecard>
+				<ns2:Scorecard Name="ILP_AFF" RiskScore="809" Version="" WeightedValueSum="-1.44671">
+					<ns2:Characteristic Name="TU_S059" Value="" Source="TU" Rank="7" WeightedValue="0" />
+					<ns2:Characteristic Name="TU_AT33" Value="" Source="TU" Rank="12" WeightedValue="-0.36461065215" />
+					<ns2:Characteristic Name="TU_AT09" Value="" Source="TU" Rank="6" WeightedValue="0" />
+					<ns2:Characteristic Name="TU_AT01" Value="" Source="TU" Rank="99" WeightedValue="n/a" />
+					<ns2:Characteristic Name="TU_CXMD" Value="" Source="TU" Rank="3" WeightedValue="0.128592" />
+					<ns2:Characteristic Name="TU_BC07" Value="" Source="TU" Rank="1" WeightedValue="0.41228" />
+					<ns2:Characteristic Name="TU_BC02" Value="" Source="TU" Rank="99" WeightedValue="n/a" />
+					<ns2:Characteristic Name="TU_RE03" Value="" Source="TU" Rank="9" WeightedValue="-0.0578" />
+					<ns2:Characteristic Name="CT_INQClusters_7_DAYS_ago" Value="" Source="CLR" Rank="5" WeightedValue="0" />
+					<ns2:Characteristic Name="CB_acct_severity_code" Value="" Source="CLR" Rank="4" WeightedValue="-0.2632" />
+					<ns2:Characteristic Name="CB_RC_A06N" Value="0" Source="CLR" Rank="" WeightedValue="0" />
+					<ns2:Characteristic Name="CB_RC_A07N" Value="0" Source="CLR" Rank="99" WeightedValue="n/a" />
+					<ns2:Characteristic Name="CB_RC_A10N" Value="0" Source="CLR" Rank="99" WeightedValue="n/a" />
+					<ns2:Characteristic Name="CB_RC_B06N" Value="0" Source="CLR" Rank="99" WeightedValue="n/a" />
+					<ns2:Characteristic Name="CB_RC_B07N" Value="0" Source="CLR" Rank="99" WeightedValue="n/a" />
+					<ns2:Characteristic Name="CB_RC_B10N" Value="0" Source="CLR" Rank="99" WeightedValue="n/a" />
+					<ns2:Characteristic Name="CB_RC_B11N" Value="0" Source="CLR" Rank="99" WeightedValue="n/a" />
+					<ns2:Characteristic Name="CLV_score" Value="700" Source="CLV" Rank="14" WeightedValue="-1.575" />
+					<ns2:Characteristic Name="CLV_pda_summ_InqEvents7D" Value="0" Source="CLV" Rank="99" WeightedValue="n/a" />
+					<ns2:Characteristic Name="CLV_dda_bankInq_Prd60D_Qty" Value="1" Source="CLV" Rank="2" WeightedValue="0.1849" />
+					<ns2:Characteristic Name="TT_Pcnt_Inq_Last30Days" Value="0" Source="TT" Rank="13" WeightedValue="-0.53097612244" />
+					<ns2:Characteristic Name="TT_summ_UniqueInqLast14Days" Value="0" Source="TT" Rank="99" WeightedValue="n/a" />
+					<ns2:Characteristic Name="TT_summ_SSNDateMinusDOBMonths" Value="106" Source="TT" Rank="11" WeightedValue="-0.0848" />
+					<ns2:Characteristic Name="MONTHS_AT_BANK_NBR" Value="30" Source="App" Rank="10" WeightedValue="-0.1422" />
+				</ns2:Scorecard>
+				<ns2:Scorecard Name="ILP_PS" RiskScore="815" Version="" WeightedValueSum="-1.48016">
+					<ns2:Characteristic Name="TU_RE01 " Value="" Source="TU" Rank="12" WeightedValue="-0.22150" />
+					<ns2:Characteristic Name="TU_FI03" Value="" Source="TU" Rank="13" WeightedValue="-0.22580" />
+					<ns2:Characteristic Name="TU_CXMD" Value="" Source="TU" Rank="8" WeightedValue="0.00000" />
+					<ns2:Characteristic Name="TU_S059" Value="" Source="TU" Rank="5" WeightedValue="0.00000" />
+					<ns2:Characteristic Name="TU_G091" Value="" Source="TU" Rank="11" WeightedValue="-0.16878" />
+					<ns2:Characteristic Name="TU_AT33" Value="" Source="TU" Rank="99" WeightedValue="n/a" />
+					<ns2:Characteristic Name="TU_BC07" Value="" Source="TU" Rank="1" WeightedValue="0.32690" />
+					<ns2:Characteristic Name="TU_BC02" Value="" Source="TU" Rank="99" WeightedValue="n/a" />
+					<ns2:Characteristic Name="CIDF_NMI_7_days_ago" Value="" Source="CLR" Rank="3" WeightedValue="0.10310" />
+					<ns2:Characteristic Name="CB_acct_severity_code" Value="" Source="CLR" Rank="14" WeightedValue="-0.32050" />
+					<ns2:Characteristic Name="CB_RC_A04N" Value="0" Source="CLR" Rank="4" WeightedValue="0.00000" />
+					<ns2:Characteristic Name="CB_RC_A14N" Value="0" Source="CLR" Rank="99" WeightedValue="n/a" />
+					<ns2:Characteristic Name="CB_RC_A15N " Value="0" Source="CLR" Rank="99" WeightedValue="n/a" />
+					<ns2:Characteristic Name="CB_RC_A19N" Value="0" Source="CLR" Rank="99" WeightedValue="n/a" />
+					<ns2:Characteristic Name="CLV_score" Value="700" Source="CLV" Rank="15" WeightedValue="-1.44900" />
+					<ns2:Characteristic Name="CLV_Pcnt_BnkInq_90Days" Value="1" Source="CLV" Rank="2" WeightedValue="0.21730" />
+					<ns2:Characteristic Name="AGG_CLVINQS30" Value="0" Source="CLV" Rank="6" WeightedValue="0.00000" />
+					<ns2:Characteristic Name="TT_summary_ttInqLast30Days" Value="0" Source="TT" Rank="7" WeightedValue="0.00000" />
+					<ns2:Characteristic Name="TT_summ_SSNDateMinusDOBMonths" Value="106" Source="TT" Rank="9" WeightedValue="-0.13568" />
+					<ns2:Characteristic Name="MONTHS_AT_BANK_NBR" Value="30" Source="App" Rank="10" WeightedValue="-0.15210" />
+				</ns2:Scorecard>
+				<ns2:Scorecard Name="ILP_GEN" RiskScore="810" Version="" WeightedValueSum="-1.44846">
+					<ns2:Characteristic Name="TU_BC02" Value="" Source="TU" Rank="5" WeightedValue="0" />
+					<ns2:Characteristic Name="TU_CXMD" Value="" Source="TU" Rank="2" WeightedValue="0.1479" />
+					<ns2:Characteristic Name="TU_AT01" Value="" Source="TU" Rank="" WeightedValue="n/a" />
+					<ns2:Characteristic Name="TU_FI03" Value="" Source="TU" Rank="4" WeightedValue="0" />
+					<ns2:Characteristic Name="TU_RE01" Value="" Source="TU" Rank="10" WeightedValue="-0.0888" />
+					<ns2:Characteristic Name="TU_S059" Value="" Source="TU" Rank="3" WeightedValue="0.14325" />
+					<ns2:Characteristic Name="CB_acct_severity_code" Value="" Source="CLR" Rank="12" WeightedValue="-0.3831" />
+					<ns2:Characteristic Name="CB_RC_A04N" Value="0" Source="CLR" Rank="9" WeightedValue="0" />
+					<ns2:Characteristic Name="CB_RC_A14N" Value="0" Source="CLR" Rank="99" WeightedValue="n/a" />
+					<ns2:Characteristic Name="CB_RC_A15N" Value="0" Source="CLR" Rank="99" WeightedValue="n/a" />
+					<ns2:Characteristic Name="CB_RC_A19N" Value="0" Source="CLR" Rank="99" WeightedValue="n/a" />
+					<ns2:Characteristic Name="CT_INQClusters_7_days_ago" Value="" Source="CLR" Rank="7" WeightedValue="0" />
+					<ns2:Characteristic Name="CLV_dda_bankInq_Prd30D_Qty" Value="0" Source="CLV" Rank="8" WeightedValue="0" />
+					<ns2:Characteristic Name="CLV_pda_summary_eventPosition" Value="0" Source="CLV" Rank="1" WeightedValue="0.4022" />
+					<ns2:Characteristic Name="CLV_score" Value="700" Source="CLV" Rank="14" WeightedValue="-1.246" />
+					<ns2:Characteristic Name="TT_Pcnt_Inq_Last30Days" Value="0" Source="TT" Rank="13" WeightedValue="-0.71840654901" />
+					<ns2:Characteristic Name="TT_summ_ttCOsLast24Months" Value="0" Source="TT" Rank="6" WeightedValue="0" />
+					<ns2:Characteristic Name="MONTHS_AT_BANK_NBR" Value="30" Source="APP" Rank="11" WeightedValue="-0.1464" />
+				</ns2:Scorecard>
+			</ns2:Scorecards>
+			<ns2:Strategy Type="" Name="New Customer - RSX" Id="S04" Value="">
+				<ns2:LineStrategy LineAssignmentAmount="600" Id="LS328" />
+			</ns2:Strategy>
+			<ns2:Knockout Name="No State" Priority="1" IsFree="1" RFAI="" NOAA="13" Result="Passed" Status="DD" Param="" OpCd="" Id="K110" AppValue="TX" />
+			<ns2:Knockout Name="Last Hard Declined App" Priority="2" IsFree="1" RFAI="" NOAA="132" Result="Passed" Status="DD" Param="45" OpCd="5" Id="K01" AppValue="735557" />
+			<ns2:Knockout Name="Age" Priority="3" IsFree="1" RFAI="" NOAA="12" Result="Passed" Status="DD" Param="18" OpCd="2" Id="K02" AppValue="50" />
+			<ns2:Knockout Name="AL / NE Age &lt; 19" Priority="4" IsFree="0" RFAI="" NOAA="12" Result="Passed" Status="DD" Param="" OpCd="" Id="K32" AppValue="" />
+			<ns2:Knockout Name="Income" Priority="5" IsFree="1" RFAI="" NOAA="4" Result="Passed" Status="DD" Param="1000" OpCd="2" Id="K03" AppValue="4200" />
+			<ns2:Knockout Name="Blocked IP" Priority="7" IsFree="1" RFAI="" NOAA="162" Result="Passed" Status="DD" Param="" OpCd="" Id="K103" AppValue="" />
+			<ns2:Knockout Name="Blocked Phone" Priority="8" IsFree="1" RFAI="" NOAA="162" Result="Passed" Status="DD" Param="" OpCd="" Id="K104" AppValue="" />
+			<ns2:Knockout Name="Blocked SSN" Priority="9" IsFree="1" RFAI="" NOAA="162" Result="Passed" Status="DD" Param="" OpCd="" Id="K100" AppValue="" />
+			<ns2:Knockout Name="Blocked Email" Priority="10" IsFree="1" RFAI="" NOAA="162" Result="Passed" Status="DD" Param="" OpCd="" Id="K101" AppValue="" />
+			<ns2:Knockout Name="Blocked Routing Number" Priority="11" IsFree="1" RFAI="" NOAA="162" Result="Passed" Status="DD" Param="" OpCd="" Id="K102" AppValue="" />
+			<ns2:Knockout Name="Blocked Drivers License" Priority="12" IsFree="1" RFAI="" NOAA="162" Result="Passed" Status="DD" Param="" OpCd="" Id="K117" AppValue="" />
+			<ns2:Knockout Name="Blocked Email Domain" Priority="13" IsFree="1" RFAI="" NOAA="162" Result="Passed" Status="DD" Param="" OpCd="" Id="K118" AppValue="" />
+			<ns2:Knockout Name="Bank Account Length" Priority="21" IsFree="1" RFAI="30" NOAA="" Result="Passed" Status="CD" Param="15" OpCd="4" Id="K05" AppValue="10" />
+			<ns2:Knockout Name="SSI and Primary Income GTE 3500" Priority="22" IsFree="0" RFAI="30" NOAA="" Result="Passed" Status="CD" Param="3499" OpCd="4" Id="K08" AppValue="0" />
+			<ns2:Knockout Name="60+ days delinquent" Priority="23" IsFree="1" RFAI="" NOAA="61" Result="Passed" Status="DD" Param="60" OpCd="4" Id="K18" AppValue="" />
+			<ns2:Knockout Name="Charge-off" Priority="24" IsFree="1" RFAI="" NOAA="61" Result="Passed" Status="DD" Param="" OpCd="" Id="K19" AppValue="" />
+			<ns2:Knockout Name="FX_App Score Cut" Priority="25" IsFree="0" RFAI="" NOAA="135" Result="Passed" Status="DD" Param="750" OpCd="2" Id="K152" AppValue="888" />
+			<ns2:Knockout Name="PID Decline" Priority="27" IsFree="0" RFAI="" NOAA="161" Result="Passed" Status="DD" Param="480" OpCd="2" Id="K149" AppValue="800" />
+			<ns2:Knockout Name="ACH Payday Rejects" Priority="28" IsFree="0" RFAI="" NOAA="161" Result="Passed" Status="DD" Param="1" OpCd="5" Id="K150" AppValue="0" />
+			<ns2:Knockout Name="FX_Clarity Score Cut" Priority="29" IsFree="0" RFAI="" NOAA="135" Result="Passed" Status="DD" Param="820" OpCd="2" Id="K63" AppValue="942" />
+			<ns2:Knockout Name="Clarity - Prevalidate" Priority="30" IsFree="0" RFAI="" NOAA="161" Result="Passed" Status="DD" Param="" OpCd="" Id="K30" AppValue="" />
+			<ns2:Knockout Name="Clarity - OFAC" Priority="31" IsFree="0" RFAI="30" NOAA="" Result="Passed" Status="M" Param="" OpCd="" Id="K27" AppValue="false" />
+			<ns2:Knockout Name="Clarity - FACTA" Priority="32" IsFree="0" RFAI="" NOAA="" Result="Passed" Status="M" Param="" OpCd="" Id="K29" AppValue="" />
+			<ns2:Knockout Name="FX_CLV Score Cut" Priority="33" IsFree="0" RFAI="" NOAA="135" Result="Passed" Status="DD" Param="850" OpCd="2" Id="K64" AppValue="950" />
+			<ns2:Knockout Name="TT - SSN Issue Date Invalid" Priority="43" IsFree="0" RFAI="43" NOAA="" Result="Passed" Status="CD" Param="0" OpCd="2" Id="K13" AppValue="" />
+			<ns2:Knockout Name="TT Segment 56-Skipguard" Priority="44" IsFree="0" RFAI="" NOAA="21" Result="Passed" Status="DD" Param="" OpCd="" Id="K11" AppValue="" />
+			<ns2:Knockout Name="TT - SSN Invalid" Priority="45" IsFree="0" RFAI="43" NOAA="" Result="Passed" Status="CD" Param="" OpCd="" Id="K12" AppValue="" />
+			<ns2:Knockout Name="TT - OFAC" Priority="46" IsFree="0" RFAI="30" NOAA="" Result="Passed" Status="M" Param="" OpCd="" Id="K10" AppValue="" />
+			<ns2:Knockout Name="TU - OFAC" Priority="47" IsFree="0" RFAI="30" NOAA="" Result="Passed" Status="M" Param="" OpCd="" Id="K28" AppValue="" />
+			<ns2:Knockout Name="FACTA - TU Active Military" Priority="48" IsFree="0" RFAI="" NOAA="" Result="Passed" Status="M" Param="" OpCd="" Id="K14" AppValue="" />
+			<ns2:Knockout Name="FACTA - TU Extended Fraud" Priority="49" IsFree="0" RFAI="" NOAA="" Result="Passed" Status="M" Param="" OpCd="" Id="K16" AppValue="" />
+			<ns2:Knockout Name="FACTA - TU Initial Fraud" Priority="50" IsFree="0" RFAI="" NOAA="" Result="Passed" Status="M" Param="" OpCd="" Id="K15" AppValue="" />
+			<ns2:Rule Name="RSX LT 700 - Generic - S04" Priority="16" IsFree="0" RFAI="" NOAA="135" Result="Passed" Status="DD" Param="640" OpCd="2" Id="R191" AppValue="810" />
+			<ns2:Rule Name="RSX LT 700 - Affiliate - momu - S04" Priority="17" IsFree="0" RFAI="" NOAA="135" Result="Skipped" Status="DD" Param="700" OpCd="2" Id="R192" AppValue="" />
+			<ns2:Rule Name="RSX LT 700 - Affiliate - MomuCal001 - S04" Priority="18" IsFree="0" RFAI="" NOAA="135" Result="Skipped" Status="DD" Param="700" OpCd="2" Id="R193" AppValue="" />
+			<ns2:Rule Name="RSX LT 700 - Affiliate - momudc - S04" Priority="19" IsFree="0" RFAI="" NOAA="135" Result="Skipped" Status="DD" Param="720" OpCd="2" Id="R194" AppValue="" />
+			<ns2:Rule Name="RSX LT 700 - Affiliate - momudc? - S04" Priority="20" IsFree="0" RFAI="" NOAA="135" Result="Skipped" Status="DD" Param="720" OpCd="2" Id="R195" AppValue="" />
+			<ns2:Rule Name="RSX LT 700 - Affiliate - MomuDEC - S04" Priority="21" IsFree="0" RFAI="" NOAA="135" Result="Skipped" Status="DD" Param="720" OpCd="2" Id="R196" AppValue="" />
+			<ns2:Rule Name="RSX LT 700 - Affiliate - MomuDec001 - S04" Priority="22" IsFree="0" RFAI="" NOAA="135" Result="Skipped" Status="DD" Param="720" OpCd="2" Id="R197" AppValue="" />
+			<ns2:Rule Name="RSX LT 700 - Affiliate - MomuEM001 - S04" Priority="23" IsFree="0" RFAI="" NOAA="135" Result="Skipped" Status="DD" Param="700" OpCd="2" Id="R198" AppValue="" />
+			<ns2:Rule Name="RSX LT 700 - Affiliate - MomuExi001 - S04" Priority="24" IsFree="0" RFAI="" NOAA="135" Result="Skipped" Status="DD" Param="700" OpCd="2" Id="R199" AppValue="" />
+			<ns2:Rule Name="RSX LT 700 - Affiliate - MomuExit00 - S04" Priority="25" IsFree="0" RFAI="" NOAA="135" Result="Skipped" Status="DD" Param="700" OpCd="2" Id="R201" AppValue="" />
+			<ns2:Rule Name="RSX LT 700 - Affiliate - MomuMil001 - S04" Priority="26" IsFree="0" RFAI="" NOAA="135" Result="Skipped" Status="DD" Param="700" OpCd="2" Id="R202" AppValue="" />
+			<ns2:Rule Name="RSX LT 700 - Affiliate - MomuSF001 - S04" Priority="27" IsFree="0" RFAI="" NOAA="135" Result="Skipped" Status="DD" Param="700" OpCd="2" Id="R203" AppValue="" />
+			<ns2:Rule Name="RSX LT 700 - Affiliate - pw1000 - S04" Priority="28" IsFree="0" RFAI="" NOAA="135" Result="Skipped" Status="DD" Param="700" OpCd="2" Id="R204" AppValue="" />
+			<ns2:Rule Name="RSX LT 700 - Affiliate - LC001 - S04" Priority="29" IsFree="0" RFAI="" NOAA="135" Result="Skipped" Status="DD" Param="700" OpCd="2" Id="R212" AppValue="" />
+			<ns2:Rule Name="RSX LT 660 - Paid Search - bing - S04" Priority="30" IsFree="0" RFAI="" NOAA="135" Result="Skipped" Status="DD" Param="660" OpCd="2" Id="R205" AppValue="" />
+			<ns2:Rule Name="RSX LT 660 - Paid Search - fc - S04" Priority="31" IsFree="0" RFAI="" NOAA="135" Result="Skipped" Status="DD" Param="660" OpCd="2" Id="R206" AppValue="" />
+			<ns2:Rule Name="RSX LT 660 - Paid Search - fc-dlp - S04" Priority="32" IsFree="0" RFAI="" NOAA="135" Result="Skipped" Status="DD" Param="660" OpCd="2" Id="R207" AppValue="" />
+			<ns2:Rule Name="RSX LT 660 - Paid Search - ggl - S04" Priority="33" IsFree="0" RFAI="" NOAA="135" Result="Skipped" Status="DD" Param="660" OpCd="2" Id="R208" AppValue="" />
+			<ns2:Rule Name="RSX LT 700 - Default Affiliate - S04" Priority="35" IsFree="0" RFAI="" NOAA="135" Result="Skipped" Status="DD" Param="700" OpCd="2" Id="R209" AppValue="" />
+			<ns2:Rule Name="RSX LT 660 - Default Paid Search - S04" Priority="36" IsFree="0" RFAI="" NOAA="135" Result="Skipped" Status="DD" Param="660" OpCd="2" Id="R210" AppValue="" />
+			<ns2:Rule Name="RSX LT 700 - Default Affiliate/Other - S04" Priority="37" IsFree="0" RFAI="" NOAA="135" Result="Skipped" Status="DD" Param="700" OpCd="2" Id="R211" AppValue="" />
+		</ns2:Channel>
+		<ns2:Decision DecisionStatus="CA" DecisionTimeStamp="2014-11-21T14:59:17" RiskScore="810" ScorecardUsed="ILP_GEN" />
+		<ns2:ThirdParty>
+			<ns2:CLVerify IVDSLI="1200" BnkInq60Days="1" CLVPDLNS1="0" DaysSinceMstRecCheckOrder="0" Inq7Days="0" BnkInq730Days="0" CLVRECMERCH="0" CLVBDLNS60="0" CLVARDIFF2="0" CLVARDIFF1="0" LastNmChngLast90Days="0" HomePhnChngLast90Days="0" WorkPhnChngLast90Days="0" ZipCdChangeLast90Days="0" ABARoutingNbrChngLast90Days="0" BnkAcctChngLast90Days="0" LoanDefaultDifferential="0" InqLast30Days="0" NbrMicrSSN="0" Score="700" BnkInqLast30Days="0" OFACAlert="false" SSNValidCode="Y" SSNDOBWarning="N" SSNNameMatch="" NameAddrMatch="N" CLVIFEV30DAYS="0" CLVCSWP24HRS="" CLVIFIQ24HRS="1" CLVCSWP30="0" CLVCSWP15="0" CLV_dda_bankInq_Prd3Y_Qty="1" CLV_dda_bankInq_Prd90D_Qty="1" CLV_dda_bankInq_Prd30D_Qty="0" CLV_dda_bankInq_Prd60D_Qty="1" CLV_Pcnt_BnkInq_90Days="1.0" CLV_pda_summ_InqEvents7D="0" CLV_pda_summary_eventPosition="0" AGG_CLVINQS30="0" CLV_pda_summary_recentInquiries="0" CLV_Cstab_ItmHmPh_D15="1" CLV_dda_ACLD_fraudCount="0" WarmAddrMatchCode="N" CLVLNSGV="18" dda_bankinquiry_Period365Days_quantity="0" CLVConsumerHomePhoneDays90="0" CLVAccountCount="" CLVPDALoans="" aba_account_count="" aba_detail_loan_de_dif_0="0" aba_detail_loan_de_dif_1="0" aba_detail_loan_de_dif_10="" aba_detail_loan_de_dif_2="" aba_detail_loan_de_dif_3="" aba_detail_loan_de_dif_4="" aba_detail_loan_de_dif_5="" aba_detail_loan_de_dif_6="" aba_detail_loan_de_dif_7="" aba_detail_loan_de_dif_8="" aba_detail_loan_de_dif_9="" IDV_phoneAddressMatch="N" CLVPDLNSAMT3="" />
+			<ns2:TU G051="" l2c_scr2="" G098="" G082="" BR34="" BC03="" AT20="" AT33="" BC02="" BC07="" CXMD="" AT02="" G091="" PctBnkAcct12Mnths="" PctCol12Mnths="" PctAmtPastDue="" AddressFlag="false" FACTAMilitaryAlert="false" FACTAInitialFraudAlert="false" FACTAExtendedFraudAlert="false" FICOScore="" OFACHit="" S068="" G065="" AT01="" S059="" S004="" BKRTRDS="" G104="" IN25="" AT24="" G057="" PF25="" COLXMD36="" RE01="" RE03="" FI03="" AT09="" AT34="" G058="" S011="" BC01="" S064="" BK02="" BR03="" BR20="" G060="" G096="" BR62="" RT08="" G049="" G094="" S073="" />
+			<ns2:Teletrack OFACMatchScore="0" SkipGuardCnt="0" SSNYrIssued="1973" ChargeOffsLst24Mnths="0.0" PctInqLst30Days="0.0" SSNInvalid="0.0" ChargeOffLast12Mnths="0.0" UniqueInqLast120Days="0" TotalOpenCOs="0" InqLast120Days="0" InqLast30Days="0" UniqueInqLast14Days="0" SSNDateMinusDOBMonths="106.0" Has_Paid_Loan="" Has_Open_Loan="" summ_ttChargeoffsTotal="" summ_PDLCOsLast3Months="" summ_ttInqLast25Days="" TT_INQ_TOTAL_PAST_3_MONTHS="0" TT_CO_OPEN_CK_ADV_IND="0" InqLst120Days="0" CR_Chk_BankVal_ACHSub="" CR_Chk_SSNCDRel_La90DaysCt="">
+				<ns2:WarningFactor WarningCode="" WarningDescription="" />
+				<ns2:FACTAAlert AlertCode="" AlertText="" />
+			</ns2:Teletrack>
+			<ns2:Clarity IDAScore="800" OFACMatch="false" IndentityTheftPrevention="" SSNDeceased="false" SSNValid="true" BankAcctType="CHECKING" BankRoutingValid="true" PrevalidateAction="Approve" CB_acct_age="24" CB_acct_severity_code="" CB_RC_A04N="0" CB_RC_A14N="0" CB_RC_A15N="0" CB_RC_A19N="0" CB_RC_A06N="0" CB_RC_A07N="0" CB_RC_A10N="0" CB_RC_B06N="0" CB_RC_B07N="0" CB_RC_B10N="0" CB_RC_B11N="0" CB_RC="A16" CIDF_NMI_7_days_ago="" CT_INQClusters_7_DAYS_ago="" Num_of_ssn_with_bank_acct="1" CIDF_Bank90="1" CIDF_NMI90="1" CIDF_wkPhone90="1" date_of_birth="1964-01-01" Account_High_Risk="false" CB_AB_Flag="1" Acct_Behavior_Code="9" inquiry_received_at="2011-04-06T13:49:03Z" LeadGenBestPracticesFlag="Approve" PrevalidateActionRsnDscr="" CB_acct_days_since_last_Clarity="" CB_acct_type="" CB_num_of_accts_currently_in_use="0" CB_RC_A31="0" CB_RC_A32="0" CB_RC_A33="0" CB_RC_A34="0" CB_RC_A40="0" CB_RC_A41="0" CB_RC_A50="0" CB_RC_A51="0" CB_RC_A65="0" CB_RC_A69="0" CB_RC_B03="0" CB_RC_B04="0" CB_RC_B14="0" CB_RC_B15="0" CB_RC_B19="0" CB_RC_B31="0" CB_RC_B32="0" CB_RC_B33="0" CB_RC_B34="0" CB_RC_B40="0" CB_RC_B41="0" CB_RC_B50="0" CB_RC_B51="0" CB_RC_B65="0" CB_RC_B69="0" CB_RC_D01="0" CBP_Open_2_years_ago="" CBP_primary_acct_90_days_ago="" CPT_INQClusters_2_years_ago="" CPT_INQClusters_30_days_ago="" CPT_Patterns_TOTPayments_180_day="4" CPT_Summary_amt_open_lines="" CPT_Summary_spml_avg_rollovers="12" CPT_TOTInquiries_1_hour_ago="" CPT_TOTInquiries_2_years_ago="1" CSIDF_Num_Inq_90_days="" CSIDF_possible_fraud_type="" CSIDF_SSN_num_emails="" FraudAction="" SupWarnScore="" SupWarnReasonCdDesc="" SupAcctOwnershipAction="" ClrAcctOwnershipAction="" ClrFraudReasonCodes="" ClrFraudReasonDesc="" ClrFraudScore="850" ClrWarnAction="" NameMatchRisk="" Age_in_years="47" CAO_supActOwn_nmMatchRisk="" CBP_stbBP_seen1stTimeBP_1Y="" CB_supBnk_EWH_actType_1="" CB_supBnk_EWH_days1stCLRAct_1="1" CB_supBnk_EWH_days1stCLRAct_2="312" CB_supBnk_EWH_days1stCLRAct_3="312" CB_supBnk_EWH_days1stCLRAct_4="" CB_supBnk_EWH_days1stCLRAct_5="" CB_supBnk_EWH_days1stCLRAct_6="" CB_supBnk_EWH_days1stCLRAct_7="" CB_supBnk_EWH_days1stCLRAct_8="" CB_supBnk_EWH_daysLastCLRAct_1="" CB_supBnk_EWH_daysLastCLRAct_2="312" CB_supBnk_EWH_daysLastCLRAct_3="312" CB_supBnk_EWH_daysLastCLRAct_4="" CB_supBnk_EWH_daysLastCLRAct_5="" CB_supBnk_EWH_daysLastCLRAct_6="" CB_supBnk_EWH_daysLastCLRAct_7="" CB_supBnk_EWH_daysLastCLRAct_8="" CBP_stbBP_openBP_1Y="" CB_supBnk_EWH_numSeenByCLR_1="0" CF_stb_ninetydaysago_8="1" CF_stb_fifteendaysago_8="1" CBP_stbBP_seen1stTimeBP_180D="" CF_ctab_ssn_7="1" CF_rt_sevendaysago_1="1.0" CBP_stbBP_openBP_3Y="" CB_supBnk_EWH_actAgeCD_1="9" CB_supBnk_EWH_actBehavCD_1="9" CB_supBnk_EWH_actBehavCD_2="4" CB_supBnk_EWH_actBehavCD_3="9" CB_supBnk_EWH_actBehavCD_4="" CB_supBnk_EWH_actBehavCD_5="" CB_supBnk_EWH_actBehavCD_6="" CB_supBnk_EWH_actBehavCD_7="" CB_supBnk_EWH_actBehavCD_8="" CB_supBnk_numHistAct="3" CF_ctab_bankaccount_4="1" CF_ctab_homephone_3="1" CF_ctab_homephone_4="1" CF_inq_ninetydaysago="1" CF_pt_sevendaysago="8" CF_rt_threesixtyfivedaysago_2="0.66" CB_RC_A66="0" CB_RC_A67="0" CB_RC_A68="0" CF_fraudsignaturematch="false" CF_id_identitytypecode="" CF_ctab_homeaddress_3="1" inquiry_home_phone="1231231234" inquiry_work_phone="1231231234" />
+			<ns2:IDAnalytics IDA_ConsistencySNAPD="" IDA_idscore_action="" IDA_VelocityBasedRisk="" />
+		</ns2:ThirdParty>
+	</ns2:UnderwritingResult>
+	<ns1:UnderwritingRequest xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" transactionID="DE01e41c087_149d3cb5e46_07ffc149d3cc2bed_0a01ca31.15">
+		<ns1:Header>
+			<ns1:TrackingId>4a06ec34-fe02-4c4d-9e03-1ed6b2d3d181</ns1:TrackingId>
+			<ns1:PartnerId>TUNIC</ns1:PartnerId>
+			<ns1:ProductIdentifier>1000</ns1:ProductIdentifier>
+		</ns1:Header>
+		<ns0:Application xmlns:ns0="http://ThinkFinance/Underwriting/Services/2012/08/Application">
+			<ns0:SourceId>Web</ns0:SourceId>
+			<ns0:ApplicationNumber>1003085</ns0:ApplicationNumber>
+			<ns0:ApplicationUniqueId>391a9c18-2030-4e27-bbd3-8fc4b2d3d1bd</ns0:ApplicationUniqueId>
+			<ns0:SubmitDate>2014-11-21T20:58:39Z</ns0:SubmitDate>
+			<ns0:OriginalDate>2014-11-21T20:58:39Z</ns0:OriginalDate>
+			<ns0:ExpirationDate>2014-12-01T20:58:39Z</ns0:ExpirationDate>
+			<ns0:InitialSubmitDate>2014-11-21T20:58:39Z</ns0:InitialSubmitDate>
+			<ns0:IsApplicationSigned>true</ns0:IsApplicationSigned>
+			<ns0:SignedDate>2014-11-21T20:58:39Z</ns0:SignedDate>
+			<ns0:IsApplicationAccepted>false</ns0:IsApplicationAccepted>
+			<ns0:AcceptedAmount>0</ns0:AcceptedAmount>
+			<ns0:DecisionType>Underwriting</ns0:DecisionType>
+			<ns0:IPAddress>10.4.0.223</ns0:IPAddress>
+			<ns0:IsAllFaxesReceived>false</ns0:IsAllFaxesReceived>
+			<ns0:Contact>
+				<ns0:FirstName>Testmwdy</ns0:FirstName>
+				<ns0:LastName>Lastmwdy</ns0:LastName>
+				<ns0:DateOfBirth>1964-03-01</ns0:DateOfBirth>
+				<ns0:SSN>666636573</ns0:SSN>
+				<ns0:DriversLicenseNumber>24663131</ns0:DriversLicenseNumber>
+				<ns0:DriversLicenseState>TX</ns0:DriversLicenseState>
+				<ns0:IsActiveMilitary>false</ns0:IsActiveMilitary>
+				<ns0:EMailAddress>testemail636573@email.dev</ns0:EMailAddress>
+				<ns0:EMailYears>2</ns0:EMailYears>
+				<ns0:EMailMonths>2</ns0:EMailMonths>
+				<ns0:HomePhone>1666729163</ns0:HomePhone>
+				<ns0:CellPhone>1231231234</ns0:CellPhone>
+			</ns0:Contact>
+			<ns0:Incomes>
+				<ns0:Income>
+					<ns0:Type>PermanentEmployment</ns0:Type>
+					<ns0:Source>Primary</ns0:Source>
+					<ns0:Amount>2000</ns0:Amount>
+					<ns0:PaymentCycle>TwiceMonthly</ns0:PaymentCycle>
+					<ns0:NextPayDate>2014-12-01</ns0:NextPayDate>
+					<ns0:PayMonthlyDay1>1</ns0:PayMonthlyDay1>
+					<ns0:PayMonthlyDay2>15</ns0:PayMonthlyDay2>
+					<ns0:PayMonthlyDayOfWeekIter1>0</ns0:PayMonthlyDayOfWeekIter1>
+					<ns0:PayMonthlyDayOfWeekIter2>0</ns0:PayMonthlyDayOfWeekIter2>
+				</ns0:Income>
+				<ns0:Income>
+					<ns0:Type>SelfEmployed</ns0:Type>
+					<ns0:Source>Secondary</ns0:Source>
+					<ns0:Amount>200</ns0:Amount>
+					<ns0:PaymentCycle>Monthly</ns0:PaymentCycle>
+				</ns0:Income>
+			</ns0:Incomes>
+			<ns0:Address>
+				<ns0:Line1>6365 Main St</ns0:Line1>
+				<ns0:City>Grapevine</ns0:City>
+				<ns0:State>TX</ns0:State>
+				<ns0:ZipCode>76051</ns0:ZipCode>
+				<ns0:OwnershipType>Rent</ns0:OwnershipType>
+				<ns0:MonthsAtResidence>6</ns0:MonthsAtResidence>
+				<ns0:MonthlyHousingCost>1300</ns0:MonthlyHousingCost>
+			</ns0:Address>
+			<ns0:Employment>
+				<ns0:Employer>Geico</ns0:Employer>
+				<ns0:JobTitle>Adjustor</ns0:JobTitle>
+				<ns0:JobCategory>HealthSpecialist</ns0:JobCategory>
+				<ns0:HiredDate>2005-05-05</ns0:HiredDate>
+				<ns0:WorkPhoneNumber>9725555555</ns0:WorkPhoneNumber>
+				<ns0:WorkPhoneExtension>0</ns0:WorkPhoneExtension>
+				<ns0:VerificationPhoneNumber>2145555555</ns0:VerificationPhoneNumber>
+				<ns0:VerificationPhoneExtension>0</ns0:VerificationPhoneExtension>
+			</ns0:Employment>
+			<ns0:Bank>
+				<ns0:AccountType>Checking</ns0:AccountType>
+				<ns0:Name>Capital One</ns0:Name>
+				<ns0:RoutingNumber>102100400</ns0:RoutingNumber>
+				<ns0:AccountNumber>9126394915</ns0:AccountNumber>
+				<ns0:IsDirectDeposit>true</ns0:IsDirectDeposit>
+				<ns0:AccountYears>2</ns0:AccountYears>
+				<ns0:AccountMonths>6</ns0:AccountMonths>
+			</ns0:Bank>
+			<ns0:References>
+				<ns0:Reference>
+					<ns0:FirstName>John Doe</ns0:FirstName>
+					<ns0:LastName />
+					<ns0:Phone>9995555555</ns0:Phone>
+					<ns0:Relationship>Spouse</ns0:Relationship>
+					<ns0:IsAuthorized>true</ns0:IsAuthorized>
+				</ns0:Reference>
+				<ns0:Reference>
+					<ns0:FirstName>Jane Doe</ns0:FirstName>
+					<ns0:LastName />
+					<ns0:Phone>8885555555</ns0:Phone>
+					<ns0:Relationship>Relative</ns0:Relationship>
+					<ns0:IsAuthorized>true</ns0:IsAuthorized>
+				</ns0:Reference>
+			</ns0:References>
+			<ns0:BlockedAttributes>
+				<ns0:IsBlockedIP>false</ns0:IsBlockedIP>
+				<ns0:IsBlockedPhone>false</ns0:IsBlockedPhone>
+			</ns0:BlockedAttributes>
+			<ns0:Source>
+				<ns0:Type>WebSite</ns0:Type>
+				<ns0:Name>o_id</ns0:Name>
+				<ns0:PromoSubCode />
+				<ns0:CampaignCode />
+			</ns0:Source>
+			<ns0:Iovation>
+				<ns0:Result>R</ns0:Result>
+				<ns0:Reason>2 or more accts created within 30 days</ns0:Reason>
+			</ns0:Iovation>
+			<ns0:VersionNumber>1</ns0:VersionNumber>
+		</ns0:Application>
+		<ns1:CustomerHistory>
+			<ns1:IdleCustomerFlag>false</ns1:IdleCustomerFlag>
+			<ns1:MaxDelinquentDaysIdleCustomer>0</ns1:MaxDelinquentDaysIdleCustomer>
+			<ns1:MaxDelinquentDaysLastLoan>0</ns1:MaxDelinquentDaysLastLoan>
+			<ns1:EverChargeOff>false</ns1:EverChargeOff>
+			<ns1:DateLastHardDecline>0001-01-01</ns1:DateLastHardDecline>
+			<ns1:LastApprovedAmount>0</ns1:LastApprovedAmount>
+			<ns1:NumberOfSuccessfulCumulativePayments>0</ns1:NumberOfSuccessfulCumulativePayments>
+			<ns1:LastAmountFunded>0</ns1:LastAmountFunded>
+			<ns1:HasPriorDefault>false</ns1:HasPriorDefault>
+			<ns1:AccountAge>0</ns1:AccountAge>
+			<ns1:AccountActiveAge>0</ns1:AccountActiveAge>
+			<ns1:LastLoanAge>0</ns1:LastLoanAge>
+			<ns1:IdlePeriod>0</ns1:IdlePeriod>
+			<ns1:NoOfPayoffs>0</ns1:NoOfPayoffs>
+			<ns1:PaymentsScheduledLastLoan>0</ns1:PaymentsScheduledLastLoan>
+			<ns1:PaymentsScheduledAccount>0</ns1:PaymentsScheduledAccount>
+			<ns1:PaymentsCompletedLastLoan>0</ns1:PaymentsCompletedLastLoan>
+			<ns1:PaymentsCompletedAccount>0</ns1:PaymentsCompletedAccount>
+			<ns1:PaymentsSkippedLastLoan>0</ns1:PaymentsSkippedLastLoan>
+			<ns1:PaymentsSkippedAccount>0</ns1:PaymentsSkippedAccount>
+			<ns1:PaymentsCancelledLastLoan>0</ns1:PaymentsCancelledLastLoan>
+			<ns1:PaymentsCancelledAccount>0</ns1:PaymentsCancelledAccount>
+			<ns1:PaymentsMissedLastLoan>0</ns1:PaymentsMissedLastLoan>
+			<ns1:PaymentsMissedAccount>0</ns1:PaymentsMissedAccount>
+			<ns1:PaymentsLateLastLoan>0</ns1:PaymentsLateLastLoan>
+			<ns1:PaymentsLateAccount>0</ns1:PaymentsLateAccount>
+			<ns1:PartialPaymentsLastLoan>0</ns1:PartialPaymentsLastLoan>
+			<ns1:PartialPaymentsAccount>0</ns1:PartialPaymentsAccount>
+			<ns1:AmountFinanced>0</ns1:AmountFinanced>
+			<ns1:FirstPaymentDefault>false</ns1:FirstPaymentDefault>
+			<ns1:SecondPaymentDefault>false</ns1:SecondPaymentDefault>
+			<ns1:EverDelinquentLastLoan>false</ns1:EverDelinquentLastLoan>
+			<ns1:EverDelinquentAccount>false</ns1:EverDelinquentAccount>
+			<ns1:MaxDaysPastDueLastLoan>0</ns1:MaxDaysPastDueLastLoan>
+			<ns1:MaxDaysPastDueAccount>0</ns1:MaxDaysPastDueAccount>
+			<ns1:TotalDaysPastDueLastLoan>0</ns1:TotalDaysPastDueLastLoan>
+			<ns1:TotalDaysPastDueAccount>0</ns1:TotalDaysPastDueAccount>
+		</ns1:CustomerHistory>
+		<ns1:Demographics>
+			<ns1:CBSA />
+			<ns1:CBSADivsion />
+			<ns1:CBSATitle />
+			<ns1:CityState />
+			<ns1:CountyAverageHouseValue />
+			<ns1:CountyIncomePerHousehold />
+			<ns1:CountyState />
+			<ns1:MSA2000 />
+			<ns1:PMSA />
+			<ns1:ZipCode>76051</ns1:ZipCode>
+			<ns1:TimeZone />
+		</ns1:Demographics>
+		<ns1:ManualOverride>
+			<ns1:IsOverride>false</ns1:IsOverride>
+		</ns1:ManualOverride>
+	</ns1:UnderwritingRequest>
+</ns2:UnderwritingResponse>

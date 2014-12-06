@@ -1,0 +1,89 @@
+<?xml version="1.0" standalone="yes"?>
+<xs:schema targetNamespace="http://ThinkFinance/Underwriting/Services/2012/08/UnderwritingRequest" xmlns:mstns="http://ThinkFinance/Underwriting/Services/2012/08/UnderwritingResponse" xmlns="http://ThinkFinance/Underwriting/Services/2012/08/UnderwritingRequest" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" attributeFormDefault="qualified" elementFormDefault="qualified" xmlns:app1="http://ThinkFinance/Underwriting/Services/2012/08/UnderwritingRequest" xmlns:app2="http://ThinkFinance/Underwriting/Services/2012/08/Application">
+  <xs:import namespace="http://ThinkFinance/Underwriting/Services/2012/08/Application" schemaLocation="UnderwriterResponse_app2.xsd" />
+  <xs:import namespace="http://ThinkFinance/Underwriting/Services/2012/08/UnderwritingResponse" schemaLocation="UnderwriterResponse.xsd" />
+  <xs:element name="UnderwritingRequest" msdata:Prefix="ns1">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="Header" msdata:Prefix="ns1" minOccurs="0" maxOccurs="unbounded">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="TrackingId" msdata:Prefix="ns1" type="xs:string" minOccurs="0" />
+              <xs:element name="PartnerId" msdata:Prefix="ns1" type="xs:string" minOccurs="0" />
+              <xs:element name="ProductIdentifier" msdata:Prefix="ns1" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element ref="app2:Application" />
+        <xs:element name="CustomerHistory" msdata:Prefix="ns1" minOccurs="0" maxOccurs="unbounded">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="IdleCustomerFlag" msdata:Prefix="ns1" type="xs:string" minOccurs="0" />
+              <xs:element name="MaxDelinquentDaysIdleCustomer" msdata:Prefix="ns1" type="xs:string" minOccurs="0" />
+              <xs:element name="MaxDelinquentDaysLastLoan" msdata:Prefix="ns1" type="xs:string" minOccurs="0" />
+              <xs:element name="EverChargeOff" msdata:Prefix="ns1" type="xs:string" minOccurs="0" />
+              <xs:element name="DateLastHardDecline" msdata:Prefix="ns1" type="xs:string" minOccurs="0" />
+              <xs:element name="LastApprovedAmount" msdata:Prefix="ns1" type="xs:string" minOccurs="0" />
+              <xs:element name="NumberOfSuccessfulCumulativePayments" msdata:Prefix="ns1" type="xs:string" minOccurs="0" />
+              <xs:element name="LastAmountFunded" msdata:Prefix="ns1" type="xs:string" minOccurs="0" />
+              <xs:element name="HasPriorDefault" msdata:Prefix="ns1" type="xs:string" minOccurs="0" />
+              <xs:element name="AccountAge" msdata:Prefix="ns1" type="xs:string" minOccurs="0" />
+              <xs:element name="AccountActiveAge" msdata:Prefix="ns1" type="xs:string" minOccurs="0" />
+              <xs:element name="LastLoanAge" msdata:Prefix="ns1" type="xs:string" minOccurs="0" />
+              <xs:element name="IdlePeriod" msdata:Prefix="ns1" type="xs:string" minOccurs="0" />
+              <xs:element name="NoOfPayoffs" msdata:Prefix="ns1" type="xs:string" minOccurs="0" />
+              <xs:element name="PaymentsScheduledLastLoan" msdata:Prefix="ns1" type="xs:string" minOccurs="0" />
+              <xs:element name="PaymentsScheduledAccount" msdata:Prefix="ns1" type="xs:string" minOccurs="0" />
+              <xs:element name="PaymentsCompletedLastLoan" msdata:Prefix="ns1" type="xs:string" minOccurs="0" />
+              <xs:element name="PaymentsCompletedAccount" msdata:Prefix="ns1" type="xs:string" minOccurs="0" />
+              <xs:element name="PaymentsSkippedLastLoan" msdata:Prefix="ns1" type="xs:string" minOccurs="0" />
+              <xs:element name="PaymentsSkippedAccount" msdata:Prefix="ns1" type="xs:string" minOccurs="0" />
+              <xs:element name="PaymentsCancelledLastLoan" msdata:Prefix="ns1" type="xs:string" minOccurs="0" />
+              <xs:element name="PaymentsCancelledAccount" msdata:Prefix="ns1" type="xs:string" minOccurs="0" />
+              <xs:element name="PaymentsMissedLastLoan" msdata:Prefix="ns1" type="xs:string" minOccurs="0" />
+              <xs:element name="PaymentsMissedAccount" msdata:Prefix="ns1" type="xs:string" minOccurs="0" />
+              <xs:element name="PaymentsLateLastLoan" msdata:Prefix="ns1" type="xs:string" minOccurs="0" />
+              <xs:element name="PaymentsLateAccount" msdata:Prefix="ns1" type="xs:string" minOccurs="0" />
+              <xs:element name="PartialPaymentsLastLoan" msdata:Prefix="ns1" type="xs:string" minOccurs="0" />
+              <xs:element name="PartialPaymentsAccount" msdata:Prefix="ns1" type="xs:string" minOccurs="0" />
+              <xs:element name="AmountFinanced" msdata:Prefix="ns1" type="xs:string" minOccurs="0" />
+              <xs:element name="FirstPaymentDefault" msdata:Prefix="ns1" type="xs:string" minOccurs="0" />
+              <xs:element name="SecondPaymentDefault" msdata:Prefix="ns1" type="xs:string" minOccurs="0" />
+              <xs:element name="EverDelinquentLastLoan" msdata:Prefix="ns1" type="xs:string" minOccurs="0" />
+              <xs:element name="EverDelinquentAccount" msdata:Prefix="ns1" type="xs:string" minOccurs="0" />
+              <xs:element name="MaxDaysPastDueLastLoan" msdata:Prefix="ns1" type="xs:string" minOccurs="0" />
+              <xs:element name="MaxDaysPastDueAccount" msdata:Prefix="ns1" type="xs:string" minOccurs="0" />
+              <xs:element name="TotalDaysPastDueLastLoan" msdata:Prefix="ns1" type="xs:string" minOccurs="0" />
+              <xs:element name="TotalDaysPastDueAccount" msdata:Prefix="ns1" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="Demographics" msdata:Prefix="ns1" minOccurs="0" maxOccurs="unbounded">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="CBSA" msdata:Prefix="ns1" type="xs:string" minOccurs="0" />
+              <xs:element name="CBSADivsion" msdata:Prefix="ns1" type="xs:string" minOccurs="0" />
+              <xs:element name="CBSATitle" msdata:Prefix="ns1" type="xs:string" minOccurs="0" />
+              <xs:element name="CityState" msdata:Prefix="ns1" type="xs:string" minOccurs="0" />
+              <xs:element name="CountyAverageHouseValue" msdata:Prefix="ns1" type="xs:string" minOccurs="0" />
+              <xs:element name="CountyIncomePerHousehold" msdata:Prefix="ns1" type="xs:string" minOccurs="0" />
+              <xs:element name="CountyState" msdata:Prefix="ns1" type="xs:string" minOccurs="0" />
+              <xs:element name="MSA2000" msdata:Prefix="ns1" type="xs:string" minOccurs="0" />
+              <xs:element name="PMSA" msdata:Prefix="ns1" type="xs:string" minOccurs="0" />
+              <xs:element name="ZipCode" msdata:Prefix="ns1" type="xs:string" minOccurs="0" />
+              <xs:element name="TimeZone" msdata:Prefix="ns1" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="ManualOverride" msdata:Prefix="ns1" minOccurs="0" maxOccurs="unbounded">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="IsOverride" msdata:Prefix="ns1" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+      <xs:attribute name="transactionID" form="unqualified" type="xs:string" />
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

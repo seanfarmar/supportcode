@@ -1,0 +1,438 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="UnderwritingResponse" targetNamespace="http://ThinkFinance/Underwriting/Services/2012/08/UnderwritingResponse" xmlns:mstns="http://ThinkFinance/Underwriting/Services/2012/08/UnderwritingResponse" xmlns="http://ThinkFinance/Underwriting/Services/2012/08/UnderwritingResponse" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" attributeFormDefault="qualified" elementFormDefault="qualified" xmlns:app1="http://ThinkFinance/Underwriting/Services/2012/08/UnderwritingRequest" xmlns:app2="http://ThinkFinance/Underwriting/Services/2012/08/Application">
+  <xs:import namespace="http://ThinkFinance/Underwriting/Services/2012/08/UnderwritingRequest" schemaLocation="UnderwriterResponse_app1.xsd" />
+  <xs:import namespace="http://ThinkFinance/Underwriting/Services/2012/08/Application" schemaLocation="UnderwriterResponse_app2.xsd" />
+  <xs:element name="UnderwritingResponse" msdata:IsDataSet="true" msdata:Locale="en-US" msdata:Prefix="ns2">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="UnderwritingResult" msdata:Prefix="ns2">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Header" msdata:Prefix="ns2" minOccurs="0" maxOccurs="unbounded">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="TrackingId" msdata:Prefix="ns2" type="xs:string" minOccurs="0" />
+                    <xs:element name="ApplicationNumber" msdata:Prefix="ns2" type="xs:string" minOccurs="0" />
+                    <xs:element name="ApplicationUniqueId" msdata:Prefix="ns2" type="xs:string" minOccurs="0" />
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="Channel" msdata:Prefix="ns2" minOccurs="0" maxOccurs="unbounded">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="AdverseAction" msdata:Prefix="ns2" minOccurs="0" maxOccurs="unbounded">
+                      <xs:complexType>
+                        <xs:attribute name="Reason1" form="unqualified" type="xs:string" />
+                      </xs:complexType>
+                    </xs:element>
+                    <xs:element name="Scorecards" msdata:Prefix="ns2" minOccurs="0" maxOccurs="unbounded">
+                      <xs:complexType>
+                        <xs:sequence>
+                          <xs:element name="Scorecard" msdata:Prefix="ns2" minOccurs="0" maxOccurs="unbounded">
+                            <xs:complexType>
+                              <xs:sequence>
+                                <xs:element name="Characteristic" msdata:Prefix="ns2" minOccurs="0" maxOccurs="unbounded">
+                                  <xs:complexType>
+                                    <xs:attribute name="Name" form="unqualified" type="xs:string" />
+                                    <xs:attribute name="Value" form="unqualified" type="xs:string" />
+                                    <xs:attribute name="Source" form="unqualified" type="xs:string" />
+                                    <xs:attribute name="Rank" form="unqualified" type="xs:string" />
+                                    <xs:attribute name="WeightedValue" form="unqualified" type="xs:string" />
+                                  </xs:complexType>
+                                </xs:element>
+                              </xs:sequence>
+                              <xs:attribute name="Name" form="unqualified" type="xs:string" />
+                              <xs:attribute name="RiskScore" form="unqualified" type="xs:string" />
+                              <xs:attribute name="Version" form="unqualified" type="xs:string" />
+                              <xs:attribute name="WeightedValueSum" form="unqualified" type="xs:string" />
+                            </xs:complexType>
+                          </xs:element>
+                        </xs:sequence>
+                      </xs:complexType>
+                    </xs:element>
+                    <xs:element name="Strategy" msdata:Prefix="ns2" minOccurs="0" maxOccurs="unbounded">
+                      <xs:complexType>
+                        <xs:sequence>
+                          <xs:element name="LineStrategy" msdata:Prefix="ns2" minOccurs="0" maxOccurs="unbounded">
+                            <xs:complexType>
+                              <xs:attribute name="LineAssignmentAmount" form="unqualified" type="xs:string" />
+                              <xs:attribute name="Id" form="unqualified" type="xs:string" />
+                            </xs:complexType>
+                          </xs:element>
+                        </xs:sequence>
+                        <xs:attribute name="Type" form="unqualified" type="xs:string" />
+                        <xs:attribute name="Name" form="unqualified" type="xs:string" />
+                        <xs:attribute name="Id" form="unqualified" type="xs:string" />
+                        <xs:attribute name="Value" form="unqualified" type="xs:string" />
+                      </xs:complexType>
+                    </xs:element>
+                    <xs:element name="Knockout" msdata:Prefix="ns2" minOccurs="0" maxOccurs="unbounded">
+                      <xs:complexType>
+                        <xs:attribute name="Name" form="unqualified" type="xs:string" />
+                        <xs:attribute name="Priority" form="unqualified" type="xs:string" />
+                        <xs:attribute name="IsFree" form="unqualified" type="xs:string" />
+                        <xs:attribute name="RFAI" form="unqualified" type="xs:string" />
+                        <xs:attribute name="NOAA" form="unqualified" type="xs:string" />
+                        <xs:attribute name="Result" form="unqualified" type="xs:string" />
+                        <xs:attribute name="Status" form="unqualified" type="xs:string" />
+                        <xs:attribute name="Param" form="unqualified" type="xs:string" />
+                        <xs:attribute name="OpCd" form="unqualified" type="xs:string" />
+                        <xs:attribute name="Id" form="unqualified" type="xs:string" />
+                        <xs:attribute name="AppValue" form="unqualified" type="xs:string" />
+                      </xs:complexType>
+                    </xs:element>
+                    <xs:element name="Rule" msdata:Prefix="ns2" minOccurs="0" maxOccurs="unbounded">
+                      <xs:complexType>
+                        <xs:attribute name="Name" form="unqualified" type="xs:string" />
+                        <xs:attribute name="Priority" form="unqualified" type="xs:string" />
+                        <xs:attribute name="IsFree" form="unqualified" type="xs:string" />
+                        <xs:attribute name="RFAI" form="unqualified" type="xs:string" />
+                        <xs:attribute name="NOAA" form="unqualified" type="xs:string" />
+                        <xs:attribute name="Result" form="unqualified" type="xs:string" />
+                        <xs:attribute name="Status" form="unqualified" type="xs:string" />
+                        <xs:attribute name="Param" form="unqualified" type="xs:string" />
+                        <xs:attribute name="OpCd" form="unqualified" type="xs:string" />
+                        <xs:attribute name="Id" form="unqualified" type="xs:string" />
+                        <xs:attribute name="AppValue" form="unqualified" type="xs:string" />
+                      </xs:complexType>
+                    </xs:element>
+                  </xs:sequence>
+                  <xs:attribute name="Name" form="unqualified" type="xs:string" />
+                  <xs:attribute name="Id" form="unqualified" type="xs:string" />
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="Decision" msdata:Prefix="ns2" minOccurs="0" maxOccurs="unbounded">
+                <xs:complexType>
+                  <xs:attribute name="DecisionStatus" form="unqualified" type="xs:string" />
+                  <xs:attribute name="DecisionTimeStamp" form="unqualified" type="xs:string" />
+                  <xs:attribute name="RiskScore" form="unqualified" type="xs:string" />
+                  <xs:attribute name="ScorecardUsed" form="unqualified" type="xs:string" />
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="ThirdParty" msdata:Prefix="ns2" minOccurs="0" maxOccurs="unbounded">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="CLVerify" msdata:Prefix="ns2" minOccurs="0" maxOccurs="unbounded">
+                      <xs:complexType>
+                        <xs:attribute name="IVDSLI" form="unqualified" type="xs:string" />
+                        <xs:attribute name="BnkInq60Days" form="unqualified" type="xs:string" />
+                        <xs:attribute name="CLVPDLNS1" form="unqualified" type="xs:string" />
+                        <xs:attribute name="DaysSinceMstRecCheckOrder" form="unqualified" type="xs:string" />
+                        <xs:attribute name="Inq7Days" form="unqualified" type="xs:string" />
+                        <xs:attribute name="BnkInq730Days" form="unqualified" type="xs:string" />
+                        <xs:attribute name="CLVRECMERCH" form="unqualified" type="xs:string" />
+                        <xs:attribute name="CLVBDLNS60" form="unqualified" type="xs:string" />
+                        <xs:attribute name="CLVARDIFF2" form="unqualified" type="xs:string" />
+                        <xs:attribute name="CLVARDIFF1" form="unqualified" type="xs:string" />
+                        <xs:attribute name="LastNmChngLast90Days" form="unqualified" type="xs:string" />
+                        <xs:attribute name="HomePhnChngLast90Days" form="unqualified" type="xs:string" />
+                        <xs:attribute name="WorkPhnChngLast90Days" form="unqualified" type="xs:string" />
+                        <xs:attribute name="ZipCdChangeLast90Days" form="unqualified" type="xs:string" />
+                        <xs:attribute name="ABARoutingNbrChngLast90Days" form="unqualified" type="xs:string" />
+                        <xs:attribute name="BnkAcctChngLast90Days" form="unqualified" type="xs:string" />
+                        <xs:attribute name="LoanDefaultDifferential" form="unqualified" type="xs:string" />
+                        <xs:attribute name="InqLast30Days" form="unqualified" type="xs:string" />
+                        <xs:attribute name="NbrMicrSSN" form="unqualified" type="xs:string" />
+                        <xs:attribute name="Score" form="unqualified" type="xs:string" />
+                        <xs:attribute name="BnkInqLast30Days" form="unqualified" type="xs:string" />
+                        <xs:attribute name="OFACAlert" form="unqualified" type="xs:string" />
+                        <xs:attribute name="SSNValidCode" form="unqualified" type="xs:string" />
+                        <xs:attribute name="SSNDOBWarning" form="unqualified" type="xs:string" />
+                        <xs:attribute name="SSNNameMatch" form="unqualified" type="xs:string" />
+                        <xs:attribute name="NameAddrMatch" form="unqualified" type="xs:string" />
+                        <xs:attribute name="CLVIFEV30DAYS" form="unqualified" type="xs:string" />
+                        <xs:attribute name="CLVCSWP24HRS" form="unqualified" type="xs:string" />
+                        <xs:attribute name="CLVIFIQ24HRS" form="unqualified" type="xs:string" />
+                        <xs:attribute name="CLVCSWP30" form="unqualified" type="xs:string" />
+                        <xs:attribute name="CLVCSWP15" form="unqualified" type="xs:string" />
+                        <xs:attribute name="CLV_dda_bankInq_Prd3Y_Qty" form="unqualified" type="xs:string" />
+                        <xs:attribute name="CLV_dda_bankInq_Prd90D_Qty" form="unqualified" type="xs:string" />
+                        <xs:attribute name="CLV_dda_bankInq_Prd30D_Qty" form="unqualified" type="xs:string" />
+                        <xs:attribute name="CLV_dda_bankInq_Prd60D_Qty" form="unqualified" type="xs:string" />
+                        <xs:attribute name="CLV_Pcnt_BnkInq_90Days" form="unqualified" type="xs:string" />
+                        <xs:attribute name="CLV_pda_summ_InqEvents7D" form="unqualified" type="xs:string" />
+                        <xs:attribute name="CLV_pda_summary_eventPosition" form="unqualified" type="xs:string" />
+                        <xs:attribute name="AGG_CLVINQS30" form="unqualified" type="xs:string" />
+                        <xs:attribute name="CLV_pda_summary_recentInquiries" form="unqualified" type="xs:string" />
+                        <xs:attribute name="CLV_Cstab_ItmHmPh_D15" form="unqualified" type="xs:string" />
+                        <xs:attribute name="CLV_dda_ACLD_fraudCount" form="unqualified" type="xs:string" />
+                        <xs:attribute name="WarmAddrMatchCode" form="unqualified" type="xs:string" />
+                        <xs:attribute name="CLVLNSGV" form="unqualified" type="xs:string" />
+                        <xs:attribute name="dda_bankinquiry_Period365Days_quantity" form="unqualified" type="xs:string" />
+                        <xs:attribute name="CLVConsumerHomePhoneDays90" form="unqualified" type="xs:string" />
+                        <xs:attribute name="CLVAccountCount" form="unqualified" type="xs:string" />
+                        <xs:attribute name="CLVPDALoans" form="unqualified" type="xs:string" />
+                        <xs:attribute name="aba_account_count" form="unqualified" type="xs:string" />
+                        <xs:attribute name="aba_detail_loan_de_dif_0" form="unqualified" type="xs:string" />
+                        <xs:attribute name="aba_detail_loan_de_dif_1" form="unqualified" type="xs:string" />
+                        <xs:attribute name="aba_detail_loan_de_dif_10" form="unqualified" type="xs:string" />
+                        <xs:attribute name="aba_detail_loan_de_dif_2" form="unqualified" type="xs:string" />
+                        <xs:attribute name="aba_detail_loan_de_dif_3" form="unqualified" type="xs:string" />
+                        <xs:attribute name="aba_detail_loan_de_dif_4" form="unqualified" type="xs:string" />
+                        <xs:attribute name="aba_detail_loan_de_dif_5" form="unqualified" type="xs:string" />
+                        <xs:attribute name="aba_detail_loan_de_dif_6" form="unqualified" type="xs:string" />
+                        <xs:attribute name="aba_detail_loan_de_dif_7" form="unqualified" type="xs:string" />
+                        <xs:attribute name="aba_detail_loan_de_dif_8" form="unqualified" type="xs:string" />
+                        <xs:attribute name="aba_detail_loan_de_dif_9" form="unqualified" type="xs:string" />
+                        <xs:attribute name="IDV_phoneAddressMatch" form="unqualified" type="xs:string" />
+                        <xs:attribute name="CLVPDLNSAMT3" form="unqualified" type="xs:string" />
+                      </xs:complexType>
+                    </xs:element>
+                    <xs:element name="TU" msdata:Prefix="ns2" minOccurs="0" maxOccurs="unbounded">
+                      <xs:complexType>
+                        <xs:attribute name="G051" form="unqualified" type="xs:string" />
+                        <xs:attribute name="l2c_scr2" form="unqualified" type="xs:string" />
+                        <xs:attribute name="G098" form="unqualified" type="xs:string" />
+                        <xs:attribute name="G082" form="unqualified" type="xs:string" />
+                        <xs:attribute name="BR34" form="unqualified" type="xs:string" />
+                        <xs:attribute name="BC03" form="unqualified" type="xs:string" />
+                        <xs:attribute name="AT20" form="unqualified" type="xs:string" />
+                        <xs:attribute name="AT33" form="unqualified" type="xs:string" />
+                        <xs:attribute name="BC02" form="unqualified" type="xs:string" />
+                        <xs:attribute name="BC07" form="unqualified" type="xs:string" />
+                        <xs:attribute name="CXMD" form="unqualified" type="xs:string" />
+                        <xs:attribute name="AT02" form="unqualified" type="xs:string" />
+                        <xs:attribute name="G091" form="unqualified" type="xs:string" />
+                        <xs:attribute name="PctBnkAcct12Mnths" form="unqualified" type="xs:string" />
+                        <xs:attribute name="PctCol12Mnths" form="unqualified" type="xs:string" />
+                        <xs:attribute name="PctAmtPastDue" form="unqualified" type="xs:string" />
+                        <xs:attribute name="AddressFlag" form="unqualified" type="xs:string" />
+                        <xs:attribute name="FACTAMilitaryAlert" form="unqualified" type="xs:string" />
+                        <xs:attribute name="FACTAInitialFraudAlert" form="unqualified" type="xs:string" />
+                        <xs:attribute name="FACTAExtendedFraudAlert" form="unqualified" type="xs:string" />
+                        <xs:attribute name="FICOScore" form="unqualified" type="xs:string" />
+                        <xs:attribute name="OFACHit" form="unqualified" type="xs:string" />
+                        <xs:attribute name="S068" form="unqualified" type="xs:string" />
+                        <xs:attribute name="G065" form="unqualified" type="xs:string" />
+                        <xs:attribute name="AT01" form="unqualified" type="xs:string" />
+                        <xs:attribute name="S059" form="unqualified" type="xs:string" />
+                        <xs:attribute name="S004" form="unqualified" type="xs:string" />
+                        <xs:attribute name="BKRTRDS" form="unqualified" type="xs:string" />
+                        <xs:attribute name="G104" form="unqualified" type="xs:string" />
+                        <xs:attribute name="IN25" form="unqualified" type="xs:string" />
+                        <xs:attribute name="AT24" form="unqualified" type="xs:string" />
+                        <xs:attribute name="G057" form="unqualified" type="xs:string" />
+                        <xs:attribute name="PF25" form="unqualified" type="xs:string" />
+                        <xs:attribute name="COLXMD36" form="unqualified" type="xs:string" />
+                        <xs:attribute name="RE01" form="unqualified" type="xs:string" />
+                        <xs:attribute name="RE03" form="unqualified" type="xs:string" />
+                        <xs:attribute name="FI03" form="unqualified" type="xs:string" />
+                        <xs:attribute name="AT09" form="unqualified" type="xs:string" />
+                        <xs:attribute name="AT34" form="unqualified" type="xs:string" />
+                        <xs:attribute name="G058" form="unqualified" type="xs:string" />
+                        <xs:attribute name="S011" form="unqualified" type="xs:string" />
+                        <xs:attribute name="BC01" form="unqualified" type="xs:string" />
+                        <xs:attribute name="S064" form="unqualified" type="xs:string" />
+                        <xs:attribute name="BK02" form="unqualified" type="xs:string" />
+                        <xs:attribute name="BR03" form="unqualified" type="xs:string" />
+                        <xs:attribute name="BR20" form="unqualified" type="xs:string" />
+                        <xs:attribute name="G060" form="unqualified" type="xs:string" />
+                        <xs:attribute name="G096" form="unqualified" type="xs:string" />
+                        <xs:attribute name="BR62" form="unqualified" type="xs:string" />
+                        <xs:attribute name="RT08" form="unqualified" type="xs:string" />
+                        <xs:attribute name="G049" form="unqualified" type="xs:string" />
+                        <xs:attribute name="G094" form="unqualified" type="xs:string" />
+                        <xs:attribute name="S073" form="unqualified" type="xs:string" />
+                      </xs:complexType>
+                    </xs:element>
+                    <xs:element name="Teletrack" msdata:Prefix="ns2" minOccurs="0" maxOccurs="unbounded">
+                      <xs:complexType>
+                        <xs:sequence>
+                          <xs:element name="WarningFactor" msdata:Prefix="ns2" minOccurs="0" maxOccurs="unbounded">
+                            <xs:complexType>
+                              <xs:attribute name="WarningCode" form="unqualified" type="xs:string" />
+                              <xs:attribute name="WarningDescription" form="unqualified" type="xs:string" />
+                            </xs:complexType>
+                          </xs:element>
+                          <xs:element name="FACTAAlert" msdata:Prefix="ns2" minOccurs="0" maxOccurs="unbounded">
+                            <xs:complexType>
+                              <xs:attribute name="AlertCode" form="unqualified" type="xs:string" />
+                              <xs:attribute name="AlertText" form="unqualified" type="xs:string" />
+                            </xs:complexType>
+                          </xs:element>
+                        </xs:sequence>
+                        <xs:attribute name="OFACMatchScore" form="unqualified" type="xs:string" />
+                        <xs:attribute name="SkipGuardCnt" form="unqualified" type="xs:string" />
+                        <xs:attribute name="SSNYrIssued" form="unqualified" type="xs:string" />
+                        <xs:attribute name="ChargeOffsLst24Mnths" form="unqualified" type="xs:string" />
+                        <xs:attribute name="PctInqLst30Days" form="unqualified" type="xs:string" />
+                        <xs:attribute name="SSNInvalid" form="unqualified" type="xs:string" />
+                        <xs:attribute name="ChargeOffLast12Mnths" form="unqualified" type="xs:string" />
+                        <xs:attribute name="UniqueInqLast120Days" form="unqualified" type="xs:string" />
+                        <xs:attribute name="TotalOpenCOs" form="unqualified" type="xs:string" />
+                        <xs:attribute name="InqLast120Days" form="unqualified" type="xs:string" />
+                        <xs:attribute name="InqLast30Days" form="unqualified" type="xs:string" />
+                        <xs:attribute name="UniqueInqLast14Days" form="unqualified" type="xs:string" />
+                        <xs:attribute name="SSNDateMinusDOBMonths" form="unqualified" type="xs:string" />
+                        <xs:attribute name="Has_Paid_Loan" form="unqualified" type="xs:string" />
+                        <xs:attribute name="Has_Open_Loan" form="unqualified" type="xs:string" />
+                        <xs:attribute name="summ_ttChargeoffsTotal" form="unqualified" type="xs:string" />
+                        <xs:attribute name="summ_PDLCOsLast3Months" form="unqualified" type="xs:string" />
+                        <xs:attribute name="summ_ttInqLast25Days" form="unqualified" type="xs:string" />
+                        <xs:attribute name="TT_INQ_TOTAL_PAST_3_MONTHS" form="unqualified" type="xs:string" />
+                        <xs:attribute name="TT_CO_OPEN_CK_ADV_IND" form="unqualified" type="xs:string" />
+                        <xs:attribute name="InqLst120Days" form="unqualified" type="xs:string" />
+                        <xs:attribute name="CR_Chk_BankVal_ACHSub" form="unqualified" type="xs:string" />
+                        <xs:attribute name="CR_Chk_SSNCDRel_La90DaysCt" form="unqualified" type="xs:string" />
+                      </xs:complexType>
+                    </xs:element>
+                    <xs:element name="Clarity" msdata:Prefix="ns2" minOccurs="0" maxOccurs="unbounded">
+                      <xs:complexType>
+                        <xs:attribute name="IDAScore" form="unqualified" type="xs:string" />
+                        <xs:attribute name="OFACMatch" form="unqualified" type="xs:string" />
+                        <xs:attribute name="IndentityTheftPrevention" form="unqualified" type="xs:string" />
+                        <xs:attribute name="SSNDeceased" form="unqualified" type="xs:string" />
+                        <xs:attribute name="SSNValid" form="unqualified" type="xs:string" />
+                        <xs:attribute name="BankAcctType" form="unqualified" type="xs:string" />
+                        <xs:attribute name="BankRoutingValid" form="unqualified" type="xs:string" />
+                        <xs:attribute name="PrevalidateAction" form="unqualified" type="xs:string" />
+                        <xs:attribute name="CB_acct_age" form="unqualified" type="xs:string" />
+                        <xs:attribute name="CB_acct_severity_code" form="unqualified" type="xs:string" />
+                        <xs:attribute name="CB_RC_A04N" form="unqualified" type="xs:string" />
+                        <xs:attribute name="CB_RC_A14N" form="unqualified" type="xs:string" />
+                        <xs:attribute name="CB_RC_A15N" form="unqualified" type="xs:string" />
+                        <xs:attribute name="CB_RC_A19N" form="unqualified" type="xs:string" />
+                        <xs:attribute name="CB_RC_A06N" form="unqualified" type="xs:string" />
+                        <xs:attribute name="CB_RC_A07N" form="unqualified" type="xs:string" />
+                        <xs:attribute name="CB_RC_A10N" form="unqualified" type="xs:string" />
+                        <xs:attribute name="CB_RC_B06N" form="unqualified" type="xs:string" />
+                        <xs:attribute name="CB_RC_B07N" form="unqualified" type="xs:string" />
+                        <xs:attribute name="CB_RC_B10N" form="unqualified" type="xs:string" />
+                        <xs:attribute name="CB_RC_B11N" form="unqualified" type="xs:string" />
+                        <xs:attribute name="CB_RC" form="unqualified" type="xs:string" />
+                        <xs:attribute name="CIDF_NMI_7_days_ago" form="unqualified" type="xs:string" />
+                        <xs:attribute name="CT_INQClusters_7_DAYS_ago" form="unqualified" type="xs:string" />
+                        <xs:attribute name="Num_of_ssn_with_bank_acct" form="unqualified" type="xs:string" />
+                        <xs:attribute name="CIDF_Bank90" form="unqualified" type="xs:string" />
+                        <xs:attribute name="CIDF_NMI90" form="unqualified" type="xs:string" />
+                        <xs:attribute name="CIDF_wkPhone90" form="unqualified" type="xs:string" />
+                        <xs:attribute name="date_of_birth" form="unqualified" type="xs:string" />
+                        <xs:attribute name="Account_High_Risk" form="unqualified" type="xs:string" />
+                        <xs:attribute name="CB_AB_Flag" form="unqualified" type="xs:string" />
+                        <xs:attribute name="Acct_Behavior_Code" form="unqualified" type="xs:string" />
+                        <xs:attribute name="inquiry_received_at" form="unqualified" type="xs:string" />
+                        <xs:attribute name="LeadGenBestPracticesFlag" form="unqualified" type="xs:string" />
+                        <xs:attribute name="PrevalidateActionRsnDscr" form="unqualified" type="xs:string" />
+                        <xs:attribute name="CB_acct_days_since_last_Clarity" form="unqualified" type="xs:string" />
+                        <xs:attribute name="CB_acct_type" form="unqualified" type="xs:string" />
+                        <xs:attribute name="CB_num_of_accts_currently_in_use" form="unqualified" type="xs:string" />
+                        <xs:attribute name="CB_RC_A31" form="unqualified" type="xs:string" />
+                        <xs:attribute name="CB_RC_A32" form="unqualified" type="xs:string" />
+                        <xs:attribute name="CB_RC_A33" form="unqualified" type="xs:string" />
+                        <xs:attribute name="CB_RC_A34" form="unqualified" type="xs:string" />
+                        <xs:attribute name="CB_RC_A40" form="unqualified" type="xs:string" />
+                        <xs:attribute name="CB_RC_A41" form="unqualified" type="xs:string" />
+                        <xs:attribute name="CB_RC_A50" form="unqualified" type="xs:string" />
+                        <xs:attribute name="CB_RC_A51" form="unqualified" type="xs:string" />
+                        <xs:attribute name="CB_RC_A65" form="unqualified" type="xs:string" />
+                        <xs:attribute name="CB_RC_A69" form="unqualified" type="xs:string" />
+                        <xs:attribute name="CB_RC_B03" form="unqualified" type="xs:string" />
+                        <xs:attribute name="CB_RC_B04" form="unqualified" type="xs:string" />
+                        <xs:attribute name="CB_RC_B14" form="unqualified" type="xs:string" />
+                        <xs:attribute name="CB_RC_B15" form="unqualified" type="xs:string" />
+                        <xs:attribute name="CB_RC_B19" form="unqualified" type="xs:string" />
+                        <xs:attribute name="CB_RC_B31" form="unqualified" type="xs:string" />
+                        <xs:attribute name="CB_RC_B32" form="unqualified" type="xs:string" />
+                        <xs:attribute name="CB_RC_B33" form="unqualified" type="xs:string" />
+                        <xs:attribute name="CB_RC_B34" form="unqualified" type="xs:string" />
+                        <xs:attribute name="CB_RC_B40" form="unqualified" type="xs:string" />
+                        <xs:attribute name="CB_RC_B41" form="unqualified" type="xs:string" />
+                        <xs:attribute name="CB_RC_B50" form="unqualified" type="xs:string" />
+                        <xs:attribute name="CB_RC_B51" form="unqualified" type="xs:string" />
+                        <xs:attribute name="CB_RC_B65" form="unqualified" type="xs:string" />
+                        <xs:attribute name="CB_RC_B69" form="unqualified" type="xs:string" />
+                        <xs:attribute name="CB_RC_D01" form="unqualified" type="xs:string" />
+                        <xs:attribute name="CBP_Open_2_years_ago" form="unqualified" type="xs:string" />
+                        <xs:attribute name="CBP_primary_acct_90_days_ago" form="unqualified" type="xs:string" />
+                        <xs:attribute name="CPT_INQClusters_2_years_ago" form="unqualified" type="xs:string" />
+                        <xs:attribute name="CPT_INQClusters_30_days_ago" form="unqualified" type="xs:string" />
+                        <xs:attribute name="CPT_Patterns_TOTPayments_180_day" form="unqualified" type="xs:string" />
+                        <xs:attribute name="CPT_Summary_amt_open_lines" form="unqualified" type="xs:string" />
+                        <xs:attribute name="CPT_Summary_spml_avg_rollovers" form="unqualified" type="xs:string" />
+                        <xs:attribute name="CPT_TOTInquiries_1_hour_ago" form="unqualified" type="xs:string" />
+                        <xs:attribute name="CPT_TOTInquiries_2_years_ago" form="unqualified" type="xs:string" />
+                        <xs:attribute name="CSIDF_Num_Inq_90_days" form="unqualified" type="xs:string" />
+                        <xs:attribute name="CSIDF_possible_fraud_type" form="unqualified" type="xs:string" />
+                        <xs:attribute name="CSIDF_SSN_num_emails" form="unqualified" type="xs:string" />
+                        <xs:attribute name="FraudAction" form="unqualified" type="xs:string" />
+                        <xs:attribute name="SupWarnScore" form="unqualified" type="xs:string" />
+                        <xs:attribute name="SupWarnReasonCdDesc" form="unqualified" type="xs:string" />
+                        <xs:attribute name="SupAcctOwnershipAction" form="unqualified" type="xs:string" />
+                        <xs:attribute name="ClrAcctOwnershipAction" form="unqualified" type="xs:string" />
+                        <xs:attribute name="ClrFraudReasonCodes" form="unqualified" type="xs:string" />
+                        <xs:attribute name="ClrFraudReasonDesc" form="unqualified" type="xs:string" />
+                        <xs:attribute name="ClrFraudScore" form="unqualified" type="xs:string" />
+                        <xs:attribute name="ClrWarnAction" form="unqualified" type="xs:string" />
+                        <xs:attribute name="NameMatchRisk" form="unqualified" type="xs:string" />
+                        <xs:attribute name="Age_in_years" form="unqualified" type="xs:string" />
+                        <xs:attribute name="CAO_supActOwn_nmMatchRisk" form="unqualified" type="xs:string" />
+                        <xs:attribute name="CBP_stbBP_seen1stTimeBP_1Y" form="unqualified" type="xs:string" />
+                        <xs:attribute name="CB_supBnk_EWH_actType_1" form="unqualified" type="xs:string" />
+                        <xs:attribute name="CB_supBnk_EWH_days1stCLRAct_1" form="unqualified" type="xs:string" />
+                        <xs:attribute name="CB_supBnk_EWH_days1stCLRAct_2" form="unqualified" type="xs:string" />
+                        <xs:attribute name="CB_supBnk_EWH_days1stCLRAct_3" form="unqualified" type="xs:string" />
+                        <xs:attribute name="CB_supBnk_EWH_days1stCLRAct_4" form="unqualified" type="xs:string" />
+                        <xs:attribute name="CB_supBnk_EWH_days1stCLRAct_5" form="unqualified" type="xs:string" />
+                        <xs:attribute name="CB_supBnk_EWH_days1stCLRAct_6" form="unqualified" type="xs:string" />
+                        <xs:attribute name="CB_supBnk_EWH_days1stCLRAct_7" form="unqualified" type="xs:string" />
+                        <xs:attribute name="CB_supBnk_EWH_days1stCLRAct_8" form="unqualified" type="xs:string" />
+                        <xs:attribute name="CB_supBnk_EWH_daysLastCLRAct_1" form="unqualified" type="xs:string" />
+                        <xs:attribute name="CB_supBnk_EWH_daysLastCLRAct_2" form="unqualified" type="xs:string" />
+                        <xs:attribute name="CB_supBnk_EWH_daysLastCLRAct_3" form="unqualified" type="xs:string" />
+                        <xs:attribute name="CB_supBnk_EWH_daysLastCLRAct_4" form="unqualified" type="xs:string" />
+                        <xs:attribute name="CB_supBnk_EWH_daysLastCLRAct_5" form="unqualified" type="xs:string" />
+                        <xs:attribute name="CB_supBnk_EWH_daysLastCLRAct_6" form="unqualified" type="xs:string" />
+                        <xs:attribute name="CB_supBnk_EWH_daysLastCLRAct_7" form="unqualified" type="xs:string" />
+                        <xs:attribute name="CB_supBnk_EWH_daysLastCLRAct_8" form="unqualified" type="xs:string" />
+                        <xs:attribute name="CBP_stbBP_openBP_1Y" form="unqualified" type="xs:string" />
+                        <xs:attribute name="CB_supBnk_EWH_numSeenByCLR_1" form="unqualified" type="xs:string" />
+                        <xs:attribute name="CF_stb_ninetydaysago_8" form="unqualified" type="xs:string" />
+                        <xs:attribute name="CF_stb_fifteendaysago_8" form="unqualified" type="xs:string" />
+                        <xs:attribute name="CBP_stbBP_seen1stTimeBP_180D" form="unqualified" type="xs:string" />
+                        <xs:attribute name="CF_ctab_ssn_7" form="unqualified" type="xs:string" />
+                        <xs:attribute name="CF_rt_sevendaysago_1" form="unqualified" type="xs:string" />
+                        <xs:attribute name="CBP_stbBP_openBP_3Y" form="unqualified" type="xs:string" />
+                        <xs:attribute name="CB_supBnk_EWH_actAgeCD_1" form="unqualified" type="xs:string" />
+                        <xs:attribute name="CB_supBnk_EWH_actBehavCD_1" form="unqualified" type="xs:string" />
+                        <xs:attribute name="CB_supBnk_EWH_actBehavCD_2" form="unqualified" type="xs:string" />
+                        <xs:attribute name="CB_supBnk_EWH_actBehavCD_3" form="unqualified" type="xs:string" />
+                        <xs:attribute name="CB_supBnk_EWH_actBehavCD_4" form="unqualified" type="xs:string" />
+                        <xs:attribute name="CB_supBnk_EWH_actBehavCD_5" form="unqualified" type="xs:string" />
+                        <xs:attribute name="CB_supBnk_EWH_actBehavCD_6" form="unqualified" type="xs:string" />
+                        <xs:attribute name="CB_supBnk_EWH_actBehavCD_7" form="unqualified" type="xs:string" />
+                        <xs:attribute name="CB_supBnk_EWH_actBehavCD_8" form="unqualified" type="xs:string" />
+                        <xs:attribute name="CB_supBnk_numHistAct" form="unqualified" type="xs:string" />
+                        <xs:attribute name="CF_ctab_bankaccount_4" form="unqualified" type="xs:string" />
+                        <xs:attribute name="CF_ctab_homephone_3" form="unqualified" type="xs:string" />
+                        <xs:attribute name="CF_ctab_homephone_4" form="unqualified" type="xs:string" />
+                        <xs:attribute name="CF_inq_ninetydaysago" form="unqualified" type="xs:string" />
+                        <xs:attribute name="CF_pt_sevendaysago" form="unqualified" type="xs:string" />
+                        <xs:attribute name="CF_rt_threesixtyfivedaysago_2" form="unqualified" type="xs:string" />
+                        <xs:attribute name="CB_RC_A66" form="unqualified" type="xs:string" />
+                        <xs:attribute name="CB_RC_A67" form="unqualified" type="xs:string" />
+                        <xs:attribute name="CB_RC_A68" form="unqualified" type="xs:string" />
+                        <xs:attribute name="CF_fraudsignaturematch" form="unqualified" type="xs:string" />
+                        <xs:attribute name="CF_id_identitytypecode" form="unqualified" type="xs:string" />
+                        <xs:attribute name="CF_ctab_homeaddress_3" form="unqualified" type="xs:string" />
+                        <xs:attribute name="inquiry_home_phone" form="unqualified" type="xs:string" />
+                        <xs:attribute name="inquiry_work_phone" form="unqualified" type="xs:string" />
+                      </xs:complexType>
+                    </xs:element>
+                    <xs:element name="IDAnalytics" msdata:Prefix="ns2" minOccurs="0" maxOccurs="unbounded">
+                      <xs:complexType>
+                        <xs:attribute name="IDA_ConsistencySNAPD" form="unqualified" type="xs:string" />
+                        <xs:attribute name="IDA_idscore_action" form="unqualified" type="xs:string" />
+                        <xs:attribute name="IDA_VelocityBasedRisk" form="unqualified" type="xs:string" />
+                      </xs:complexType>
+                    </xs:element>
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element ref="app1:UnderwritingRequest" />
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>
