@@ -12,6 +12,10 @@ namespace ClassLibrary1
 	*/
 	public class EndpointConfig : IConfigureThisEndpoint, AsA_Server
     {
+	    public void Customize(BusConfiguration configuration)
+	    {
+	        configuration.UsePersistence<InMemoryPersistence>();
+	    }
     }
 
     class Starter : IWantToRunWhenBusStartsAndStops
@@ -20,7 +24,7 @@ namespace ClassLibrary1
 
         public void Start()
         {
-            var uri = new Uri("http://docs.google.com/uc?authuser=1&id=0BzGD5JpB16DVTWNoemYyNkY3ZEk&ex");
+            var uri = new Uri(@"http://docs.google.com/uc?authuser=1&id=0BzGD5JpB16DVTWNoemYyNkY3ZEk&ex");
 
             var myCommand = new MyCommand(10, uri);
 
@@ -29,7 +33,6 @@ namespace ClassLibrary1
 
         public void Stop()
         {
-            throw new System.NotImplementedException();
         }
     }
 }
