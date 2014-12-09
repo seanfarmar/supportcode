@@ -30,32 +30,39 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="NServiceBus">
-      <HintPath>..\References\NServiceBus.dll</HintPath>
+    <Reference Include="NServiceBus, Version=4.6.0.0, Culture=neutral, PublicKeyToken=9fc386479f8a226c, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\NServiceBus.Interfaces.4.6.0\lib\net40\NServiceBus.dll</HintPath>
     </Reference>
-    <Reference Include="NServiceBus.Core">
-      <HintPath>..\References\NServiceBus.Core.dll</HintPath>
+    <Reference Include="NServiceBus.Core, Version=5.0.0.0, Culture=neutral, PublicKeyToken=9fc386479f8a226c, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\NServiceBus.4.6.0\lib\net40\NServiceBus.Core.dll</HintPath>
     </Reference>
-    <Reference Include="NServiceBus.Host">
-      <HintPath>..\References\NServiceBus.Host.exe</HintPath>
+    <Reference Include="NServiceBus.Host, Version=4.6.0.0, Culture=neutral, PublicKeyToken=9fc386479f8a226c, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\NServiceBus.Host.4.6.0\lib\net40\NServiceBus.Host.exe</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
-    <Reference Include="System.Xml.Linq" />
-    <Reference Include="System.Data.DataSetExtensions" />
-    <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Data" />
-    <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ProcessPayCommandHandler.cs" />
     <Compile Include="EndpointConfig.cs" />
-    <Compile Include="ProcessOrderCommandHandler.cs" />
+    <Compile Include="PreparePayProcessBachCommandHandler.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+    <None Include="packages.config">
+      <SubType>Designer</SubType>
+    </None>
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\PayrollGenerator.Conventions\PayrollGenerator.Conventions.csproj">
+      <Project>{b17ee3b7-739d-45bc-b2b2-77e240f74d72}</Project>
+      <Name>PayrollGenerator.Conventions</Name>
+    </ProjectReference>
     <ProjectReference Include="..\PayrollGenerator.Messages\PayrollGenerator.Messages.csproj">
       <Project>{c91a7122-4fbe-437b-b573-b86a6d3fe28b}</Project>
       <Name>PayrollGenerator.Messages</Name>
@@ -69,4 +76,8 @@
   <Target Name="AfterBuild">
   </Target>
   -->
+  <PropertyGroup>
+    <StartAction>Program</StartAction>
+    <StartProgram>$(ProjectDir)$(OutputPath)NServiceBus.Host.exe</StartProgram>
+  </PropertyGroup>
 </Project>

@@ -30,24 +30,31 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="NServiceBus">
-      <HintPath>..\References\NServiceBus.dll</HintPath>
+    <Reference Include="NServiceBus, Version=4.6.0.0, Culture=neutral, PublicKeyToken=9fc386479f8a226c, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\NServiceBus.Interfaces.4.6.0\lib\net40\NServiceBus.dll</HintPath>
     </Reference>
-    <Reference Include="NServiceBus.Core">
-      <HintPath>..\References\NServiceBus.Core.dll</HintPath>
+    <Reference Include="NServiceBus.Core, Version=4.6.0.0, Culture=neutral, PublicKeyToken=9fc386479f8a226c, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\NServiceBus.4.6.0\lib\net40\NServiceBus.Core.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
-    <Reference Include="System.Xml.Linq" />
-    <Reference Include="System.Data.DataSetExtensions" />
-    <Reference Include="Microsoft.CSharp" />
-    <Reference Include="System.Data" />
-    <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Response\ProcessPayResponse.cs" />
+    <Compile Include="Commands\ProcessPayCommand.cs" />
+    <Compile Include="Commands\PayProcessStarter.cs" />
     <Compile Include="PlaceOrderStatus.cs" />
+    <Compile Include="Response\PreparePayProcessBachResponse.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="PayProcess.cs" />
+    <Compile Include="Commands\PreparePayProcessBachCommand.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Events\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

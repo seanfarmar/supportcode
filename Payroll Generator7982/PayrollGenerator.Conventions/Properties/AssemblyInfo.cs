@@ -5,11 +5,11 @@ using System.Runtime.InteropServices;
 // General Information about an assembly is controlled through the following 
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("PayrollGenerator.SagaHandler")]
+[assembly: AssemblyTitle("PayrollGenerator.Conventions")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("PayrollGenerator.SagaHandler")]
+[assembly: AssemblyProduct("PayrollGenerator.Conventions")]
 [assembly: AssemblyCopyright("Copyright ©  2014")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
@@ -20,7 +20,7 @@ using System.Runtime.InteropServices;
 [assembly: ComVisible(false)]
 
 // The following GUID is for the ID of the typelib if this project is exposed to COM
-[assembly: Guid("c082b3ae-db86-4d3c-961a-94ccf8059308")]
+[assembly: Guid("2530d908-fb0c-4519-b27a-53b8eb6f02d5")]
 
 // Version information for an assembly consists of the following four values:
 //

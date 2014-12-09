@@ -1,15 +1,17 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 2012
+# Visual Studio 2013
+VisualStudioVersion = 12.0.31101.0
+MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PayrollGenerator.Sender", "PayrollGenerator.Sender\PayrollGenerator.Sender.csproj", "{4B55BF7A-856B-438D-9C92-CDF8499F6B2A}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PayrollGenerator.Messages", "PayrollGenerator.Messages\PayrollGenerator.Messages.csproj", "{C91A7122-4FBE-437B-B573-B86A6D3FE28B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PayrollGenerator.SagaHandler", "PayrollGenerator.SagaHandler\PayrollGenerator.SagaHandler.csproj", "{13C30386-A7E0-4A64-8D8C-5162FDE3449F}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PayrollGenerator.Saga", "PayrollGenerator.Saga\PayrollGenerator.Saga.csproj", "{13C30386-A7E0-4A64-8D8C-5162FDE3449F}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PayrollGenerator.Handler", "PayrollGenerator.Handler\PayrollGenerator.Handler.csproj", "{A77B742E-0689-416C-8EC1-81F366FC7BA9}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PayrollGenerator.Handler.Worker1", "PayrollGenerator.Handler.Worker1\PayrollGenerator.Handler.Worker1.csproj", "{679E745A-7DC1-416D-A231-E792CE35CEAA}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PayrollGenerator.Conventions", "PayrollGenerator.Conventions\PayrollGenerator.Conventions.csproj", "{B17EE3B7-739D-45BC-B2B2-77E240F74D72}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -33,10 +35,10 @@ Global
 		{A77B742E-0689-416C-8EC1-81F366FC7BA9}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A77B742E-0689-416C-8EC1-81F366FC7BA9}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A77B742E-0689-416C-8EC1-81F366FC7BA9}.Release|Any CPU.Build.0 = Release|Any CPU
-		{679E745A-7DC1-416D-A231-E792CE35CEAA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{679E745A-7DC1-416D-A231-E792CE35CEAA}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{679E745A-7DC1-416D-A231-E792CE35CEAA}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{679E745A-7DC1-416D-A231-E792CE35CEAA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B17EE3B7-739D-45BC-B2B2-77E240F74D72}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B17EE3B7-739D-45BC-B2B2-77E240F74D72}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B17EE3B7-739D-45BC-B2B2-77E240F74D72}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B17EE3B7-739D-45BC-B2B2-77E240F74D72}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

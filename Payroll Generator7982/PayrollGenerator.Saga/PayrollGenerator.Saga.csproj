@@ -4,11 +4,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{679E745A-7DC1-416D-A231-E792CE35CEAA}</ProjectGuid>
+    <ProjectGuid>{13C30386-A7E0-4A64-8D8C-5162FDE3449F}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>PayrollGenerator.Handler.Worker1</RootNamespace>
-    <AssemblyName>PayrollGenerator.Handler.Worker1</AssemblyName>
+    <RootNamespace>PayrollGenerator.Saga</RootNamespace>
+    <AssemblyName>PayrollGenerator.Saga</AssemblyName>
     <TargetFrameworkVersion>v4.5.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
@@ -30,36 +30,36 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="NServiceBus">
-      <HintPath>..\References\NServiceBus.dll</HintPath>
+    <Reference Include="NServiceBus, Version=4.6.0.0, Culture=neutral, PublicKeyToken=9fc386479f8a226c, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\NServiceBus.Interfaces.4.6.0\lib\net40\NServiceBus.dll</HintPath>
     </Reference>
-    <Reference Include="NServiceBus.Core">
-      <HintPath>..\References\NServiceBus.Core.dll</HintPath>
+    <Reference Include="NServiceBus.Core, Version=4.6.0.0, Culture=neutral, PublicKeyToken=9fc386479f8a226c, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\NServiceBus.4.6.0\lib\net40\NServiceBus.Core.dll</HintPath>
     </Reference>
-    <Reference Include="NServiceBus.Host">
-      <HintPath>..\References\NServiceBus.Host.exe</HintPath>
+    <Reference Include="NServiceBus.Host, Version=4.6.0.0, Culture=neutral, PublicKeyToken=9fc386479f8a226c, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\NServiceBus.Host.4.6.0\lib\net40\NServiceBus.Host.exe</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
-    <Reference Include="System.Xml.Linq" />
-    <Reference Include="System.Data.DataSetExtensions" />
-    <Reference Include="Microsoft.CSharp" />
-    <Reference Include="System.Data" />
-    <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="..\PayrollGenerator.Handler\EndpointConfig.cs">
-      <Link>EndpointConfig.cs</Link>
-    </Compile>
-    <Compile Include="..\PayrollGenerator.Handler\ProcessOrderCommandHandler.cs">
-      <Link>ProcessOrderCommandHandler.cs</Link>
-    </Compile>
+    <Compile Include="EndpointConfig.cs" />
+    <Compile Include="PayProcessData.cs" />
+    <Compile Include="PayProcessPolicy.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+    <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\PayrollGenerator.Conventions\PayrollGenerator.Conventions.csproj">
+      <Project>{b17ee3b7-739d-45bc-b2b2-77e240f74d72}</Project>
+      <Name>PayrollGenerator.Conventions</Name>
+    </ProjectReference>
     <ProjectReference Include="..\PayrollGenerator.Messages\PayrollGenerator.Messages.csproj">
       <Project>{c91a7122-4fbe-437b-b573-b86a6d3fe28b}</Project>
       <Name>PayrollGenerator.Messages</Name>
@@ -73,4 +73,8 @@
   <Target Name="AfterBuild">
   </Target>
   -->
+  <PropertyGroup>
+    <StartAction>Program</StartAction>
+    <StartProgram>$(ProjectDir)$(OutputPath)NServiceBus.Host.exe</StartProgram>
+  </PropertyGroup>
 </Project>

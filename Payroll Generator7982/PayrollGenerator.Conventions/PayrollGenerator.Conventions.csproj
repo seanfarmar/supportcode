@@ -1,15 +1,15 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{13C30386-A7E0-4A64-8D8C-5162FDE3449F}</ProjectGuid>
+    <ProjectGuid>{B17EE3B7-739D-45BC-B2B2-77E240F74D72}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>PayrollGenerator.SagaHandler</RootNamespace>
-    <AssemblyName>PayrollGenerator.SagaHandler</AssemblyName>
-    <TargetFrameworkVersion>v4.5.1</TargetFrameworkVersion>
+    <RootNamespace>PayrollGenerator.Conventions</RootNamespace>
+    <AssemblyName>PayrollGenerator.Conventions</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
@@ -31,13 +31,10 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="NServiceBus">
-      <HintPath>..\References\NServiceBus.dll</HintPath>
+      <HintPath>..\packages\NServiceBus.Interfaces.4.6.0\lib\net40\NServiceBus.dll</HintPath>
     </Reference>
     <Reference Include="NServiceBus.Core">
-      <HintPath>..\References\NServiceBus.Core.dll</HintPath>
-    </Reference>
-    <Reference Include="NServiceBus.Host">
-      <HintPath>..\References\NServiceBus.Host.exe</HintPath>
+      <HintPath>..\packages\NServiceBus.4.6.0\lib\net40\NServiceBus.Core.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
@@ -48,18 +45,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="EndpointConfig.cs" />
-    <Compile Include="PayProcessPolicy.cs" />
+    <Compile Include="Conventions.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="App.config" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\PayrollGenerator.Messages\PayrollGenerator.Messages.csproj">
-      <Project>{c91a7122-4fbe-437b-b573-b86a6d3fe28b}</Project>
-      <Name>PayrollGenerator.Messages</Name>
-    </ProjectReference>
+    <None Include="packages.config" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

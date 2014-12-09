@@ -1,6 +1,8 @@
-﻿using NServiceBus;
-
-namespace PayrollGenerator.Sender
+﻿namespace PayrollGenerator.Sender
 {
-    class EndpointConfig : IConfigureThisEndpoint, AsA_Server {}
+    using NServiceBus;
+
+    internal class EndpointConfig : IConfigureThisEndpoint, AsA_Server
+    {
+    }
 }
