@@ -18,6 +18,8 @@
 
             // testing failure scenarios 
             if (message.EmployeeId % 2 == 1) throw new Exception("Just throwing the odd numbers to see if that breaks the sending handler");
+
+            // if the failure is logical then respond with en error response (not throw)
         }
     }
 }
