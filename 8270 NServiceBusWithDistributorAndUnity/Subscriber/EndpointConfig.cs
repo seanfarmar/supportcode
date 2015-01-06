@@ -15,21 +15,31 @@ namespace Subscriber
     // [EndpointSLA("0:00:05")]
     public class EndpointConfig : IConfigureThisEndpoint, AsA_Server, IWantCustomInitialization
     {
+        public bool IsDistributor
+        {
+            get
+            {
+                return bool.Parse(ConfigurationManager.AppSettings["IsDistributor"]);
+            }
+        }
+
         public void Init()
         {
             Configure.With()
                 .UnityBuilder() // does not work
                 //.DefaultBuilder()             // works
+                //.CastleWindsorBuilder()
                 .UnicastBus()
+                //.RunMSMQDistributor()
                 .MsmqSubscriptionStorage() //Default is RavenDb
                 .UseInMemoryTimeoutPersister();  //Default is RavenDb
 
-            //if (IsDistributor)
-            //    Configure.With()
-            //        .RunMSMQDistributor(withWorker: true);  // Distributor and worker
-            //else
-            //    Configure.With()
-            //        .EnlistWithMSMQDistributor();   // Worker
+            if (IsDistributor)
+                Configure.With()
+                    .RunMSMQDistributor(withWorker: true);  // Distributor and worker
+            else
+                Configure.With()
+                    .EnlistWithMSMQDistributor();   // Worker
         }
     }
 
