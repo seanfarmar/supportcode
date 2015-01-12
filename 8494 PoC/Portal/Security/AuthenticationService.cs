@@ -1,16 +1,12 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using AuthenticationGateway.Contracts;
-using NServiceBus;
-
-namespace Security
+﻿namespace Security
 {
+    using System;
+    using AuthenticationGateway.Contracts;
+    using NServiceBus;
+
     public class AuthenticationService
     {
-        private IBus _bus { get; set; }
+        public IBus _bus { get; set; }
 
         public AuthenticationService(IBus bus)
         {
@@ -20,8 +16,7 @@ namespace Security
 
         public void Authenticate(string username, string passsword)
         {
-            _bus.Send(new NeedAuthentication() { Username = username, Password = passsword });
+            _bus.Send(new NeedAuthentication {Username = username, Password = passsword});
         }
-
     }
 }

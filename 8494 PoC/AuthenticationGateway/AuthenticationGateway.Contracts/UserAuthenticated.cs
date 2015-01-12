@@ -1,8 +1,8 @@
-﻿using System;
-using NServiceBus;
-
-namespace AuthenticationGateway.Contracts
+﻿namespace AuthenticationGateway.Contracts
 {
+    using System;
+    using NServiceBus;
+
     public class UserAuthenticated : IEvent
     {
         public string Username { get; set; }

@@ -1,13 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using AuthenticationGateway.Contracts;
-using NServiceBus;
-
-namespace AuthenticationGateway.Handlers
+﻿namespace AuthenticationGateway.Handlers
 {
+    using System;
+    using Contracts;
+    using NServiceBus;
+
     public class NeedAuthenticationHandler : IHandleMessages<NeedAuthentication>
     {
         public IBus Bus { get; set; }
@@ -16,9 +12,7 @@ namespace AuthenticationGateway.Handlers
         public void Handle(NeedAuthentication message)
         {
             Console.WriteLine("Username to be authenticated: " + message.Username);
-            Bus.Publish(new UserAuthenticated() { Username = message.Username, Time = new DateTime() });
+            Bus.Publish(new UserAuthenticated {Username = message.Username, Time = new DateTime()});
         }
-
-
     }
 }

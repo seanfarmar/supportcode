@@ -1,8 +1,7 @@
-﻿using System;
-using NServiceBus;
-
-namespace AuthenticationGateway.Contracts
+﻿namespace AuthenticationGateway.Contracts
 {
+    using NServiceBus;
+
     public class NeedAuthentication : ICommand
     {
         public string Username { get; set; }
