@@ -1,0 +1,9 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Applications>
+  <Application name="Tolerance Data Web">
+    <IdentityProvider>
+      <Authentication url="http://"></Authentication>
+      <Authorization url="http://"></Authorization>
+    </IdentityProvider>
+  </Application>
+</Applications>
