@@ -84,6 +84,7 @@
     <Compile Include="ProcessMessageHandler.cs" />
     <Compile Include="service\interfaces\IOrderHandlers.cs" />
     <Compile Include="service\interfaces\IProviderSagaPersistance.cs" />
+    <Compile Include="service\msmq\ProfileHandlerToManageRoleProduction.cs" />
     <Compile Include="service\profiles\Lite.cs" />
     <Compile Include="service\configurationHandlers\LiteLoggingHandler.cs" />
     <Compile Include="service\configurationHandlers\LiteProfileHandler.cs" />
@@ -91,7 +92,7 @@
     <Compile Include="service\profiles\Production.cs" />
     <Compile Include="service\configurationHandlers\ProductionLoggingHandler.cs" />
     <Compile Include="service\configurationHandlers\ProductionProfileHandler.cs" />
-    <Compile Include="service\msmq\ProfileHandlerToManageRole.cs" />
+    <Compile Include="service\msmq\ProfileHandlerToManageRoleLite.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="service\msmq\RoleManager.cs" />
   </ItemGroup>

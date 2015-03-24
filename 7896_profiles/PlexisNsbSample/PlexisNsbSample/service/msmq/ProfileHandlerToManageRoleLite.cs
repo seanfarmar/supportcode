@@ -1,12 +1,10 @@
-using System;
-using NServiceBus;
-using NServiceBus.Hosting.Profiles;
-
 namespace PlexisNsbSample
 {
-	public class ProfileHandlerToManageRole :
+    using NServiceBus;
+    using NServiceBus.Hosting.Profiles;
+
+    public class ProfileHandlerToManageRoleLite :
 		IHandleProfile<Lite>,
-		IHandleProfile<Production>,
 		IWantTheEndpointConfig
 	{
 		public void ProfileActivated()
