@@ -21,25 +21,25 @@ namespace ProblemTest
             
 
             //NSB            
-            FillAllPropertiesOfType<IDocumentSession>();            
+            //FillAllPropertiesOfType<IDocumentSession>();            
 
             //NServiceBus
-            ForSingletonOf<IBus>().Use(
-            NServiceBus.Configure.With()
-            .StructureMapBuilder()
-                .DefiningCommandsAs(t => t.Namespace != null && t.Namespace.EndsWith("Command"))
-                .DefiningEventsAs(t => t.Namespace != null && t.Namespace.EndsWith("Event"))
-                .DefiningMessagesAs(t => t.Namespace == "Messages")
-                .RavenPersistence("RavenDB")
-                .UseTransport<ActiveMQ>()
-                .DefineEndpointName("IS.Argus.Core.Web")
-                .PurgeOnStartup(true)
-                .UnicastBus()
-                .CreateBus()
-                .Start(() => NServiceBus.Configure.Instance
-                .ForInstallationOn<Windows>()
-                .Install())
-            );            
+            //ForSingletonOf<IBus>().Use(
+            //NServiceBus.Configure.With()
+            //.StructureMapBuilder()
+            //.DefiningCommandsAs(t => t.Namespace != null && t.Namespace.EndsWith("Command"))
+            //.DefiningEventsAs(t => t.Namespace != null && t.Namespace.EndsWith("Event"))
+            //.DefiningMessagesAs(t => t.Namespace == "Messages")
+            //.RavenPersistence("RavenDB")
+            //.UseTransport<ActiveMQ>()
+            //.DefineEndpointName("IS.Argus.Core.Web")
+            //.PurgeOnStartup(true)
+            //.UnicastBus()
+            //.CreateBus()
+            //.Start(() => NServiceBus.Configure.Instance
+            //.ForInstallationOn<Windows>()
+            //.Install())
+            //);            
 
             //Web             
             For<HttpContextBase>().Use(() => HttpContext.Current == null ? null : new HttpContextWrapper(HttpContext.Current));

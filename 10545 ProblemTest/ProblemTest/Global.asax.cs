@@ -12,10 +12,38 @@ using StructureMap;
 
 namespace ProblemTest
 {
+    using NServiceBus;
+    using NServiceBus.Installation.Environments;
+
     public class MvcApplication : System.Web.HttpApplication
     {
+        private static IBus _bus;
+
+        private IStartableBus _startableBus;
+
+        public static IBus Bus
+        {
+            get { return _bus; }
+        }
+
         protected void Application_Start()
         {
+            //NSB
+            _startableBus = Configure.With()
+                .StructureMapBuilder()
+                .RavenPersistence("RavenDB")
+                .UseTransport<ActiveMQ>()
+                .DefineEndpointName("IS.Argus.Core.Web")
+                .DefiningCommandsAs(t => t.Namespace != null && t.Namespace.EndsWith("Command"))
+                .DefiningEventsAs(t => t.Namespace != null && t.Namespace.EndsWith("Event"))
+                .DefiningMessagesAs(t => t.Namespace == "Messages")
+                .UnicastBus()
+                .CreateBus();
+
+            Configure.Instance.ForInstallationOn<Windows>().Install();
+
+            _bus = _startableBus.Start();
+
             AreaRegistration.RegisterAllAreas();
 
             DependencyResolver.SetResolver(new StructureMapDependencyResolver(ObjectFactory.Container)); // for MVC
@@ -33,11 +61,14 @@ namespace ProblemTest
                 x.Scan(scan =>
                 {
                     scan.LookForRegistries();
-                    scan.Assembly("ProblemTest");                    
-
+                    scan.Assembly("ProblemTest");
                 });
+            });           
+        }
 
-            });            
+        protected void Application_End()
+        {
+            _startableBus.Dispose();
         }
 
         protected void Application_EndRequest()
