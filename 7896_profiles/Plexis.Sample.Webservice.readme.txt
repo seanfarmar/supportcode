@@ -1,0 +1,18 @@
+This code is provided as a sample only for the purpose of demonstrating an issue and is not meant for distribution or production use.
+
+This solution illustrates the issue of not routing the message from a NServiceBus.webservice queue to a NSB service queue. The solution consists of 4 projects:
+
+1) Plexis.Sample.BusPass - console based client used to send message to the webservice
+2) Plexis.Sample.Messages - simple DLL defining Message (IMessage) and Return Codes
+3) Plexis.Sample.Service - Light weight service modeled after our service structure using a framework to define custom configuration.  
+Please note that the service itself works and can be tested by modifying the entry point in BusPass to point to the "Plexis.Sample.Service.Input" queue instead of "Plexis.Sample.WebService.Input"
+4) Plexis.Sample.Webservice - This code is nearly identical to our production code. It contains 3 primary components, 
+	a) the Global.asmx which defines the Bus configuration on application startup
+	b) The webservice class which wraps the NServiceBus webservice 
+	c) the web.config which defines the message mapping
+
+The webservice functioned using the NSB 2.6 framework. The only modifications when upgrading to NSB 3.3.13 were the removal of input queue definition in the web.config and the addition of DefineEndpointName and Configure.Instance.ForInstallationOn<Windows>().Install() to the Bus configuration. 
+
+Build the solution; ensure that the Plexis.Sample.Service project properties Start Action 'Start external program' selection points to the NServiceBus.Host in your debug bin directory. Command Line Arguments should be set to the Plexis.Sample.Service.Lite profile.
+
+Run the projects in the solution. (I set multiple startup projects to include BusPass, the Service, and the webservice). Once everything is up and running, you may press enter in the BusPass console window to fire a message to the WebService. You can verify in MSMQ that the message processed through the webservice, but was never handled by the service.
