@@ -2,7 +2,6 @@
 {
     using System;
     using MessageConventions;
-    using MyCorp.NSB.Contracts.Commands;
     using Ninject;
     using NServiceBus;
     using NServiceBus.Config;
@@ -12,46 +11,34 @@
     {
         private static void Main(string[] args)
         {
-            var configuration = new BusConfiguration();
-
             // Common code to define all the interface bindings
-            var kernel = NinjectCommon.Start();
+            using (var kernel = NinjectCommon.Start())
+            {
+                var busConfiguration = CreateBusConfig(kernel);  // Bus is registered in Ninject container by NServiceBus
 
+                using (Bus.Create(busConfiguration).Start())
+                {
+                    var worker = kernel.Get<Worker>();
+
+                    worker.DoWork();
+
+                    // only for demo
+                    Console.WriteLine("Hit any key to exit");
+                    Console.ReadKey();
+
+                }// This makes sure that the bus is properly disposed thus shutdown.
+            }
+        }
+
+        private static BusConfiguration CreateBusConfig(IKernel kernel)
+        {
+            var configuration = new BusConfiguration();
             configuration.UseContainer<NinjectBuilder>(b => b.ExistingKernel(kernel));
-
-            new NServiceBusConventions().Customize(configuration);
-
-            configuration.ApplyMessageConventions();
-            
-            var bus = Bus.Create(configuration).Start();
-
-            new Worker().DoWork(bus);
-
-            // only for demo
-            Console.WriteLine("Hit any key to exit");
-            Console.ReadKey();
-        }
-    }
-
-    public class Worker
-    {
-        public void DoWork(IBus bus)
-        {
-            // using SendLocal for simlicity  
-            bus.SendLocal(new ProcessInventoryChangesMessage{Guid = Guid.NewGuid(), InventoryCode = "INV_001"});
-
-            // same for the rest:
-            // Bus.Send(new ProcessSalesOrderChanges());
-            // Bus.Send(new ProcessSalesShipmentChanges());
-        }
-    }
-
-    public class NServiceBusConventions : INeedInitialization
-    {
-        public void Customize(BusConfiguration configuration)
-        {
             configuration.UsePersistence<InMemoryPersistence>();
             configuration.UseSerialization<JsonSerializer>();
+            configuration.ApplyMessageConventions();
+            //configuration.EnableInstallers();
+            return configuration;
         }
     }
 
