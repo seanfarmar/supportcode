@@ -21,7 +21,7 @@
 
             new NServiceBusConventions().Customize(configuration);
 
-            new MyMessageConventions().Customize(configuration);
+            configuration.ApplyMessageConventions();
             
             var bus = Bus.Create(configuration).Start();
 
