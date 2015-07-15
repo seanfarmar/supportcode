@@ -64,9 +64,13 @@
     <Reference Include="System.Core" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Common\AuditQueueProvider.cs" />
+    <Compile Include="Common\NinjectCommon.cs" />
+    <Compile Include="Common\NServiceBusConfiguration.cs" />
+    <Compile Include="Common\ErrorQueueProvider.cs" />
     <Compile Include="ProcessInventoryChangesMessageHandler.cs" />
-    <Compile Include="IInventoryDataProvider.cs" />
-    <Compile Include="InventoryDataProvider.cs" />
+    <Compile Include="Dependencies\IInventoryDataProvider.cs" />
+    <Compile Include="Dependencies\InventoryDataProvider.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Worker.cs" />
