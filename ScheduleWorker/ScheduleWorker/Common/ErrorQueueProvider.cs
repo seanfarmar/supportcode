@@ -1,4 +1,4 @@
-﻿namespace ScheduleWorker
+﻿namespace ScheduleWorker.Common
 {
     using NServiceBus.Config;
     using NServiceBus.Config.ConfigurationSource;
@@ -7,7 +7,7 @@
     {
         public MessageForwardingInCaseOfFaultConfig GetConfiguration()
         {
-            return new MessageForwardingInCaseOfFaultConfig { ErrorQueue = "error" };
+            return new MessageForwardingInCaseOfFaultConfig {ErrorQueue = "error"};
         }
     }
 }

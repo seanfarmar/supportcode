@@ -1,5 +1,6 @@
-﻿namespace ScheduleWorker
+﻿namespace ScheduleWorker.Common
 {
+    using Dependencies;
     using Ninject;
 
     public class NinjectCommon

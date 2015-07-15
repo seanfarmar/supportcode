@@ -1,30 +1,38 @@
 ﻿namespace ScheduleWorker
 {
     using System;
+    using Dependencies;
     using MyCorp.NSB.Contracts.Commands;
     using MyCorp.NSB.Contracts.Events;
     using NServiceBus;
 
-    public class ProcessInventoryChangesMessageHandler : IHandleMessages<ProcessInventoryChangesMessage>
+    public class ProcessInventoryChangesMessageHandler : IHandleMessages<ProcessInventoryChanges>
     {
-        readonly IInventoryDataProvider _inventoryDataProvider;
-        public IBus Bus { get; set; }
+        private readonly IInventoryDataProvider _inventoryDataProvider;
 
         public ProcessInventoryChangesMessageHandler(IInventoryDataProvider inventoryDataProvider)
         {
             _inventoryDataProvider = inventoryDataProvider;
         }
 
-        public void Handle(ProcessInventoryChangesMessage message)
+        public IBus Bus { get; set; }
+
+        public void Handle(ProcessInventoryChanges message)
         {
             // Do the work here, one for each unit of work, thei handler can scale out to it's own endpoint
+            var inventory = _inventoryDataProvider.GetInventory();
 
-            string inventory = _inventoryDataProvider.GetInventory();
-
-            Console.WriteLine("Handeling ProcessInventoryChangesMessage and inventory is: {0}", inventory);
+            Console.WriteLine("Handeling ProcessInventoryChanges and inventoryCode is: {0}, Invetory text form InventoryDataProvider: {1}", message.InventoryCode, inventory);
 
             // now we publish....
-            Bus.Publish(new PublishInventoryChangesMessage{Guid=message.Guid, Inventory = inventory, InventoryCode= message.InventoryCode});
+            Bus.Publish(new InventoryChanged
+            {
+                Guid = message.Guid,
+                Inventory = inventory,
+                InventoryCode = message.InventoryCode
+            });
+
+            Console.WriteLine("Published InventoryChanged event inventoryCode is: {0}", message.InventoryCode);
         }
     }
 }

@@ -7,7 +7,7 @@
     {
         public AuditConfig GetConfiguration()
         {
-            return new AuditConfig { QueueName = "audit" };
+            return new AuditConfig {QueueName = "audit"};
         }
     }
 }

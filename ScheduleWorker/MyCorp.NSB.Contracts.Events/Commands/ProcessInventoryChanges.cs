@@ -2,10 +2,9 @@
 {
     using System;
 
-    public class ProcessInventoryChangesMessage
+    public class ProcessInventoryChanges
     {
         public Guid Guid { get; set; }
-
         public string InventoryCode { get; set; }
     }
 }

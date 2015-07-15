@@ -1,9 +1,9 @@
-﻿using System;
-using MyCorp.NSB.Contracts.Commands;
-using NServiceBus;
-
-namespace ScheduleWorker
+﻿namespace ScheduleWorker
 {
+    using System;
+    using MyCorp.NSB.Contracts.Commands;
+    using NServiceBus;
+
     public class Worker
     {
         private readonly IBus bus;
@@ -15,9 +15,10 @@ namespace ScheduleWorker
 
         public void DoWork()
         {
-            Console.WriteLine("Sending ProcessInventoryChangesMessage");
+            // 
+            Console.WriteLine("Sending ProcessInventoryChanges");
             // using SendLocal for simlicity  
-            bus.SendLocal(new ProcessInventoryChangesMessage { Guid = Guid.NewGuid(), InventoryCode = "INV_001" });
+            bus.SendLocal(new ProcessInventoryChanges {Guid = Guid.NewGuid(), InventoryCode = "INV_001"});
 
             // same for the rest:
             // Bus.Send(new ProcessSalesOrderChanges());

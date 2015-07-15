@@ -2,12 +2,10 @@
 {
     using System;
 
-    public class PublishInventoryChangesMessage
+    public class InventoryChanged
     {
         public Guid Guid { get; set; }
-
         public string Inventory { get; set; }
-
         public string InventoryCode { get; set; }
     }
 }

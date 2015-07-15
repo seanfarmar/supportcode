@@ -1,4 +1,4 @@
-﻿namespace ScheduleWorker
+﻿namespace ScheduleWorker.Dependencies
 {
     public interface IInventoryDataProvider
     {

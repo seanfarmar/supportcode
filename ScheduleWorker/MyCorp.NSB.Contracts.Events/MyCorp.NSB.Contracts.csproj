@@ -37,10 +37,10 @@
     <Reference Include="System.Core" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Commands\ProcessInventoryChangesMessage.cs" />
-    <Compile Include="Events\PublishInventoryChangesMessage.cs" />
-    <Compile Include="Events\PublishSalesOrderChanges.cs" />
-    <Compile Include="Events\PublishSalesShipmentChanges.cs" />
+    <Compile Include="Commands\ProcessInventoryChanges.cs" />
+    <Compile Include="Events\InventoryChanged.cs" />
+    <Compile Include="Events\SalesOrderChanged.cs" />
+    <Compile Include="Events\SalesShipmentChanged.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Commands\ProcessSalesOrderChanges.cs" />
     <Compile Include="Commands\ProcessSalesShipmentChanges.cs" />
