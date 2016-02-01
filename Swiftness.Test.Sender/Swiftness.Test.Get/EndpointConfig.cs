@@ -3,6 +3,7 @@
     using System;
     using Common;
     using NServiceBus;
+    using NServiceBus.Features;
     using NServiceBus.Log4Net;
 
     public class EndpointConfig : IConfigureThisEndpoint, AsA_Server
@@ -19,16 +20,17 @@
 
             configuration.UsePersistence<NHibernatePersistence>();
             configuration.UseSerialization<JsonSerializer>();
-            configuration.Transactions().Enable();
+            // configuration.Transactions().Enable();
             //configuration.Transactions().EnableDistributedTransactions();
             //configuration.DisableFeature<Audit>();
 
-            NServiceBus.Logging.LogManager.Use<Log4NetFactory>();
+            //NServiceBus.Logging.LogManager.Use<Log4NetFactory>();
 
             configuration.UseContainer<StructureMapBuilder>();
+            configuration.DisableFeature<Audit>();
 
-            Log4NetConfig logConfig = new Log4NetConfig();
-            logConfig.Start();
+            //Log4NetConfig logConfig = new Log4NetConfig();
+            //logConfig.Start();
         }
 
         private static void OnUnhandledException(object sender, UnhandledExceptionEventArgs e)
