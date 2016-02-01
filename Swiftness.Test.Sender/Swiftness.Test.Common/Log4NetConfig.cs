@@ -1,13 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Diagnostics;
-using System.IO;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace Swiftness.Test.Common
+﻿namespace Swiftness.Test.Common
 {
+    using System;
+    using System.Diagnostics;
+    using System.IO;
+
     public class Log4NetConfig
     {
 

@@ -30,47 +30,48 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="log4net, Version=1.2.15.0, Culture=neutral, PublicKeyToken=669e0ddf0bb1aa2a, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\packages\log4net.2.0.5\lib\net45-full\log4net.dll</HintPath>
+    <Reference Include="Iesi.Collections, Version=4.0.0.0, Culture=neutral, PublicKeyToken=aa95f207798dfdb4, processorArchitecture=MSIL">
+      <HintPath>..\packages\Iesi.Collections.4.0.1.4000\lib\net40\Iesi.Collections.dll</HintPath>
+      <Private>True</Private>
     </Reference>
-    <Reference Include="NHibernate">
-      <HintPath>..\..\..\..\..\..\..\Projects\Services4.1\ADI2.0\Infra 2.0\packages\NHibernate.4.0.1.4000\lib\net40\NHibernate.dll</HintPath>
+    <Reference Include="log4net, Version=1.2.11.0, Culture=neutral, PublicKeyToken=669e0ddf0bb1aa2a, processorArchitecture=MSIL">
+      <HintPath>..\packages\log4net.2.0.0\lib\net40-full\log4net.dll</HintPath>
+      <Private>True</Private>
     </Reference>
-    <Reference Include="NServiceBus.Core">
-      <HintPath>..\..\..\..\..\..\..\Projects\Services4.1\ADI2.0\Infra 2.0\packages\NServiceBus.5.0.2\lib\net45\NServiceBus.Core.dll</HintPath>
+    <Reference Include="NHibernate, Version=4.0.0.4000, Culture=neutral, PublicKeyToken=aa95f207798dfdb4, processorArchitecture=MSIL">
+      <HintPath>..\packages\NHibernate.4.0.1.4000\lib\net40\NHibernate.dll</HintPath>
+      <Private>True</Private>
     </Reference>
-    <Reference Include="NServiceBus.Distributor.MSMQ">
-      <HintPath>..\..\..\..\..\..\..\Projects\Services4.1\ADI2.0\Infra 2.0\packages\NServiceBus.Distributor.MSMQ.5.0.3\lib\net45\NServiceBus.Distributor.MSMQ.dll</HintPath>
+    <Reference Include="NServiceBus.Core, Version=5.0.0.0, Culture=neutral, PublicKeyToken=9fc386479f8a226c, processorArchitecture=MSIL">
+      <HintPath>..\packages\NServiceBus.5.2.14\lib\net45\NServiceBus.Core.dll</HintPath>
+      <Private>True</Private>
     </Reference>
-    <Reference Include="NServiceBus.Host">
-      <HintPath>..\..\..\..\..\..\..\Projects\Services4.1\ADI2.0\Infra 2.0\packages\NServiceBus.Host.6.0.0\lib\net45\NServiceBus.Host.exe</HintPath>
+    <Reference Include="NServiceBus.Host, Version=6.0.0.0, Culture=neutral, PublicKeyToken=9fc386479f8a226c, processorArchitecture=MSIL">
+      <HintPath>..\packages\NServiceBus.Host.6.0.0\lib\net45\NServiceBus.Host.exe</HintPath>
+      <Private>True</Private>
     </Reference>
-    <Reference Include="NServiceBus.Log4Net">
-      <HintPath>..\..\..\..\..\..\..\Projects\Services4.1\ADI2.0\Infra 2.0\packages\NServiceBus.Log4Net.1.0.0\lib\net45\NServiceBus.Log4Net.dll</HintPath>
+    <Reference Include="NServiceBus.Log4Net, Version=1.0.0.0, Culture=neutral, PublicKeyToken=9fc386479f8a226c, processorArchitecture=MSIL">
+      <HintPath>..\packages\NServiceBus.Log4Net.1.0.0\lib\net45\NServiceBus.Log4Net.dll</HintPath>
+      <Private>True</Private>
     </Reference>
-    <Reference Include="NServiceBus.NHibernate">
-      <HintPath>..\..\..\..\..\..\..\Projects\Services4.1\ADI2.0\Infra 2.0\packages\NServiceBus.NHibernate.6.2.1\lib\net45\NServiceBus.NHibernate.dll</HintPath>
+    <Reference Include="NServiceBus.NHibernate, Version=6.0.0.0, Culture=neutral, PublicKeyToken=9fc386479f8a226c, processorArchitecture=MSIL">
+      <HintPath>..\packages\NServiceBus.NHibernate.6.2.5\lib\net45\NServiceBus.NHibernate.dll</HintPath>
+      <Private>True</Private>
     </Reference>
-    <Reference Include="NServiceBus.ObjectBuilder.StructureMap">
-      <HintPath>..\..\..\..\..\..\..\Projects\Services4.1\ADI2.0\Infra 2.0\packages\NServiceBus.StructureMap.5.0.1\lib\net45\NServiceBus.ObjectBuilder.StructureMap.dll</HintPath>
+    <Reference Include="NServiceBus.ObjectBuilder.StructureMap, Version=5.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\NServiceBus.StructureMap.5.0.1\lib\net45\NServiceBus.ObjectBuilder.StructureMap.dll</HintPath>
+      <Private>True</Private>
     </Reference>
-    <Reference Include="StructureMap">
-      <HintPath>..\..\..\..\..\..\..\Projects\Services4.1\ADI2.0\Infra 2.0\packages\structuremap.3.0.5.130\lib\net40\StructureMap.dll</HintPath>
+    <Reference Include="StructureMap, Version=3.0.5.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\structuremap.3.0.5.130\lib\net40\StructureMap.dll</HintPath>
+      <Private>True</Private>
     </Reference>
-    <Reference Include="StructureMap.Net4">
-      <HintPath>..\..\..\..\..\..\..\Projects\Services4.1\ADI2.0\Infra 2.0\packages\structuremap.3.0.5.130\lib\net40\StructureMap.Net4.dll</HintPath>
-    </Reference>
-    <Reference Include="SwiftNess.Framework.Server">
-      <HintPath>..\..\..\..\..\..\..\Projects\Raphael\ADI2.0\Infra 2.0\Framework\SwiftNess.Framework.Server\bin\Debug\SwiftNess.Framework.Server.dll</HintPath>
+    <Reference Include="StructureMap.Net4, Version=3.0.5.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\structuremap.3.0.5.130\lib\net40\StructureMap.Net4.dll</HintPath>
+      <Private>True</Private>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
-    <Reference Include="System.Xml.Linq" />
-    <Reference Include="System.Data.DataSetExtensions" />
-    <Reference Include="Microsoft.CSharp" />
-    <Reference Include="System.Data" />
-    <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="NServiceBus.Host.exe.config">

@@ -1,15 +1,10 @@
-﻿using NServiceBus;
-using NServiceBus.Log4Net;
-using StructureMap;
-using Swiftness.Test.Common;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace Swiftness.Test.Get
+﻿namespace Swiftness.Test.Get
 {
+    using System;
+    using Common;
+    using NServiceBus;
+    using NServiceBus.Log4Net;
+
     public class EndpointConfig : IConfigureThisEndpoint, AsA_Server
     {
         public EndpointConfig()

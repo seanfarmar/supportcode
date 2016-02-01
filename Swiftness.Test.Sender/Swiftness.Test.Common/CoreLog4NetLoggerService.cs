@@ -1,12 +1,9 @@
-﻿using NServiceBus.Logging;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace Swiftness.Test.Common
+﻿namespace Swiftness.Test.Common
 {
+    using System;
+    using System.Collections.Generic;
+    using NServiceBus.Logging;
+
     public interface IProcessContext
     {
         long GeneralFileDataRootKey { get; set; }
