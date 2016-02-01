@@ -79,8 +79,7 @@
         Default,
         MonitorEvent
     }
-
-
+    
     public class CoreLog4NetLoggerService : ILoggerService2
     {
         private static Dictionary<string, ILog> loggerMap;

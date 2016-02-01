@@ -2,6 +2,9 @@
 <Project ToolsVersion="12.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|AnyCPU'">
     <StartAction>Program</StartAction>
-    <StartProgram>C:\Users\noam.tzuberi\Documents\visual studio 2013\Projects\Swiftness.Test.Sender\Swiftness.Test.Sender\bin\Debug\NServiceBus.Host.exe</StartProgram>
+    <StartProgram>C:\Code\Github\SupportCode\Swiftness.Test.Sender\Swiftness.Test.Sender\bin\Debug\NServiceBus.Host.exe</StartProgram>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ProjectView>ShowAllFiles</ProjectView>
   </PropertyGroup>
 </Project>
