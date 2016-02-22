@@ -28,6 +28,7 @@
 
             configuration.UseContainer<StructureMapBuilder>();
             configuration.DisableFeature<Audit>();
+            //configuration.Transactions().DisableDistributedTransactions();
 
             //Log4NetConfig logConfig = new Log4NetConfig();
             //logConfig.Start();

@@ -3,6 +3,7 @@
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|AnyCPU'">
     <StartAction>Program</StartAction>
     <StartProgram>C:\Code\Github\SupportCode\Swiftness.Test.Sender\Swiftness.Test.Get\bin\Debug\NServiceBus.Host.exe</StartProgram>
+    <StartArguments>NServiceBus.Production</StartArguments>
   </PropertyGroup>
   <PropertyGroup>
     <ProjectView>ShowAllFiles</ProjectView>
