@@ -4,7 +4,6 @@
     using Common;
     using NServiceBus;
     using NServiceBus.Features;
-    using NServiceBus.Log4Net;
 
     public class EndpointConfig : IConfigureThisEndpoint, AsA_Server
     {

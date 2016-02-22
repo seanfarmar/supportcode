@@ -80,6 +80,12 @@
     </Content>
     <None Include="packages.config" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Swiftness.Test.Common\Swiftness.Test.Common.csproj">
+      <Project>{F3AA6353-7E4A-424A-B1EB-6E3D894E3D36}</Project>
+      <Name>Swiftness.Test.Common</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
