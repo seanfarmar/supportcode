@@ -6,6 +6,8 @@ using NServiceBus.Config.ConfigurationSource;
 
 namespace DocumentServicesSaga.StartupApp
 {
+    using Shared;
+
     class Program
     {
         static void Main(string[] args)
@@ -16,7 +18,6 @@ namespace DocumentServicesSaga.StartupApp
 
             using (var bus = Bus.Create(busConfiguration).Start())
             {
-
                 Console.Clear();
                 Console.WriteLine("Press enter to send a message");
                 Console.WriteLine("Press any key to exit");
@@ -33,11 +34,7 @@ namespace DocumentServicesSaga.StartupApp
 
                     Console.WriteLine("Sending document extraction request at {0}.", DateTime.Now);
                     SendDocumentExtractionRequest(bus);
-
                 }
-
-
-
             }
         }
 

@@ -87,7 +87,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="DocumentServicesSaga.cs" />
+    <Compile Include="DocumentSagaData.cs" />
+    <Compile Include="DocumentServicesProcessSaga.cs" />
+    <Compile Include="HandleExtractDocument.cs" />
+    <Compile Include="DocumentExtractionTimeout.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -97,7 +100,7 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\DocumentServicesSaga.Messages\DocumentServicesSaga.Messages.csproj">
-      <Project>{06829e4c-361a-414e-970b-425a8f5a8025}</Project>
+      <Project>{06829E4C-361A-414E-970B-425A8F5A8025}</Project>
       <Name>DocumentServicesSaga.Messages</Name>
     </ProjectReference>
     <ProjectReference Include="..\DocumentServicesSaga.Shared\DocumentServicesSaga.Shared.csproj">

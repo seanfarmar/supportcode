@@ -5,6 +5,8 @@ using NServiceBus.Config.ConfigurationSource;
 
 namespace DocumentServices.Saga
 {
+    using global::DocumentServicesSaga.Shared;
+
     class Program
     {
 

@@ -18,6 +18,5 @@ namespace DocumentServices.Saga.Web.Handlers
 
             MvcApplication.Bus.Send(command);
         }
-
     }
 }

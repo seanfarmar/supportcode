@@ -8,6 +8,8 @@ using NServiceBus.Config.ConfigurationSource;
 
 namespace DocumentServices.Saga.Web
 {
+    using DocumentServicesSaga.Shared;
+
     public class MvcApplication : HttpApplication
     {
         public static IBus Bus;
@@ -28,8 +30,7 @@ namespace DocumentServices.Saga.Web
             configuration.ApplyCommonConfiguration();
 
             Bus = NServiceBus.Bus.Create(configuration).Start();
-
-
+            
             AreaRegistration.RegisterAllAreas();
             FilterConfig.RegisterGlobalFilters(GlobalFilters.Filters);
             RouteConfig.RegisterRoutes(RouteTable.Routes);
