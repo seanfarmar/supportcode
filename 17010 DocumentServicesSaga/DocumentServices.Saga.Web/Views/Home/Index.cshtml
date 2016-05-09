@@ -1,0 +1,63 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+}
+
+
+<p><button class="btn btn-lg btn-default" id="btnExtractDocument">Request document extraction</button></p>
+<p id="processing" style="display: none;">Processing...</p>
+<hr />
+<ul class="list-unstyled" id="processedFiles"></ul>
+
+
+
+@section scripts
+{
+    <script type="text/javascript">
+        $(function () {
+
+            var documentsHub = $.connection.documentsHub;
+
+
+            documentsHub.client.documentExtracted = function (data) {
+                console.log(data);
+                var li = $('<li>');
+                li.text(data.FilePath + ' extracted');
+                $('#processedFiles').append(li);
+                $('#btnExtractDocument').removeAttr('disabled');
+                $('#processing').fadeOut(300);
+            };
+
+            documentsHub.client.documentExtractionTimedOut = function (data) {
+                console.log(data);
+                var li = $('<li>');
+                li.text(data.FilePath + ' extraction timedout.');
+                $('#processedFiles').append(li);
+                $('#btnExtractDocument').removeAttr('disabled');
+                $('#processing').fadeOut(300);
+            };
+
+
+            $.connection.hub.start();
+
+
+            $('#btnExtractDocument').on('click', function (e) {
+                e.preventDefault();
+                var filePath = '';
+                $('#btnExtractDocument').attr('disabled', 'disabled');
+                $('#processing').fadeIn(300);
+
+                documentsHub.server.extractDocument(filePath)
+                    .fail(function (err) {
+                        var li = $('<li>');
+                        li.text("We couldn't extract your document. (" + err + ")");
+                        li.addClass('text-danger');
+                        $('#processedFiles').append(li);
+
+                        $('#btnExtractDocument').removeAttr('disabled');
+                        $('#processing').fadeOut(300);
+                    });
+            });
+        });
+
+    </script>
+}

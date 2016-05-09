@@ -1,0 +1,67 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.24720.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DocumentServices.Saga", "DocumentServices.Saga\DocumentServices.Saga.csproj", "{D307D56F-819E-4663-ABA5-275DC1896C8E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DocumentServicesSaga.Messages", "DocumentServicesSaga.Messages\DocumentServicesSaga.Messages.csproj", "{06829E4C-361A-414E-970B-425A8F5A8025}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DocumentServicesSaga.StartupApp", "DocumentServicesSaga.StartupApp\DocumentServicesSaga.StartupApp.csproj", "{578738EF-E895-4FD0-8348-AA99C7E5EEE8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DocumentServicesSaga.Shared", "DocumentServicesSaga.Shared\DocumentServicesSaga.Shared.csproj", "{06831654-18EA-4219-96A9-5DE322F22084}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DocumentServices.Saga.Web", "DocumentServices.Saga.Web\DocumentServices.Saga.Web.csproj", "{87666F38-10C3-4701-B44F-F5A1B20C10A1}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{D307D56F-819E-4663-ABA5-275DC1896C8E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D307D56F-819E-4663-ABA5-275DC1896C8E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D307D56F-819E-4663-ABA5-275DC1896C8E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D307D56F-819E-4663-ABA5-275DC1896C8E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{06829E4C-361A-414E-970B-425A8F5A8025}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{06829E4C-361A-414E-970B-425A8F5A8025}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{06829E4C-361A-414E-970B-425A8F5A8025}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{06829E4C-361A-414E-970B-425A8F5A8025}.Release|Any CPU.Build.0 = Release|Any CPU
+		{578738EF-E895-4FD0-8348-AA99C7E5EEE8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{578738EF-E895-4FD0-8348-AA99C7E5EEE8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{578738EF-E895-4FD0-8348-AA99C7E5EEE8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{578738EF-E895-4FD0-8348-AA99C7E5EEE8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{06831654-18EA-4219-96A9-5DE322F22084}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{06831654-18EA-4219-96A9-5DE322F22084}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{06831654-18EA-4219-96A9-5DE322F22084}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{06831654-18EA-4219-96A9-5DE322F22084}.Release|Any CPU.Build.0 = Release|Any CPU
+		{87666F38-10C3-4701-B44F-F5A1B20C10A1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{87666F38-10C3-4701-B44F-F5A1B20C10A1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{87666F38-10C3-4701-B44F-F5A1B20C10A1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{87666F38-10C3-4701-B44F-F5A1B20C10A1}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(TeamFoundationVersionControl) = preSolution
+		SccNumberOfProjects = 6
+		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+		SccTeamFoundationServer = http://tfs.ecave.net:8080/tfs/defaultcollection
+		SccLocalPath0 = .
+		SccProjectUniqueName1 = DocumentServices.Saga\\DocumentServices.Saga.csproj
+		SccProjectName1 = DocumentServices.Saga
+		SccLocalPath1 = DocumentServices.Saga
+		SccProjectUniqueName2 = DocumentServicesSaga.Messages\\DocumentServicesSaga.Messages.csproj
+		SccProjectName2 = DocumentServicesSaga.Messages
+		SccLocalPath2 = DocumentServicesSaga.Messages
+		SccProjectUniqueName3 = DocumentServicesSaga.StartupApp\\DocumentServicesSaga.StartupApp.csproj
+		SccProjectName3 = DocumentServicesSaga.StartupApp
+		SccLocalPath3 = DocumentServicesSaga.StartupApp
+		SccProjectUniqueName4 = DocumentServicesSaga.Shared\\DocumentServicesSaga.Shared.csproj
+		SccProjectName4 = DocumentServicesSaga.Shared
+		SccLocalPath4 = DocumentServicesSaga.Shared
+		SccProjectUniqueName5 = DocumentServices.Saga.Web\\DocumentServices.Saga.Web.csproj
+		SccProjectName5 = DocumentServices.Saga.Web
+		SccLocalPath5 = DocumentServices.Saga.Web
+	EndGlobalSection
+EndGlobal
