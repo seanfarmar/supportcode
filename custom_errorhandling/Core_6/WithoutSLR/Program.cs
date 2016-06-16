@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Threading.Tasks;
+using CustomErrorHandelingBehavior;
 using NServiceBus;
 using NServiceBus.Features;
 using NServiceBus.Logging;
@@ -26,6 +27,9 @@ static class Program
         endpointConfiguration.EnableInstallers();
         endpointConfiguration.SendFailedMessagesTo("error");
 
+        // register the behavior in the pipline
+        endpointConfiguration.Pipeline.Register("CustomExceptionHandelingBehaviorID", typeof(CustomExceptionHandelingBehavior), "CustomExceptionHandelingBehavior");
+
         var endpointInstance = await Endpoint.Start(endpointConfiguration)
             .ConfigureAwait(false);
         try
@@ -36,16 +40,37 @@ static class Program
             while (true)
             {
                 var key = Console.ReadKey();
-                if (key.Key != ConsoleKey.Enter)
+
+                if (key.Key == ConsoleKey.O)
                 {
-                    return;
+
+                    var myMessage = new MyOkMessage
+                    {
+                        Id = Guid.NewGuid()
+                    };
+                    await endpointInstance.SendLocal(myMessage)
+                        .ConfigureAwait(false);
                 }
-                var myMessage = new MyMessage
+
+                if (key.Key == ConsoleKey.E)
                 {
-                    Id = Guid.NewGuid()
-                };
-                await endpointInstance.SendLocal(myMessage)
-                    .ConfigureAwait(false);
+                    var myArgumentExceptionMessage = new MyArgumentExceptionMessage()
+                    {
+                        Id = Guid.NewGuid()
+                    };
+                    await endpointInstance.SendLocal(myArgumentExceptionMessage)
+                        .ConfigureAwait(false);
+                }
+
+                if (key.Key == ConsoleKey.A)
+                {
+                    var myBusinessExceptionMessage = new MyBusinessExceptionMessage()
+                    {
+                        Id = Guid.NewGuid()
+                    };
+                    await endpointInstance.SendLocal(myBusinessExceptionMessage)
+                        .ConfigureAwait(false);
+                }
             }
         }
         finally

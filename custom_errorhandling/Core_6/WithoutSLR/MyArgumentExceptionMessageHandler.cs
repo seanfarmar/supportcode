@@ -5,16 +5,19 @@ using NServiceBus;
 using NServiceBus.Logging;
 
 #region Handler
-public class MyOKMessageHandler : IHandleMessages<MyOkMessage>
+public class MyArgumentExceptionMessageHandler : IHandleMessages<MyArgumentExceptionMessage>
 {
     static ILog log = LogManager.GetLogger<MyOKMessageHandler>();
     static ConcurrentDictionary<Guid, string> Last = new ConcurrentDictionary<Guid, string>();
 
-    public Task Handle(MyOkMessage okMessage, IMessageHandlerContext context)
+    public Task Handle(MyArgumentExceptionMessage okMessage, IMessageHandlerContext context)
     {
         log.Info($"ReplyToAddress: {context.ReplyToAddress} MessageId:{context.MessageId}");
-       
-        return Task.FromResult(0);
+        
+        // add a regular exception modulator to test normal behavior     
+
+        throw new ArgumentException("A MyArgumentException occurred in the handler.");
     }
+
 }
 #endregion

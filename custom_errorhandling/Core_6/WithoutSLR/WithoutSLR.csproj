@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
@@ -38,10 +38,20 @@
     <Reference Include="System.Core" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="MyArgumentExceptionMessageHandler.cs" />
+    <Compile Include="MyBusinessExceptionMessageHandler.cs" />
     <Compile Include="MyMessageHandler.cs" />
     <Compile Include="Program.cs" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\BaseException\BaseException.csproj">
+      <Project>{053C6384-5020-46C8-8B69-FBA006F09758}</Project>
+      <Name>BaseException</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\CustomErrorHandelingBehavior\CustomErrorHandelingBehavior.csproj">
+      <Project>{687AC0C1-10A1-4E37-9D18-DE85DCC0F73C}</Project>
+      <Name>CustomErrorHandelingBehavior</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Shared\Shared.csproj">
       <Project>{87ADE927-38CB-453E-9C9D-2B69CF248A60}</Project>
       <Name>Shared</Name>
