@@ -14,11 +14,9 @@ public class MyBusinessExceptionMessageHandler : IHandleMessages<MyBusinessExcep
     public Task Handle(MyBusinessExceptionMessage okMessage, IMessageHandlerContext context)
     {
         log.Info($"ReplyToAddress: {context.ReplyToAddress} MessageId:{context.MessageId}");
-        
-        // add a regular exception modulator to test normal behavior     
 
+        // add a MyBusinessException exception to test behavior     
         throw new MyBusinessException("A MyBaseException occurred in the handler.");
     }
-
 }
 #endregion

@@ -15,9 +15,7 @@ public class MyArgumentExceptionMessageHandler : IHandleMessages<MyArgumentExcep
         log.Info($"ReplyToAddress: {context.ReplyToAddress} MessageId:{context.MessageId}");
         
         // add a regular exception modulator to test normal behavior     
-
         throw new ArgumentException("A MyArgumentException occurred in the handler.");
     }
-
 }
 #endregion

@@ -22,6 +22,7 @@ static class Program
         var endpointConfiguration = new EndpointConfiguration("Samples.ErrorHandling.WithoutSLR");
         endpointConfiguration.DisableFeature<SecondLevelRetries>();
         #endregion
+
         endpointConfiguration.UseSerialization<JsonSerializer>();
         endpointConfiguration.UsePersistence<InMemoryPersistence>();
         endpointConfiguration.EnableInstallers();
@@ -34,8 +35,10 @@ static class Program
             .ConfigureAwait(false);
         try
         {
-            Console.WriteLine("Press enter to send a message that will throw an exception.");
-            Console.WriteLine("Press any key to exit");
+            Console.WriteLine("Press a to send a message that will throw a business exception.");
+            Console.WriteLine("Press e to send a message that will throw an ArgumentException.");
+            Console.WriteLine("Press o to send a message that will be processed OK.");
+            Console.WriteLine("Press escape key to exit");
 
             while (true)
             {
@@ -43,13 +46,15 @@ static class Program
 
                 if (key.Key == ConsoleKey.O)
                 {
-
                     var myMessage = new MyOkMessage
                     {
                         Id = Guid.NewGuid()
                     };
                     await endpointInstance.SendLocal(myMessage)
                         .ConfigureAwait(false);
+
+                    Console.WriteLine("");
+                    Console.WriteLine("Sent MyOkMessage");
                 }
 
                 if (key.Key == ConsoleKey.E)
@@ -60,6 +65,9 @@ static class Program
                     };
                     await endpointInstance.SendLocal(myArgumentExceptionMessage)
                         .ConfigureAwait(false);
+
+                    Console.WriteLine("");
+                    Console.WriteLine("Sent MyArgumentExceptionMessage");
                 }
 
                 if (key.Key == ConsoleKey.A)
@@ -70,6 +78,14 @@ static class Program
                     };
                     await endpointInstance.SendLocal(myBusinessExceptionMessage)
                         .ConfigureAwait(false);
+
+                    Console.WriteLine("");
+                    Console.WriteLine("Sent MyBusinessExceptionMessage");
+                }
+
+                if (key.Key == ConsoleKey.Escape)
+                {
+                    return;
                 }
             }
         }

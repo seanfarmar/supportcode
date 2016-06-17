@@ -11,7 +11,6 @@
         public override async Task Invoke(IIncomingLogicalMessageContext context, Func<Task> next)
         {
             // custom logic before calling the next step in the pipeline.
-
             try
             {
                 await next();
