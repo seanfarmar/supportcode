@@ -1,6 +1,6 @@
 ﻿using System;
 using System.Threading.Tasks;
-using CustomErrorHandelingBehavior;
+using Behaviors;
 using NServiceBus;
 using NServiceBus.Features;
 using NServiceBus.Logging;

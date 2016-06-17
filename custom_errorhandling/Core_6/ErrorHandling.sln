@@ -7,10 +7,6 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WithoutSLR", "WithoutSLR\Wi
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Shared", "Shared\Shared.csproj", "{87ADE927-38CB-453E-9C9D-2B69CF248A60}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BaseException", "BaseException\BaseException.csproj", "{053C6384-5020-46C8-8B69-FBA006F09758}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CustomErrorHandelingBehavior", "CustomErrorHandelingBehavior\CustomErrorHandelingBehavior.csproj", "{687AC0C1-10A1-4E37-9D18-DE85DCC0F73C}"
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -25,14 +21,6 @@ Global
 		{87ADE927-38CB-453E-9C9D-2B69CF248A60}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{87ADE927-38CB-453E-9C9D-2B69CF248A60}.Release|Any CPU.ActiveCfg = Debug|Any CPU
 		{87ADE927-38CB-453E-9C9D-2B69CF248A60}.Release|Any CPU.Build.0 = Debug|Any CPU
-		{053C6384-5020-46C8-8B69-FBA006F09758}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{053C6384-5020-46C8-8B69-FBA006F09758}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{053C6384-5020-46C8-8B69-FBA006F09758}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{053C6384-5020-46C8-8B69-FBA006F09758}.Release|Any CPU.Build.0 = Release|Any CPU
-		{687AC0C1-10A1-4E37-9D18-DE85DCC0F73C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{687AC0C1-10A1-4E37-9D18-DE85DCC0F73C}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{687AC0C1-10A1-4E37-9D18-DE85DCC0F73C}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{687AC0C1-10A1-4E37-9D18-DE85DCC0F73C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

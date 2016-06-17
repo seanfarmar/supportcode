@@ -1,4 +1,4 @@
-﻿namespace CustomErrorHandelingBehavior
+﻿namespace Behaviors
 {
     using System;
     using System.Threading.Tasks;
