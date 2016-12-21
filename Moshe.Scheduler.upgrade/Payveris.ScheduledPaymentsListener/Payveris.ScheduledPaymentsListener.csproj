@@ -100,7 +100,6 @@
   <ItemGroup>
     <Compile Include="CheckPaymentsHandler.cs" />
     <Compile Include="EndpointConfig.cs" />
-    <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config">
@@ -121,6 +120,9 @@
       <Project>{fd0c59dc-dc6e-449a-a459-1dce238c3e20}</Project>
       <Name>Payveris</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Properties\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

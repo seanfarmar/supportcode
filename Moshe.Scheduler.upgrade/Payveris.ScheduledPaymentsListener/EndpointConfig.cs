@@ -23,25 +23,20 @@ namespace Payveris.ScheduledPaymentsListener
 
     public class Initialization : IWantToRunWhenEndpointStartsAndStops
     {
-        public IBus Bus { get; set; }
-        public Schedule schedule { get; set; }
-
         public Initialization()
         {
         }
 
-        public Task Start(IMessageSession session)
+        public async Task Start(IMessageSession session)
         {
             await session.ScheduleEvery(
-                TimeSpan: TimeSpan.FromSeconds(30),
+                timeSpan: TimeSpan.FromSeconds(30),
                 task: pipelineContext =>
-                    {
-                        return ContextBoundObject.
-                    }
-                )
-            //schedule.Every(TimeSpan.FromSeconds(30), () => Bus.SendLocal(new CheckScheduledPayments()));//for testing
-            schedule.Every(TimeSpan.FromSeconds(30), () => Bus.SendLocal(new CheckScheduledPayments()));
-            return Task.CompletedTask;
+                {
+                    var message = new CheckScheduledPayments();
+                    return pipelineContext.Send(message);
+                })
+                .ConfigureAwait(false);
         }
 
         public Task Stop(IMessageSession session)
