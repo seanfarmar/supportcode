@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<configuration xmlns:xdt="http://schemas.microsoft.com/XML-Document-Transform">
+<appSettings xdt:Transform="InsertIfMissing">    
+	<add key="Bold.DatabaseConnectionString" value="[Add connectionstring for database]" xdt:Locator="Match(key)" xdt:Transform="InsertIfMissing"/>
+	<add key="NServiceBus/Persistence/NHibernate/default_schema" value="[Add schema name for InboxOutBox tables]" xdt:Locator="Match(key)" xdt:Transform="InsertIfMissing"/>
+  <add key="NServiceBus/Outbox" value="true" xdt:Locator="Match(key)" xdt:Transform="InsertIfMissing"/>
+  <add key="NServiceBus/Outbox/NHibernate/TimeToKeepDeduplicationData" value="[Replaced by deployment]" xdt:Locator="Match(key)" xdt:Transform="InsertIfMissing" />
+  <add key="NServiceBus/Outbox/NHibernate/FrequencyToRunDeduplicationDataCleanup" value="[Replaced by deployment]" xdt:Locator="Match(key)" xdt:Transform="InsertIfMissing" />
+</appSettings>
+</configuration> 
