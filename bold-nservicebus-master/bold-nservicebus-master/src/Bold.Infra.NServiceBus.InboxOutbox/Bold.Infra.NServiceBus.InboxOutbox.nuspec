@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2011/08/nuspec.xsd">
+  <metadata>
+    <id>Bold.Infra.NServiceBus.InboxOutbox</id>
+    <version>4.2.0</version>
+    <title>Bold.Infra.NServiceBus.InboxOutbox</title>
+    <authors>Bold IT AB</authors>
+    <owners>Bold IT AB</owners>
+    <projectUrl>https://github.com/Maqster6/bold-nservicebus</projectUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>Package for handling Inbox and Outbox feature for NServiceBus.</description>
+    <summary />
+    <copyright>Bold IT AB</copyright>
+    <language>en-GB</language>
+    <dependencies>
+      <dependency id="EntityFramework" version="[6,7)" />
+      <dependency id="NServiceBus.NHibernate" version="[6.2.7,7)" />
+      <dependency id="Bold.ItOps.Shared.Messaging" version="[1,2)" />
+      <dependency id="Microsoft.WindowsAzure.ConfigurationManager" version="[2,3)" />
+    </dependencies>
+  </metadata>
+  <files>
+    <file src="Bold.Infra.NServiceBus.InboxOutbox.dll" target="lib\net452\Bold.Infra.NServiceBus.InboxOutbox.dll" />
+    <file src="Nuget\config.install.xdt" target="content\App.config.install.xdt"/>
+  </files>
+</package>

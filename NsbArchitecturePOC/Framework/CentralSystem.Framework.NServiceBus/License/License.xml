@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<license id="19e1aa84-84a8-4094-9a70-e5387e1cf20d" expiration="2115-11-08T09:07:33.5042066" type="Standard" LicenseVersion="5.0" WorkerThreads="Max" AllowedNumberOfWorkerNodes="Max" MaxMessageThroughputPerSecond="Max" Quantity="1" Edition="Enterprise" Applications="All" UpgradeProtectionExpiration="2016-10-21">
+  <name>Neo Games</name>
+  <Signature xmlns="http://www.w3.org/2000/09/xmldsig#">
+    <SignedInfo>
+      <CanonicalizationMethod Algorithm="http://www.w3.org/TR/2001/REC-xml-c14n-20010315" />
+      <SignatureMethod Algorithm="http://www.w3.org/2000/09/xmldsig#rsa-sha1" />
+      <Reference URI="">
+        <Transforms>
+          <Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature" />
+        </Transforms>
+        <DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+        <DigestValue>e+zOMnHJywhKPf0bYVE+6QUtrDY=</DigestValue>
+      </Reference>
+    </SignedInfo>
+    <SignatureValue>ijVgsI26ZApM+cVXt9/T1sggRZmznCqptA1Khm7cK/a4k4DsuvwwTi1Y3JjvvBKIBBswgnGCCj/ahft9onV0HTdL6T/Te1bPaQptUdLnWjuIwEI2Q+NZqTXSTnRywftJq3Vye346UEhLMRIzSnLs6HhidU3QsHRq2Dqxga5Ozds=</SignatureValue>
+  </Signature>
+</license>

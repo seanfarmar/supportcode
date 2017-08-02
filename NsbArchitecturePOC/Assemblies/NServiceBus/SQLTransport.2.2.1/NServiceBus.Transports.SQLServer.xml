@@ -1,0 +1,382 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>NServiceBus.Transports.SQLServer</name>
+    </assembly>
+    <members>
+        <member name="F:NServiceBus.Transports.SQLServer.AdaptivePollingReceiver.SlowTaskThresholdInMilliseconds">
+            <summary>
+            Controls the ramping up of additional threads in case one of the current threads is processing a slow message.
+            If the processing takes more than a number of seconds, an additional thread is ramped up. Such thing can happen only once per processing a single message.
+            </summary>
+        </member>
+        <member name="F:NServiceBus.Transports.SQLServer.AdaptivePollingReceiver.MaximumConsecutiveFailures">
+            <summary>
+            The maximum number of failures of receive for a given thread before it decides to commit suicide.
+            </summary>
+        </member>
+        <member name="F:NServiceBus.Transports.SQLServer.AdaptivePollingReceiver.MinimumConsecutiveSuccesses">
+            <summary>
+            The minimum number of successful message processing attempts for a given thread before it tries to ramp up another thread.
+            </summary>
+        </member>
+        <member name="F:NServiceBus.Transports.SQLServer.AdaptivePollingReceiver.MaximumBackOffTimeMilliseconds">
+            <summary>
+            The maximum time for a thread to wait if a previous receive operation failed.
+            </summary>
+        </member>
+        <member name="T:NServiceBus.Transports.SQLServer.BoundedExponentialBackOff">
+            <summary>
+            A utility class that does a sleep on very call up to a limit based on a condition.
+            </summary>
+        </member>
+        <member name="M:NServiceBus.Transports.SQLServer.BoundedExponentialBackOff.#ctor(System.Int32)">
+            <summary>
+            Initializes a new instance.
+            </summary>
+            <param name="maximumDelay">The maximum number of milliseconds for which the thread is blocked.</param>
+        </member>
+        <member name="M:NServiceBus.Transports.SQLServer.BoundedExponentialBackOff.ConditionalWait(System.Func{System.Boolean},System.Action{System.Int32})">
+            <summary>
+            It executes the Thread sleep if condition is <c>true</c>, otherwise it resets.
+            </summary>
+            <param name="condition">If the condition is <c>true</c> then the wait is performed.</param>
+            <param name="waitAction"></param>
+        </member>
+        <member name="F:NServiceBus.Transports.SQLServer.ExecutorTaskState.TICKS_COUNT_FOR_NOT_ACTIVE_TASK">
+            <summary>
+            To prevent lock - max ticks count prevent don't detect current task as long running
+            </summary>
+        </member>
+        <member name="T:NServiceBus.Transports.SQLServer.ConnectionInfo">
+            <summary>
+            Defines how to connect to a remote SQLServer transport endpoint.
+            </summary>
+        </member>
+        <member name="M:NServiceBus.Transports.SQLServer.ConnectionInfo.Create">
+            <summary>
+            Creates new instance of <see cref="T:NServiceBus.Transports.SQLServer.ConnectionInfo"/>.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:NServiceBus.Transports.SQLServer.ConnectionInfo.UseConnectionString(System.String)">
+            <summary>
+            Instructs the current endpoint to use provided connection string for connecting to the remote endpoint instead of the one configured for the current endpoint.
+            </summary>
+            <param name="connectionString">Specific connection string or null for the defualt connection string (same as this endpoint)</param>
+            <returns></returns>
+        </member>
+        <member name="M:NServiceBus.Transports.SQLServer.ConnectionInfo.UseSchema(System.String)">
+            <summary>
+            Instructs the current endpoint to use provided schema for connecting to the remote endpoint instead of the one configured for the current endpoint.
+            </summary>
+            <param name="schemaName">Specific schema name or null for the default schema (same as this endpoint)</param>
+            <returns></returns>
+        </member>
+        <member name="T:NServiceBus.Transports.SQLServer.EndpointConnectionInfo">
+            <summary>
+            Defines how to connect to a remote SQLServer transport endpoint.
+            </summary>
+        </member>
+        <member name="M:NServiceBus.Transports.SQLServer.EndpointConnectionInfo.For(System.String)">
+            <summary>
+            Creates new instance of <see cref="T:NServiceBus.Transports.SQLServer.EndpointConnectionInfo"/> for a given remote endpoint.
+            </summary>
+            <param name="endpoint">Name of the endpoint.</param>
+            <returns></returns>
+        </member>
+        <member name="M:NServiceBus.Transports.SQLServer.EndpointConnectionInfo.UseConnectionString(System.String)">
+            <summary>
+            Instructs the current endpoint to use provided connection string for connecting to the remote endpoint instead of the one configured for the current endpoint.
+            </summary>
+            <param name="connectionString">Specific connection string or null for the defualt connection string (same as this endpoint)</param>
+            <returns></returns>
+        </member>
+        <member name="M:NServiceBus.Transports.SQLServer.EndpointConnectionInfo.UseSchema(System.String)">
+            <summary>
+            Instructs the current endpoint to use provided schema for connecting to the remote endpoint instead of the one configured for the current endpoint.
+            </summary>
+            <param name="schemaName">Specific schema name or null for the default schema (same as this endpoint)</param>
+            <returns></returns>
+        </member>
+        <member name="T:NServiceBus.Transports.SQLServer.TransportNotifications">
+            <summary>
+            Pipeline notifications
+            </summary>
+        </member>
+        <member name="P:NServiceBus.Transports.SQLServer.TransportNotifications.ReceiveTaskStarted">
+            <summary>
+            Notifies of starting a new receive task in the transport receiver.
+            </summary>
+        </member>
+        <member name="P:NServiceBus.Transports.SQLServer.TransportNotifications.ReceiveTaskStopped">
+            <summary>
+            Notifies of stopping a receive task in the transport receiver.
+            </summary>
+        </member>
+        <member name="P:NServiceBus.Transports.SQLServer.TransportNotifications.MaximumConcurrencyLevelReached">
+            <summary>
+            Notifies of reaching maxium concurrency level and hence not starting a new receive task
+            </summary>
+        </member>
+        <member name="P:NServiceBus.Transports.SQLServer.TransportNotifications.TooMuchWork">
+            <summary>
+            Notifies of detecting too much work for current number of receive tasks
+            </summary>
+        </member>
+        <member name="P:NServiceBus.Transports.SQLServer.TransportNotifications.TooLittleWork">
+            <summary>
+            Notifies of detecting too little work for current number of receive tasks
+            </summary>
+        </member>
+        <member name="T:NServiceBus.Transports.SQLServer.ReceiveTaskStarted">
+            <summary>
+            Notifies of starting a new receive task in the transport receiver.
+            </summary>
+        </member>
+        <member name="F:NServiceBus.Transports.SQLServer.ReceiveTaskStarted.MaximumConcurrency">
+            <summary>
+            Maximum concurrency level of transport receiver
+            </summary>
+        </member>
+        <member name="F:NServiceBus.Transports.SQLServer.ReceiveTaskStarted.CurrentConcurrency">
+            <summary>
+            Current count of running receive tasks
+            </summary>
+        </member>
+        <member name="F:NServiceBus.Transports.SQLServer.ReceiveTaskStarted.Queue">
+            <summary>
+            Name of the source queue
+            </summary>
+        </member>
+        <member name="M:NServiceBus.Transports.SQLServer.ReceiveTaskStarted.#ctor(System.String,System.Int32,System.Int32)">
+            <summary>
+            Creates new instance of <see cref="T:NServiceBus.Transports.SQLServer.ReceiveTaskStarted"/>
+            </summary>
+            <param name="queue"></param>
+            <param name="currentConcurrency"></param>
+            <param name="maximumConcurrency"></param>
+        </member>
+        <member name="T:NServiceBus.Transports.SQLServer.ReceiveTaskStopped">
+            <summary>
+            Notifies of stopping a receive task in the transport receiver.
+            </summary>
+        </member>
+        <member name="F:NServiceBus.Transports.SQLServer.ReceiveTaskStopped.MaximumConcurrency">
+            <summary>
+            Maximum concurrency level of transport receiver
+            </summary>
+        </member>
+        <member name="F:NServiceBus.Transports.SQLServer.ReceiveTaskStopped.CurrentConcurrency">
+            <summary>
+            Current count of running receive tasks
+            </summary>
+        </member>
+        <member name="F:NServiceBus.Transports.SQLServer.ReceiveTaskStopped.Queue">
+            <summary>
+            Name of the source queue
+            </summary>
+        </member>
+        <member name="M:NServiceBus.Transports.SQLServer.ReceiveTaskStopped.#ctor(System.String,System.Int32,System.Int32)">
+            <summary>
+            Creates new instance of <see cref="T:NServiceBus.Transports.SQLServer.ReceiveTaskStopped"/>
+            </summary>
+            <param name="queue"></param>
+            <param name="currentConcurrency"></param>
+            <param name="maximumConcurrency"></param>
+        </member>
+        <member name="T:NServiceBus.Transports.SQLServer.MaximumConcurrencyLevelReached">
+            <summary>
+            Notifies of reaching maxium concurrency level and hence not starting a new receive task
+            </summary>
+        </member>
+        <member name="F:NServiceBus.Transports.SQLServer.MaximumConcurrencyLevelReached.MaximumConcurrency">
+            <summary>
+            Maximum concurrency level of transport receiver
+            </summary>
+        </member>
+        <member name="F:NServiceBus.Transports.SQLServer.MaximumConcurrencyLevelReached.Queue">
+            <summary>
+            Name of the source queue
+            </summary>
+        </member>
+        <member name="M:NServiceBus.Transports.SQLServer.MaximumConcurrencyLevelReached.#ctor(System.String,System.Int32)">
+            <summary>
+            Creates new instance of <see cref="T:NServiceBus.Transports.SQLServer.MaximumConcurrencyLevelReached"/>
+            </summary>
+            <param name="queue"></param>
+            <param name="maximumConcurrency"></param>
+        </member>
+        <member name="T:NServiceBus.Transports.SQLServer.TooMuchWork">
+            <summary>
+            Notifies of detecting too much work for current number of receive tasks
+            </summary>
+        </member>
+        <member name="F:NServiceBus.Transports.SQLServer.TooMuchWork.Queue">
+            <summary>
+            Name of the source queue
+            </summary>
+        </member>
+        <member name="M:NServiceBus.Transports.SQLServer.TooMuchWork.#ctor(System.String)">
+            <summary>
+            Creates new instance of <see cref="T:NServiceBus.Transports.SQLServer.TooMuchWork"/>
+            </summary>
+            <param name="queue"></param>
+        </member>
+        <member name="T:NServiceBus.Transports.SQLServer.TooLittleWork">
+            <summary>
+            Notifies of detecting too little work for current number of receive tasks
+            </summary>
+        </member>
+        <member name="F:NServiceBus.Transports.SQLServer.TooLittleWork.Queue">
+            <summary>
+            Name of the source queue
+            </summary>
+        </member>
+        <member name="M:NServiceBus.Transports.SQLServer.TooLittleWork.#ctor(System.String)">
+            <summary>
+            Creates new instance of <see cref="T:NServiceBus.Transports.SQLServer.TooLittleWork"/>
+            </summary>
+            <param name="queue"></param>
+        </member>
+        <member name="T:NServiceBus.SqlServerSettingsExtensions">
+            <summary>
+            Adds extra configuration for the Sql Server transport.
+            </summary>
+        </member>
+        <member name="M:NServiceBus.SqlServerSettingsExtensions.DisableCallbackReceiver(NServiceBus.TransportExtensions{NServiceBus.SqlServerTransport})">
+            <summary>
+            Disables the separate receiver that pulls messages from the machine specific callback queue.
+            </summary>
+            <param name="transportExtensions"></param>
+            <returns></returns>
+        </member>
+        <member name="M:NServiceBus.SqlServerSettingsExtensions.CallbackReceiverMaxConcurrency(NServiceBus.TransportExtensions{NServiceBus.SqlServerTransport},System.Int32)">
+            <summary>
+            Changes the number of threads that should be used for the callback receiver. The default is 1
+            </summary>
+            <param name="transportExtensions"></param>
+            <param name="maxConcurrency">The new value for concurrency</param>
+            <returns></returns>
+        </member>
+        <member name="M:NServiceBus.SqlServerSettingsExtensions.UseSpecificConnectionInformation(NServiceBus.TransportExtensions{NServiceBus.SqlServerTransport},System.Collections.Generic.IEnumerable{NServiceBus.Transports.SQLServer.EndpointConnectionInfo})">
+            <summary>
+            Provides per-endpoint connection strings for multi-database support.
+            </summary>
+            <param name="transportExtensions"></param>
+            <param name="connectionInformationCollection">A collection of endpoint-connection info pairs</param>
+            <returns></returns>
+        </member>
+        <member name="M:NServiceBus.SqlServerSettingsExtensions.UseSpecificConnectionInformation(NServiceBus.TransportExtensions{NServiceBus.SqlServerTransport},NServiceBus.Transports.SQLServer.EndpointConnectionInfo[])">
+            <summary>
+            Provides per-endpoint connection strings for multi-database support.
+            </summary>
+            <param name="transportExtensions"></param>
+            <param name="connectionInformationCollection">A collection of endpoint-connection info pairs</param>
+            <returns></returns>
+        </member>
+        <member name="M:NServiceBus.SqlServerSettingsExtensions.UseSpecificConnectionInformation(NServiceBus.TransportExtensions{NServiceBus.SqlServerTransport},System.Func{System.String,NServiceBus.Transports.SQLServer.ConnectionInfo})">
+            <summary>
+            Provides per-endpoint connection strings for multi-database support.
+            </summary>
+            <param name="transportExtensions"></param>
+            <param name="connectionInformationProvider">A function that gets the endpoint name and returns connection information or null if default.</param>
+            <returns></returns>
+        </member>
+        <member name="M:NServiceBus.SqlServerSettingsExtensions.DefaultSchema(NServiceBus.TransportExtensions{NServiceBus.SqlServerTransport},System.String)">
+            <summary>
+            Overrides the default schema (dbo) used for queue tables.
+            </summary>
+            <param name="transportExtensions"></param>
+            <param name="schemaName">Name of the schema to use instead do dbo</param>
+            <returns></returns>
+        </member>
+        <member name="M:NServiceBus.SqlServerSettingsExtensions.TimeToWaitBeforeTriggeringCircuitBreaker(NServiceBus.TransportExtensions{NServiceBus.SqlServerTransport},System.TimeSpan)">
+            <summary>
+            Overrides the default time to wait before triggering a circuit breaker that initiates the endpoint shutdown procedure in case there are numerous errors
+            while trying to receive messages.
+            </summary>
+            <param name="transportExtensions"></param>
+            <param name="waitTime">Time to wait before triggering the circuit breaker</param>
+            <returns></returns>
+        </member>
+        <member name="M:NServiceBus.SqlServerSettingsExtensions.PauseAfterReceiveFailure(NServiceBus.TransportExtensions{NServiceBus.SqlServerTransport},System.TimeSpan)">
+            <summary>
+            Overrides the default time to pause after a failure while trying to receive a message.
+            </summary>
+            <param name="transportExtensions"></param>
+            <param name="pauseTime">Time to pause after failure while receiving a message.</param>
+            <returns></returns>
+        </member>
+        <member name="M:NServiceBus.SqlServerSettingsExtensions.UseCustomSqlConnectionFactory(NServiceBus.TransportExtensions{NServiceBus.SqlServerTransport},System.Func{System.String,System.Data.SqlClient.SqlConnection})">
+            <summary>
+            Overrides the default time SQL Connections factory.
+            </summary>
+            <param name="transportExtensions"></param>
+            <param name="sqlConnectionFactory">Factory for creating and opening new SQL Connections.</param>
+            <returns></returns>
+        </member>
+        <member name="T:NServiceBus.Transports.SQLServer.SqlServerStorageContext">
+            <summary>
+            Provides users with access to the current SqlServer transport <see cref="T:System.Data.IDbConnection"/>. 
+            </summary>
+        </member>
+        <member name="P:NServiceBus.Transports.SQLServer.SqlServerStorageContext.Connection">
+            <summary>
+            Gets the current context SqlServer transport <see cref="T:System.Data.IDbConnection"/> or <code>null</code> if no current context SqlServer transport <see cref="T:System.Data.IDbConnection"/> available.
+            </summary>
+        </member>
+        <member name="P:NServiceBus.Transports.SQLServer.SqlServerStorageContext.Transaction">
+            <summary>
+            Gets the current context SqlServer transport <see cref="T:System.Data.SqlClient.SqlTransaction"/> or <code>null</code> if no current context SqlServer transport <see cref="T:System.Data.SqlClient.SqlTransaction"/> available.
+            </summary>
+        </member>
+        <member name="T:NServiceBus.SqlServerTransport">
+            <summary>
+            SqlServer Transport
+            </summary>
+        </member>
+        <member name="M:NServiceBus.SqlServerTransport.#ctor">
+            <summary>
+            Ctor
+            </summary>
+        </member>
+        <member name="M:NServiceBus.SqlServerTransport.Configure(NServiceBus.BusConfiguration)">
+            <summary>
+            Gives implementations access to the <see cref="T:NServiceBus.BusConfiguration"/> instance at configuration time.
+            </summary>
+        </member>
+        <member name="T:NServiceBus.Transports.SQLServer.SqlServerPollingDequeueStrategy">
+            <summary>
+                A polling implementation of <see cref="T:NServiceBus.Transports.IDequeueMessages"/>.
+            </summary>
+        </member>
+        <member name="M:NServiceBus.Transports.SQLServer.SqlServerPollingDequeueStrategy.Init(NServiceBus.Address,NServiceBus.Unicast.Transport.TransactionSettings,System.Func{NServiceBus.TransportMessage,System.Boolean},System.Action{NServiceBus.TransportMessage,System.Exception})">
+            <summary>
+                Initializes the <see cref="T:NServiceBus.Transports.IDequeueMessages"/>.
+            </summary>
+            <param name="primaryAddress">The address to listen on.</param>
+            <param name="transactionSettings">
+                The <see cref="T:NServiceBus.Unicast.Transport.TransactionSettings"/> to be used by <see cref="T:NServiceBus.Transports.IDequeueMessages"/>.
+            </param>
+            <param name="tryProcessMessage">Called when a message has been dequeued and is ready for processing.</param>
+            <param name="endProcessMessage">
+                Needs to be called by <see cref="T:NServiceBus.Transports.IDequeueMessages"/> after the message has been processed regardless if the
+                outcome was successful or not.
+            </param>
+        </member>
+        <member name="M:NServiceBus.Transports.SQLServer.SqlServerPollingDequeueStrategy.Start(System.Int32)">
+            <summary>
+                Starts the dequeuing of message using the specified <paramref name="maximumConcurrencyLevel"/>.
+            </summary>
+            <param name="maximumConcurrencyLevel">
+                Indicates the maximum concurrency level this <see cref="T:NServiceBus.Transports.IDequeueMessages"/> is able to support.
+            </param>
+        </member>
+        <member name="M:NServiceBus.Transports.SQLServer.SqlServerPollingDequeueStrategy.Stop">
+            <summary>
+                Stops the dequeuing of messages.
+            </summary>
+        </member>
+    </members>
+</doc>
