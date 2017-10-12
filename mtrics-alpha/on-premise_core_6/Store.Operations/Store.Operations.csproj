@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <TargetFrameworks>net461</TargetFrameworks>
+    <OutputType>Exe</OutputType>
+    <ApplicationManifest>app.manifest</ApplicationManifest>
+    <LangVersion>7.1</LangVersion>
+  </PropertyGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Store.Messages\Store.Messages.csproj" />
+    <ProjectReference Include="..\Store.Shared\Store.Shared.csproj" />
+    <PackageReference Include="NServiceBus" Version="6.4.1" />
+    <PackageReference Include="NServiceBus.Encryption.MessageProperty" Version="1.*" />
+    <PackageReference Include="NServiceBus.Metrics" Version="1.2.0-alpha0016" />
+    <PackageReference Include="NServiceBus.Persistence.Sql.MsBuild" Version="2.1.4" />
+  </ItemGroup>
+</Project>
